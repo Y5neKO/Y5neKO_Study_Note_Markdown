@@ -1,0 +1,54 @@
+﻿{templatefile:[top.html]}
+<div class="hdhzkj">
+{templatefile:[_daohang.html]}
+<div class="hdhwkj">
+  <div class="lrl"><div class="lrk">
+<form action="default.aspx" method="post" >
+ 留言主题：<input type=text name="DonforMc" value=""><br>
+ 公司名称：<input type=text name="DonforGjc" value=""><br>
+ 联系人：<input type=text name="DonforZz" value=""><br>
+ 联系电话：<input type=text name="DonforShr" value=""><br>
+ 联系地址：<input type=text name="DonforXzDz" value=""><br>
+ 电子邮件：<input type=text name="DonforLy" value=""><br>
+ 详细内容：<br><textarea name="DonforLr" style="width:400px;height:150px;"></textarea><br>
+ <input type="submit" value="提交">
+ <input type="hidden" value="{hedonghua:dyj}" name="Dyj">
+ <input type="hidden" value="{hedonghua:dej}" name="Dej">
+ <input type="hidden" value="1" name="Get">
+ <input type="hidden" value="1" name="SendEmailYn">(拥有邮件功能时值为1即可发邮件给邮件接收人)
+ <input type="hidden" value="lyok" name="DonforDo">
+</form>
+  </div></div>
+  <div class="lrr">
+{templatefile:[_xwlmcd.html]}  
+   <div class="lkj">
+    <h1>图片新闻</h1>
+    <div class="lrk">
+    
+{hedonghua:content bigclass=dej smallclass=dsj num=10 photonews sort=desc order=donforsj}
+   <div class="nkj">
+    <img src="[content:donfortp]">
+    <a href="[content:outlink]">[content:donformc]</a>
+    <span>[content:outsjyyr]</span>
+   </div>
+{/hedonghua:content}
+
+    </div>
+   </div>
+   
+   <div class="lkj">
+    <h1>阅读排行</h1>
+    <div class="lrk">
+  <ul class="dr">
+{hedonghua:content bigclass=dej smallclass=dsj num=9 sort=desc order=donforsj}
+   <li class="hdh[content:1outcountjsq]"><span class="span[content:1outcountjsq]">[content:1outcountjsq]</span><a href="[content:outlink]">[content:donformc]</a></li>
+{/hedonghua:content}
+  </ul>
+    </div>
+   </div>
+   
+   
+   
+  </div>
+</div></div>
+{templatefile:[bottom.html]}

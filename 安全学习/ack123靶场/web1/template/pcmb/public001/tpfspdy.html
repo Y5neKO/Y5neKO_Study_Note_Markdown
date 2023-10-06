@@ -1,0 +1,42 @@
+﻿{templatefile:[top.html]}
+<div class="hdhzkj">
+{templatefile:[_daohang.html]}
+<div class="hdhwkj">
+  <div class="spkj">
+   <div class="spl">
+{hedonghua:content column={hedonghua:dyj} num=1 donforgd sort=desc order=donforsj}
+    <a href="[content:outlink]" title="[content:donformc]"><img src="[content:donfortp]" onerror="this.src='{hedonghua:siteml}images/default.png';" /><b>[content:donformc]</b><span>[content:outsjyyr]</span></a>
+{/hedonghua:content}   
+   </div>
+   <div class="spr">
+     <ul class="spzq">
+{hedonghua:content column={hedonghua:dyj} num=6 sort=desc order=donforsj}
+    <li><a href="[content:outlink]" title="[content:donformc]"><img src="[content:donfortp]" onerror="this.src='{hedonghua:siteml}images/default.png';" /><b>[content:donformc]</b><span>[content:outsjyyr]</span></a></li>
+{/hedonghua:content}   
+    </ul>
+   </div>
+ </div>
+</div>
+
+{hedonghua:webcatalog}
+ <div class="hdhwkj">
+  <div class="bt">
+  <h2>[hdhcatalog:title]</h2>
+  <p>
+{hedonghua:thrmenu menu=[hdhcatalog:cataid] class=class checked=classed}
+ <a href="[thrmenu:href]" [thrmenu:class]>[thrmenu:title]</a>
+{/hedonghua:thrmenu}
+  <a href="[hdhcatalog:href]">更多</a>
+  </p>
+  </div>
+  <ul class="tpzq">
+ {hedonghua:cataloglist photonews num=10}
+    <li><a href="[cataloglist:link]" title="[cataloglist:donformc]"><img src="[cataloglist:donfortp]" onerror="this.src='{hedonghua:siteml}images/default.png';" /><b>[cataloglist:donformc]</b><span>[cataloglist:outsjyyr]</span></a></li>
+ {/hedonghua:cataloglist}
+ </ul>
+ </div>
+{/hedonghua:webcatalog}
+
+
+</div>
+{templatefile:[bottom.html]}

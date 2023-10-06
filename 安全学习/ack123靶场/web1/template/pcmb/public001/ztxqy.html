@@ -1,0 +1,55 @@
+﻿{templatefile:[top.html]}
+<div class="hdhzkj">
+{templatefile:[_daohang.html]}
+<div class="hdhwkj">
+ {hedonghua:specialdisplay dzt=专题ID }
+自动编号	[specialdisplay:donforId]<br>
+专题标题	[specialdisplay:donforztbt]<br>
+标题首字母	[specialdisplay:donforszm]<br>
+专题点击数	[specialdisplay:donfordjs]<br>
+添加时间	[specialdisplay:donforsj]<br>
+添加用户	[specialdisplay:donfortjr]<br>
+图片地址	[specialdisplay:donfortpdz]<br>
+图片标题	[specialdisplay:donfortpbt]<br>
+专题视频	[specialdisplay:donforztsp]<br>
+视频标题	[specialdisplay:donforspbt]<br>
+专题概要	[specialdisplay:donfoztgy]<br>
+专题详情	[specialdisplay:donforztxq]<br>
+作者	[specialdisplay:donforzz]<br>
+标题颜色	[specialdisplay:donforys]<br>
+上级栏目URL	[specialdisplay:outztlmwz]<br>
+上级栏目名称	[specialdisplay:outztlmmc]<br>
+前一篇链接[specialdisplay:prevlink] <br>
+前一篇标题[specialdisplay:prevtitle] <br>
+后一篇链接[specialdisplay:nextlink] <br>
+后一篇标题[specialdisplay:nexttitle] <br>
+//下为视频内嵌标签，如果视频地址为空则整段不显示<br>
+{specialdisplay:playvideo}
+ <a href="[ specialdisplayvideo:videourl]" class="xzlj">视频链接</a><br>
+ {/specialdisplay:playvideo}
+//下为图片内嵌标签，如果图片地址为空则整段不显示<br>
+{specialdisplay:images}
+<a href="[ specialdisplayimages:imagesurl]" class="xzlj">图片链接</a><br>
+ {/specialdisplay:images}
+
+{hedonghua:specialattribute dzt=[specialdisplay:donforId] sxz=aaa sort=desc order=DonforZjsj }
+自动编号	[specialattribute:donforid]<br>
+所属栏目	[specialattribute:donforssLm]<br>
+所属专题	[specialattribute:donforssxq]<br>
+所属附加属性	[specialattribute:donforsssx]<br>
+所属版块分类	[specialattribute:donforssbk]<br>
+文章ID		[specialattribute:donforWzid]<br>
+导入标题	[specialattribute:donfordrbt]<br>
+导入图片	[specialattribute:donfordrtp]<br>
+导入视频	[specialattribute:donfordrsp]<br>
+导入摘要	[specialattribute:donfordrzy]<br>
+是否审核	[specialattribute:donfordfsh]<br>
+添加方式	[specialattribute:donfortjfs]<br>
+增加时间	[specialattribute:donforzjsj] <br>
+{/hedonghua:specialattribute}
+
+
+{/hedonghua:specialdisplay}
+
+</div></div>
+{templatefile:[bottom.html]}

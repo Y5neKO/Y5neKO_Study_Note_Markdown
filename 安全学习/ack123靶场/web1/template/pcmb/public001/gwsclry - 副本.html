@@ -1,0 +1,234 @@
+﻿{templatefile:[top.html]}
+<div class="hdhzkj">
+{templatefile:[_daohang.html]}
+<div class="hdhwkj">
+<div class="dl">
+{hedonghua:display}
+<div class="tpk">
+<!-- 代码开始 -->
+<script type="text/javascript" src="{hedonghua:siteml}{hedonghua:sitemb}/js/hdh-packed.js"></script>
+<link href="{hedonghua:siteml}{hedonghua:sitemb}/images/cp_hdj.css" type="text/css" rel="stylesheet">
+<div class="box">
+	<div class="left-pro">
+		<div class="t2">
+		<a href="[display:donfortp]" id="zoom1" class="MagicZoom MagicThumb"><img src="[display:donfortp]" id="main_img" class="main_img" style="width:400px; height:400px;" /></a>
+		</div>
+		<div class="t1">
+			<div id="showArea">
+				<a href="[display:donfortp]" rel="zoom1" rev="[display:donfortp]"><img src="[display:donfortp]" /></a>
+				{hedonghua:photoalbum id=[display:donforid] num=4}
+				<a href="[photoes:photourl]" rel="zoom1" rev="[photoes:photourl]"><img src="[photoes:photourl]" /></a>
+				{/hedonghua:photoalbum}                
+			</div>
+		</div>
+	</div>
+</div>
+<div style="clear:both;"></div>
+<script>
+var ipath = '{hedonghua:siteml}{hedonghua:sitemb}/'; //图片路径
+</script>
+<script type="text/javascript" src="{hedonghua:siteml}{hedonghua:sitemb}/js/hdhhdj.js"></script>
+</div>
+<div class="lrk">
+<h1>[display:donformc]</h1>
+<h2>3寸液晶屏 支持短片拍摄 双重清洁系统 11点自动对焦</h2>
+<ul>
+<li><b>货号</b><span>SD1260286073</span></li>
+<li><b>货号</b><span>SD1260286073</span></li>
+<li><b>货号</b><span>SD1260286073</span></li>
+<li><b>货号</b><span>SD1260286073</span></li>
+</ul>
+<div class="gwk">
+<!------多规格开始----->
+<form action="{hedonghua:indexlink}default.aspx" method="post" name="hdhgwform" onkeydown="if(event.keyCode==13){return false;}">
+ <ul>
+  <li><b>市场价：</b><del><span id="donforscj">[display:donforybj]</span>元</del></li>
+  <li><b>销售价：</b><span id="donforyhj">[display:donforyhj]</span>元</li>
+  <li><b>库存量：</b><span id="donforkcsl">[display:donforkcsl]</span></li>
+  <li><b>商品货号：</b><span id="donforsphhxx">[display:donforsphh]</span></li>
+  {hedonghua:goodsnorms}
+  <li>
+   <b>[goodsnorms:name]：</b>
+    {goodsnorms:hdh}
+     <a id="[goodsnorms:value][goodsnorms:i]" class="HdhDxDxd" onclick="hdhdoit([goodsnorms:id],[goodsnorms:i],[goodsnorms:zs],'[goodsnorms:value]')">[goodsnorms:mc]</a>
+    {/goodsnorms:hdh}
+     <input type="hidden" name="hdhcms[goodsnorms:value]" id="hdhcms[goodsnorms:value]" />
+   </li>
+  {/hedonghua:goodsnorms}
+  <input type="hidden" name=HdhField id="HdhField" value="{goodsnorms:goodsfield}">
+数量:
+<span class="Hdhjjsl" onclick="hdhdojj(document.getElementById('donforsl').value,document.getElementById('donforkcsl').innerHTML,'-');">-</span>
+<input type="text" name="DonforSl" id="donforsl" value="1" onchange="hdhdojj(document.getElementById('donforsl').value,document.getElementById('donforkcsl').innerHTML,'');" />
+<span class="Hdhjjsl" onclick="hdhdojj(document.getElementById('donforsl').value,document.getElementById('donforkcsl').innerHTML,'+');">+</span>
+<br />
+<input type="button" id="donforjrgwc" onclick="hdhsubmit('jrgwc');" disabled="disabled" value="加入购物车"  />
+<input type="button" id="donforljgm" onclick="hdhsubmit('ljgm');" disabled="disabled" value="立即购买"  /><br />
+<input type="hidden" name="DonforSphh" id="donforsphh" value="[display:donforsphh]">
+<input type="hidden" id="donfordo" name="DonforDo" value="" />
+<input type="hidden" name="Did" value="{hedonghua:did}" >
+<input type="hidden" name="PcSj" value="s">
+<input type="hidden" name="Get" value="1">
+</ul>
+</form>
+<script language="javascript">
+function hdhsubmit(hdhbuy){
+	if(hdhbuy=="ljgm"){
+		document.getElementById("donfordo").value="buyok";
+	}else{
+		document.getElementById("donfordo").value="gwcok";
+	}
+	document.hdhgwform.submit();
+}
+///控制增加减少购买数量
+function hdhdojj(dql,kcl,jjh){
+    var hdhyn="yes";
+	if(isNaN(dql)){
+		dql=0;
+		document.getElementById("donforjrgwc").disabled=true;
+	    document.getElementById("donforljgm").disabled=true;
+	}else{
+		if(isNaN(kcl)){
+			document.getElementById("donforjrgwc").disabled=true;
+	        document.getElementById("donforljgm").disabled=true;
+		}else{
+			if (jjh == "-") { dql = parseInt(dql) - 1; }
+			else
+			{
+			    if (jjh == "+")
+			    {
+			        dql = parseInt(dql) + 1;
+			    }
+			    else
+			    {
+			    }
+			}
+			if(parseInt(dql)<1){dql=1;}
+			if(parseInt(dql)>parseInt(kcl)){
+				dql=kcl;
+			}
+			var HdhFields=document.getElementById("HdhField").value;
+			for(var x=0;x<HdhFields.split(",").length;x++){
+				if(document.getElementById("hdhcms"+HdhFields.split(",")[x]).value.length==0){
+					hdhyn="no";
+					break;
+				}
+			}
+			if(hdhyn=="yes"){
+				document.getElementById("donforsl").value=dql;
+				document.getElementById("donforjrgwc").disabled=false;
+				document.getElementById("donforljgm").disabled=false;
+			}
+		}
+	}
+}
+function hdhdoit(id,ii,zs,bl){
+ var Sphh="",Ybj=0,Yhj=0,Kcsl=0;
+ var hdhyn="yes";
+ var HdhValue="";
+ var HdhHref="{hedonghua:indexlink}default.aspx?get=1&DonforDo=getjg&Did={hedonghua:did}";
+ for(var i=1;i<=zs;i++){
+  document.getElementById(bl+i).className = "HdhDxDxd";
+ }
+ document.getElementById(bl+ii).className = "HdhDxYxd";
+ document.getElementById("hdhcms"+bl).value=id;
+ var HdhFields=document.getElementById("HdhField").value;
+ for(var x=0;x<HdhFields.split(",").length;x++){
+  if(document.getElementById("hdhcms"+HdhFields.split(",")[x]).value.length==0){
+   hdhyn="no";
+   break;
+  }
+  if(HdhValue==""){
+   HdhValue=document.getElementById("hdhcms"+HdhFields.split(",")[x]).value;
+  }else{
+  HdhValue +=","+document.getElementById("hdhcms"+HdhFields.split(",")[x]).value;
+  }
+ }
+ if(hdhyn=="yes"){// 如果所有规格已经选定
+   HdhHref=HdhHref+"&HdhZdm="+HdhFields+"&HdhZdz="+HdhValue;
+   var xmlhttp;
+   var xmlzhi;
+   if (window.XMLHttpRequest){
+    xmlhttp=new XMLHttpRequest();
+   }else{
+    xmlhttp=new ActiveXObject('Microsoft.XMLHTTP');
+   }
+   xmlhttp.onreadystatechange=function(){
+    if (xmlhttp.readyState==4 && xmlhttp.status==200){
+     xmlzhi=xmlhttp.responseText;
+	 if(xmlzhi != "n"){
+	  Sphh=xmlzhi.split("|")[0];
+	  Ybj=xmlzhi.split("|")[1];
+	  Yhj=xmlzhi.split("|")[2];
+	  Kcsl=xmlzhi.split("|")[3];
+	  document.getElementById("donforsphh").value=Sphh;
+	  document.getElementById("donforsphhxx").innerHTML=Sphh;
+	  document.getElementById("donforkcsl").innerHTML=Kcsl;
+	  document.getElementById("donforscj").innerHTML=Ybj;
+	  document.getElementById("donforyhj").innerHTML=Yhj;
+	  document.getElementById("donforjrgwc").disabled=false;
+	  document.getElementById("donforljgm").disabled=false;
+	 }else{
+	  document.getElementById("donforjrgwc").disabled=true;
+	  document.getElementById("donforljgm").disabled=true;
+	 }
+    }
+   }
+   xmlhttp.open('GET',HdhHref,true);
+   xmlhttp.send();
+ }
+}
+</script>
+<!------多规格结束----->
+ </div>
+</div>
+<div class="huiline"></div>
+<div class="jsk">[display:donforlr]</div>
+</div>
+{/hedonghua:display}
+ <div class="dlr">
+  <h4>销售排行</h4>
+  <ul class="lrk">
+   <li class="hdh1"><span class="span1">1</span><a href="?dyj=18&amp;dej=19&amp;did=45">jqueryrotate制作机锋网积分抽奖效果</a></li>
+   <li class="hdh2"><span class="span2">2</span><a href="?dyj=18&amp;dej=19&amp;did=44">ck_slide – 简单的jQuery幻灯片插件</a></li>
+   <li class="hdh3"><span class="span3">3</span><a href="?dyj=18&amp;dej=20&amp;did=43">六边形上传按钮PSD源文件下载</a></li>
+   <li class="hdh4"><span class="span4">4</span><a href="?dyj=18&amp;dej=20&amp;did=42">30个IOS7风格简洁线条图标PSD素材</a></li>
+   <li class="hdh5"><span class="span5">5</span><a href="?dyj=18&amp;dej=19&amp;did=41">腾讯游戏盒子2013官网页面html代码</a></li>
+   <li class="hdh6"><span class="span6">6</span><a href="?dyj=15&amp;dej=16&amp;did=40">很美的落地大书柜 可以放超多的图书的吧</a></li>
+   <li class="hdh7"><span class="span7">7</span><a href="?dyj=15&amp;dej=16&amp;did=39">西班牙阿拉尔孔郊区的80平米一室一厅的公寓</a></li>
+   <li class="hdh8"><span class="span8">8</span><a href="?dyj=15&amp;dej=16&amp;did=38">欧式风格继承了巴洛克风格中豪华、动感、多变的视觉效果</a></li>
+   <li class="hdh9"><span class="span9">9</span><a href="?dyj=15&amp;dej=16&amp;did=37">100平米田园雅居三口之家 自然舒适空间</a></li>
+  </ul>
+  <h4>销售排行</h4>
+<div class="r">
+
+   <div class="nkj">
+    <img src="/DemoCms/upfiles/images/20180401/6365820575154761562878693.jpg">
+    <a href="?dyj=3&amp;dej=5&amp;did=18">12.6万亿！公募总规模再创纪录：货基冲击8万亿</a>
+    <span>2018-04-01</span>
+   </div>
+
+   <div class="nkj">
+    <img src="/DemoCms/upfiles/images/20180401/6365820524315053698927539.jpg">
+    <a href="?dyj=3&amp;dej=6&amp;did=17">世界上最惨国家：12亿亩耕地却还要进口粮食</a>
+    <span>2018-04-01</span>
+   </div>
+
+   <div class="nkj">
+    <img src="/DemoCms/upfiles/images/20180401/6365820506036208203924397.jpg">
+    <a href="?dyj=3&amp;dej=6&amp;did=16">“膨胀”的吉利 连年收购资金从何而来？</a>
+    <span>2018-04-01</span>
+   </div>
+
+   <div class="nkj">
+    <img src="/DemoCms/upfiles/images/20180401/6365820045213550652259322.jpg">
+    <a href="?dyj=3&amp;dej=5&amp;did=15">霍金葬礼在剑桥举行 500名亲友同事为其送行</a>
+    <span>2018-04-01</span>
+   </div>
+
+  </div>
+  
+   </div>
+</div>
+</div>
+</div>
+{templatefile:[bottom.html]}

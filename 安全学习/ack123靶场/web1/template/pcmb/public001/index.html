@@ -1,0 +1,214 @@
+﻿{templatefile:[top.html]}
+<div class="hdhbannerkj"><div class="hdhnkj">
+<div id="solid">
+    <div class="solid0"></div><div class="solid1"></div><div class="solid2"></div>
+    <ul>
+    {hedonghua:slidelist num=5 banner=auto}
+      <li><a href="[slidelist:link]"><img src="[slidelist:pic]"  onerror="this.src='{hedonghua:siteml}images/default.png';" /></a></li>
+    {/hedonghua:slidelist}    
+    </ul>
+    <div id="btt">
+    {hedonghua:slidelist num=5 banner=auto}
+        <span></span>
+    {/hedonghua:slidelist}    
+    </div>
+</div>
+<script src="{hedonghua:siteml}{hedonghua:sitemb}js/indexbannerjs.js"></script>
+</div></div>
+
+<div class="hdhzkj">
+ <div class="hdhwkj">
+  <div class="bt">
+  <h2>新闻资讯</h2>
+  <p>
+  <a href="#">互联网媒体</a>
+  <a href="#">科技财经</a>
+  <a href="#">汽车房产</a>
+  <a href="#">更多</a>
+  </p>
+  </div>
+  <div class="l">
+  <script type="text/javascript" charset="utf-8" src="{hedonghua:siteml}{hedonghua:sitemb}js/lbtjs.js"></script>
+<div id="xxx"  >
+     <script>
+     var box =new PPTBox();
+     box.width = 455; //宽度
+     box.height = 340;//高度
+     box.autoplayer = 3;//自动播放间隔时间
+{hedonghua:content column=1 num=5 photonews sort=desc order=desc}
+   box.add({"url":"[content:donfortp]","href":"[content:outlink]","title":"[content:donformc]"})
+{/hedonghua:content}
+     box.show();
+    </script>
+</div>  
+  </div>
+  <div class="c">
+{hedonghua:content column=1 num=4  sort=desc order=donforsj}
+    <a href="[content:outlink]" class="gdxw">[content:donformc]</a>
+{/hedonghua:content}
+   <ul class="xskj">
+{hedonghua:content column=3 num=9   sort=desc order=donforsj}
+     <li><a href="[content:outlink]">[content:donformc]</a><span>[content:outsjyyr]</span></li>
+{/hedonghua:content}
+   </ul>
+  </div>
+  <div class="r">
+{hedonghua:content column=3 num=4 photonews sort=desc order=donforsj}
+   <div class="nkj">
+    <img src="[content:donfortp]"  onerror="this.src='{hedonghua:siteml}images/default.png';"/>
+    <a href="[content:outlink]">[content:donformc]</a>
+    <span>[content:outsjyyr]</span>
+   </div>
+{/hedonghua:content}
+  </div>
+ </div>
+
+ <div class="hdhwkj">
+  <div class="bt">
+  <h2>购物商城</h2>
+  <p>
+  <a href="#">手机数码</a>
+  <a href="#">电脑办公</a>
+  <a href="#">影音娱乐</a>
+  <a href="#">更多</a>
+  </p>
+  </div>
+  <ul class="gwsc">
+  
+{hedonghua:content column=7 num=10   sort=desc order=donforsj}
+  <li>
+   <a href="[content:outlink]">
+    <img src="[content:donfortp]"  onerror="this.src='{hedonghua:siteml}images/default.png';"/>
+    <h3>[content:donformc]</h3>
+    <b>¥[content:donforyhj]</b>
+    <span>人气[content:donfordjs]</span>
+   </a>
+  </li>
+{/hedonghua:content}
+  
+  </ul>
+ </div>
+
+
+
+
+ <div class="hdhwkj">
+  <div class="bt">
+  <h2>视频专区</h2>
+  <p>
+  <a href="#">手机数码</a>
+  <a href="#">电脑办公</a>
+  <a href="#">影音娱乐</a>
+  <a href="#">更多</a>
+  </p>
+  </div>
+  <div class="spkj">
+   <div class="spl">
+{hedonghua:content column=11 num=1 donforgd sort=desc order=donforsj}
+    <a href="[content:outlink]" title="[content:donformc]"><img src="[content:donfortp]"  onerror="this.src='{hedonghua:siteml}images/default.png';" /><b>[content:donformc]</b><span>[content:outsjyyr]</span><p></p></a>
+{/hedonghua:content}   
+   </div>
+   <div class="spr">
+     <ul class="spzq">
+{hedonghua:content column=11 num=6 sort=desc order=donforsj}
+    <li><a href="[content:outlink]" title="[content:donformc]"><img src="[content:donfortp]"  onerror="this.src='{hedonghua:siteml}images/default.png';"/><b>[content:donformc]</b><span>[content:outsjyyr]</span><p></p></a></li>
+{/hedonghua:content}   
+    </ul>
+   </div>
+ </div>
+ </div>
+
+
+<div class="hdhwkj">
+  <div class="bt">
+  <h2>图片分享</h2>
+  <p>
+  <a href="#">手机数码</a>
+  <a href="#">电脑办公</a>
+  <a href="#">影音娱乐</a>
+  <a href="#">更多</a>
+  </p>
+  </div>
+  <div class="spkj">
+   <div class="spl">
+{hedonghua:content column=15 num=1 donforgd sort=desc order=donforsj}
+    <a href="[content:outlink]" title="[content:donformc]"><img src="[content:donfortp]"  onerror="this.src='{hedonghua:siteml}images/default.png';"/><b>[content:donformc]</b><span>[content:outsjyyr]</span></a>
+{/hedonghua:content}   
+   </div>
+   <div class="spr">
+     <ul class="spzq">
+{hedonghua:content column=15 num=6 sort=desc order=donforsj}
+    <li><a href="[content:outlink]" title="[content:donformc]"><img src="[content:donfortp]" onerror="this.src='{hedonghua:siteml}images/default.png';" /><b>[content:donformc]</b><span>[content:outsjyyr]</span></a></li>
+{/hedonghua:content}   
+    </ul>
+   </div>
+ </div>
+</div>
+
+
+<div class="hdhwkj">
+  <div class="bt">
+  <h2>资源下载</h2>
+  <p>
+  <a href="#">JS代码</a>
+  <a href="#">PSD素材</a>
+  <a href="#">网页素材</a>
+  <a href="#">更多</a>
+  </p>
+  </div>
+  <ul class="gwsc">
+{hedonghua:content column=18 num=5   sort=desc order=donforsj}
+  <li>
+   <a href="[content:outlink]">
+    <img src="[content:donfortp]" onerror="this.src='{hedonghua:siteml}images/default.png';" />
+    <h3>[content:donformc]</h3>
+    <strong>[content:outsjyyr]</strong>
+    <span>下载[content:donfordjs]</span>
+   </a>
+  </li>
+{/hedonghua:content}
+  </ul>
+</div>
+<!--
+<div class="hdhwkj">
+ <div class="hdhfst">
+  <div class="l">
+   <div class="bt"><h2>友情链接</h2><p><a href="#">更多+</a></p></div>
+   <div class="lr">
+{hedonghua:slidelist num=30 code=link}
+<a href="[slidelist:link]" title="[slidelist:demo]">
+[slidelist:title]
+</a>
+{/hedonghua:slidelist}
+   </div>
+  </div>
+  <div class="r">
+   <div class="bt"><h2>留言反馈</h2><p><a href="#">更多+</a></p></div>
+   <div class="lr">
+   </div>
+  </div>
+ </div>
+</div>
+--->
+
+<div class="hdhwkj">
+ <div class="hdhyqlj">
+  <div class="l">
+   <div class="bt"><h2>友情链接</h2><p><a>投稿合作：76004808#qq.com</a></p></div>
+   <div class="lr">
+{hedonghua:slidelist num=记录条数 code=link}
+<a href="[slidelist:link]" title="[slidelist:demo]">
+[slidelist:title]
+</a>
+{/hedonghua:slidelist}
+   </div>
+  </div>
+ </div>
+</div>
+
+
+
+</div>
+</div>
+{hedonghua:deletecachedir}
+{templatefile:[bottom.html]}

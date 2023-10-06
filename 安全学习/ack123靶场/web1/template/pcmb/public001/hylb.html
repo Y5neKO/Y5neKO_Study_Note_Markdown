@@ -1,0 +1,61 @@
+﻿{templatefile:[top.html]}
+<div class="hdhzkj">
+{templatefile:[_daohang.html]}
+<div class="hdhwkj">
+  <div class="lrl"><div class="lrk">
+
+   <div class="xgk">
+   <ul>
+
+{hedonghua:memberlist num=4 pageno column=dyj bigclass=dej smallclass=dsj sort=desc order=donforjcsj}
+<li>
+<img src="[memberlist:donfortp]" border="0">[memberlist:donforyh]
+</li>
+{/hedonghua:memberlist}
+
+   </ul>
+{hedonghua:memberpage num=4 pageno column=dyj bigclass=dej smallclass=dsj}
+<a href="[page:first]">首页</a>
+<a href="[page:front]">前一页</a>
+{pagenum:5}
+<a href="[page:url]" [class]>[page:num]</a>
+{/pagenum}
+<a href="[page:next]">后一页</a>
+<a href="[page:last]">尾页</a>
+{/hedonghua:memberpage}
+   </div>
+
+  </div></div>
+  <div class="lrr">
+{templatefile:[_xwlmcd.html]}  
+   <div class="lkj">
+    <h1>图片新闻</h1>
+    <div class="lrk">
+    
+{hedonghua:content bigclass=dej smallclass=dsj num=10 photonews sort=desc order=donforsj}
+   <div class="nkj">
+    <img src="[content:donfortp]">
+    <a href="[content:outlink]">[content:donformc]</a>
+    <span>[content:outsjyyr]</span>
+   </div>
+{/hedonghua:content}
+
+    </div>
+   </div>
+   
+   <div class="lkj">
+    <h1>阅读排行</h1>
+    <div class="lrk">
+  <ul class="dr">
+{hedonghua:content bigclass=dej smallclass=dsj num=9 sort=desc order=donforsj}
+   <li class="hdh[content:1outcountjsq]"><span class="span[content:1outcountjsq]">[content:1outcountjsq]</span><a href="[content:outlink]">[content:donformc]</a></li>
+{/hedonghua:content}
+  </ul>
+    </div>
+   </div>
+   
+   
+   
+  </div>
+</div></div>
+{templatefile:[bottom.html]}

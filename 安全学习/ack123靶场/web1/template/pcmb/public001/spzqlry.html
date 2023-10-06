@@ -1,0 +1,94 @@
+﻿{templatefile:[top.html]}
+<div class="hdhzkj">
+{templatefile:[_daohang.html]}
+  <div class="hdhwkj">
+  <div class="lrl"><div class="lrk">
+{hedonghua:display}
+   <h1>[display:donformc]</h1>
+   <div class="zwk">
+   {display:playvideo}
+   <video width="785" height="441" controls="controls">
+   <source src="[displayvideo:videourl]" type="video/mp4">
+   <source src="[displayvideo:videourl]" type="video/ogg">
+   <source src="[displayvideo:videourl]" type="application/x-shockwave-flash">
+   </video>
+   {/display:playvideo}
+   </div>
+   <div class="msk">
+    <span>[display:donforsj]</span>
+    <span>[display:donforplsl]人评论</span>
+    <span>[display:donfordjs]次</span>
+   </div>
+   <div class="zyk"><p>
+   [display:donforzy]…
+   </p></div>
+   <div class="zwk">
+   [display:donforlr]
+   </div>
+<div>
+<br><br>
+{hedonghua:morevideo id=0}
+<video width='320' height='240' controls='controls'>
+  <source src='[video:href]' type='video/mp4'>
+</video>
+视频介绍：[video:content]
+{/hedonghua:morevideo}
+<br><br>
+</div>
+ {hedonghua:listvideo  did=[display:outwzid]}
+ <div>[listvideo:outwzid]、<a href='[listvideo:outlink]'>[listvideo:donformc]</a></div>
+ {/hedonghua:listvideo}
+   <div class="sxp">
+   <p>
+   <b>上一篇：</b><a href="[display:prevlink]">[display:prevtitle]</a>
+   </p>
+   <p>
+   <b>下一篇：</b><a href="[display:nextlink]">[display:nexttitle]</a>
+   </p>
+   </div>
+   <div class="xgk">
+   <h2><span>相关文章</span></h2>
+   <ul>
+   
+{hedonghua:keyrecord keyword=[display:donforgjc] num=10}
+   <li>
+   <span>[record:outsjyyr]</span><a href="[record:link]">[record:donformc]</a>
+   </li>
+{/hedonghua:keyrecord}   
+   </ul>
+   </div>
+{/hedonghua:display}
+  </div></div>
+  <div class="lrr">
+{templatefile:[_xwlmcd.html]}  
+   <div class="lkj">
+    <h1>图片新闻</h1>
+    <div class="lrk">
+    
+{hedonghua:content bigclass=dej smallclass=dsj num=10 photonews sort=desc order=donforsj}
+   <div class="nkj">
+    <img src="[content:donfortp]" onerror="this.src='{hedonghua:siteml}images/default.png';">
+    <a href="[content:outlink]">[content:donformc]</a>
+    <span>[content:outsjyyr]</span>
+   </div>
+{/hedonghua:content}
+
+    </div>
+   </div>
+   
+   <div class="lkj">
+    <h1>阅读排行</h1>
+    <div class="lrk">
+  <ul class="dr">
+{hedonghua:content bigclass=dej smallclass=dsj num=9 sort=desc order=donforsj}
+   <li class="hdh[content:1outcountjsq]"><span class="span[content:1outcountjsq]">[content:1outcountjsq]</span><a href="[content:outlink]">[content:donformc]</a></li>
+{/hedonghua:content}
+  </ul>
+    </div>
+   </div>
+   
+   
+   
+  </div>
+</div></div>
+{templatefile:[bottom.html]}

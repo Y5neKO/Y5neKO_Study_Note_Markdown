@@ -1,0 +1,14 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="nologinmaster.master.cs" Inherits="Admin_nologinmaster" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title></title>
+<asp:ContentPlaceHolder id="tophead" runat="server">
+</asp:ContentPlaceHolder>
+<link type="text/css" rel="Stylesheet" href="images/css.css" />
+</head>
+<body>
+<asp:ContentPlaceHolder id="midcontent" runat="server">    
+</asp:ContentPlaceHolder>
+</body>
+</html>

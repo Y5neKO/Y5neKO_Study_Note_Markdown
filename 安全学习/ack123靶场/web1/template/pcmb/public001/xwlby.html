@@ -1,0 +1,69 @@
+﻿{templatefile:[top.html]}
+<div class="hdhzkj">
+{templatefile:[_daohang.html]}
+{templatefile:[_sxsjlm.html]}
+<div class="hdhwkj">
+  <div class="lrl">
+   <ul>
+   
+{hedonghua:content bigclass=dej smallclass=dsj num=10 pageno  sort=desc order=donforsj}
+    <li>
+     <h1><a href="[content:outlink]">[content:donformc]</a></h1>
+     <div class="zyk">
+	{content:playimages}
+      <b><img src="[playimages:imagesurl]" onerror="this.src='{hedonghua:siteml}images/default.png';"></b>
+	{/content:playimages}
+      <p>[content:donforzy]</p>
+      <div class="ms">
+       <span>[content:donforsj]</span>
+       <span>[content:donforplsl]人评论</span>
+       <span>[content:donfordjs]次浏览</span>
+      </div>
+     </div>
+    </li>
+{/hedonghua:content}
+   </ul>
+   <div class="fy">
+{hedonghua:pageno bigclass=dej smallclass=dsj num=10 pageno  sort=desc order=donforsj}
+<a href="[page:first]">首页</a>
+<a href="[page:front]">前一页</a>
+{pagenum:5}
+{class:wx}{checked:xz}<a href="[page:url]" [class]>[page:num]</a>
+{/pagenum}
+<a href="[page:next]">后一页</a>
+<a href="[page:last]">尾页</a>
+{/hedonghua:pageno}   </div>
+  </div>
+  <div class="lrr">
+{templatefile:[_xwlmcd.html]}  
+   <div class="lkj">
+    <h1>图片新闻</h1>
+    <div class="lrk">
+    
+{hedonghua:content bigclass=dej smallclass=dsj num=10 photonews sort=desc order=donforsj}
+   <div class="nkj">
+    <img src="[content:donfortp]" onerror="this.src='{hedonghua:siteml}images/default.png';">
+    <a href="[content:outlink]">[content:donformc]</a>
+    <span>[content:outsjyyr]</span>
+   </div>
+{/hedonghua:content}
+
+    </div>
+   </div>
+   
+   <div class="lkj">
+    <h1>阅读排行</h1>
+    <div class="lrk">
+  <ul class="dr">
+{hedonghua:content bigclass=dej smallclass=dsj num=9 sort=desc order=donforsj}
+   <li class="hdh[content:1outcountjsq]"><span class="span[content:1outcountjsq]">[content:1outcountjsq]</span><a href="[content:outlink]">[content:donformc]</a></li>
+{/hedonghua:content}
+  </ul>
+    </div>
+   </div>
+   
+   
+   
+  </div>
+</div></div>
+{templatefile:[bottom.html]}

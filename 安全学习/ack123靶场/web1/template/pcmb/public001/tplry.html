@@ -1,0 +1,90 @@
+﻿{templatefile:[top.html]}
+<div class="hdhzkj">
+{templatefile:[_daohang.html]}
+<div class="hdhwkj">
+  <div class="lrl"><div class="lrk">
+{hedonghua:display}
+   <h1>[display:donformc]</h1>
+   <div class="msk">
+    <span>[display:donforsj]</span>
+    <span>[display:donforplsl]人评论</span>
+    <span>[display:donfordjs]次</span>
+   </div>
+   <div class="zyk"><p>
+   [display:donforzy]…
+   </p></div>
+   <div class="zwk">
+<form action="default.aspx" method="post" >
+ {hedonghua:votelist donforwz=did}
+  [voteitemid1]|[voteitemid0]<b>[voteitemname]</b><br>  投票项目名
+  {votelist:content}
+  <div>
+   [votelistid0]|[votelistid1]
+   <input type="[voteliststate]" value="[votelistvalue]" name="[votelistname]" />
+  [votelistchoice]  根据后台配置显示checkbox或radio
+  </div>
+  {/votelist:content}
+ {/hedonghua:votelist}
+ <input type="submit" value="我要投票">
+ <input type="hidden" value="{hedonghua:dyj}" name="Dyj">
+ <input type="hidden" value="{hedonghua:dej}" name="Dej">
+ <input type="hidden" value="{hedonghua:dsj}" name="Dsj">
+ <input type="hidden" value="{hedonghua:did}" name="Did">
+ <input type="hidden" value="1" name="Get">
+ <input type="hidden" value="tpok" name="DonforDo">
+</form>
+   </div>
+   <div class="sxp">
+   <p>
+   <b>上一篇：</b><a href="[display:prevlink]">[display:prevtitle]</a>
+   </p>
+   <p>
+   <b>下一篇：</b><a href="[display:nextlink]">[display:nexttitle]</a>
+   </p>
+   </div>
+   <div class="xgk">
+   <h2><span>相关文章</span></h2>
+   <ul>
+   
+{hedonghua:keyrecord keyword=[display:donforgjc] num=10}
+   <li>
+   <span>[record:outsjyyr]</span><a href="[record:link]">[record:donformc]</a>
+   </li>
+{/hedonghua:keyrecord}   
+   </ul>
+   </div>
+{/hedonghua:display}
+  </div></div>
+  <div class="lrr">
+{templatefile:[_xwlmcd.html]}  
+   <div class="lkj">
+    <h1>图片新闻</h1>
+    <div class="lrk">
+    
+{hedonghua:content bigclass=dej smallclass=dsj num=10 photonews sort=desc order=donforsj}
+   <div class="nkj">
+    <img src="[content:donfortp]">
+    <a href="[content:outlink]">[content:donformc]</a>
+    <span>[content:outsjyyr]</span>
+   </div>
+{/hedonghua:content}
+
+    </div>
+   </div>
+   
+   <div class="lkj">
+    <h1>阅读排行</h1>
+    <div class="lrk">
+  <ul class="dr">
+{hedonghua:content bigclass=dej smallclass=dsj num=9 sort=desc order=donforsj}
+   <li class="hdh[content:1outcountjsq]"><span class="span[content:1outcountjsq]">[content:1outcountjsq]</span><a href="[content:outlink]">[content:donformc]</a></li>
+{/hedonghua:content}
+  </ul>
+    </div>
+   </div>
+   
+   
+   
+  </div>
+</div></div>
+{templatefile:[bottom.html]}

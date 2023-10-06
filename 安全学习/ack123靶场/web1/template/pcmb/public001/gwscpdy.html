@@ -1,0 +1,95 @@
+﻿{templatefile:[top.html]}
+<div class="hdhzkj">
+{templatefile:[_daohang.html]}
+<div class="hdhwkj">
+ <div class="scone">
+ <div class="dl">
+   <div class="lkj">
+    <div class="lrk">
+{hedonghua:menulist allmenu menu=dyj}
+  {menuej}
+   {ejclass:class1}{ejchecked:class2}
+   <h1><a href="[menulist:href]" [menulist:class]>[menulist:title]</a></h1>
+  {/menuej}
+  {menusj}
+   {sjclass:class1}{sjchecked:class2}
+   <a href="[menulist:href]" [menulist:class]>[menulist:title]</a>
+  {/menusj}
+{/hedonghua:menulist}    
+    
+    
+    </div>
+   </div> </div>
+ <div class="dc">
+  <script type="text/javascript" charset="utf-8" src="{hedonghua:siteml}{hedonghua:sitemb}js/lbtjs.js"></script>
+<div id="xxx"  >
+     <script>
+     var box =new PPTBox();
+     box.width = 700; //宽度
+     box.height = 340;//高度
+     box.autoplayer = 3;//自动播放间隔时间
+{hedonghua:content column=3 num=5 photonews sort=desc order=desc}
+   box.add({"url":"[content:donfortp]","href":"[content:outlink]","title":"[content:donformc]"})
+{/hedonghua:content}
+     box.show();
+    </script>
+</div>  
+ </div>
+ <div class="dr">
+{hedonghua:content column=dyj num=4 photonews sort=desc order=donforsj}
+   <div class="nkj">
+    <img src="[content:donfortp]" onerror="this.src='{hedonghua:siteml}images/default.png';" />
+    <a href="[content:outlink]">[content:donformc]</a>
+    <span>[content:outsjyyr]</span>
+   </div>
+{/hedonghua:content}
+ </div>
+ </div>
+</div>
+{hedonghua:webcatalog}
+ <div class="hdhwkj">
+  <div class="bt">
+  <h2>[hdhcatalog:title]</h2>
+  <p>
+  <!--- ---->
+{hedonghua:thrmenu menu=[hdhcatalog:cataid] class=class checked=classed}
+ <a href="[thrmenu:href]" [thrmenu:class]>[thrmenu:title]</a>
+{/hedonghua:thrmenu}
+  <a href="[hdhcatalog:href]">更多</a>
+  </p>
+  </div>
+  <ul class="gwsc">
+ {hedonghua:cataloglist photonews num=10}
+  <li>
+   <a href="[cataloglist:link]">
+    <img src="[cataloglist:donfortp]" onerror="this.src='{hedonghua:siteml}images/default.png';" />
+    <h3>[cataloglist:donformc]</h3>
+    <b>¥[cataloglist:donforyhj]</b>
+    <span>人气[cataloglist:donfordjs]</span>
+   </a>
+  </li>
+ {/hedonghua:cataloglist}
+  </ul>
+ </div>
+{/hedonghua:webcatalog}
+</div>
+<!----
+<table width="100%">
+{hedonghua:keyrecord keyword=三星  num=10}
+<tr>
+<td width=80>[record:outsjyyr]</td><td><a href="[record:link]">[record:donformc] </a></td>
+</tr>
+{/hedonghua:keyrecord}
+</table>
+
+<table width="100%">
+<tr>
+<td>
+{hedonghua:keyrecord keyword=三星  num=10}
+<a href="[record:link]" style="display:block;width:80px;height:100px;float:left;margin:10px;overflow:hidden;"><img src="[record:donfortp]" onerror="this.src='{hedonghua:siteml}images/default.png';" style="display:block;width:80px;height:80px;float:left; "/><br />[record:donformc]</a>
+{/hedonghua:keyrecord}
+</td>
+</tr>
+</table>
+----->
+{templatefile:[bottom.html]}

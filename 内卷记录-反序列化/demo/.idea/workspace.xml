@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3439e957-a9a3-4304-9eb5-1a061f4ed691" name="默认的" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ctf5.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectId" id="2GKriV5SMkEInTCjmDeVuRNordf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3439e957-a9a3-4304-9eb5-1a061f4ed691" name="默认的" comment="" />
+      <created>1666148244137</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666148244137</updated>
+      <workItem from="1666148245148" duration="3099000" />
+      <workItem from="1666230180690" duration="5796000" />
+      <workItem from="1666315983809" duration="1820000" />
+      <workItem from="1666767713495" duration="8495000" />
+      <workItem from="1667819993275" duration="696000" />
+      <workItem from="1668225775809" duration="2259000" />
+      <workItem from="1668236543491" duration="2806000" />
+      <workItem from="1683537658065" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="534" y="50" key="#PHP" timestamp="1666148266516">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="534" y="50" key="#PHP/0.0.1536.816@0.0.1536.816" timestamp="1666148266516" />
+    <state x="223" y="63" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1666150712550">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="223" y="63" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.816@0.0.1536.816" timestamp="1666150712550" />
+    <state x="2681" y="419" key="NewPhpFileDialog" timestamp="1666775968060">
+      <screen x="1920" y="0" width="1920" height="1032" />
+    </state>
+    <state x="2681" y="419" key="NewPhpFileDialog/0.0.1536.816/1920.0.1920.1032@1920.0.1920.1032" timestamp="1666775968060" />
+    <state x="609" y="331" key="NewPhpFileDialog/0.0.1536.816@0.0.1536.816" timestamp="1666250128954" />
+    <state x="431" y="137" width="672" height="678" key="search.everywhere.popup" timestamp="1666234460871">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="431" y="137" width="672" height="678" key="search.everywhere.popup/0.0.1536.816@0.0.1536.816" timestamp="1666234460871" />
+  </component>
+</project>

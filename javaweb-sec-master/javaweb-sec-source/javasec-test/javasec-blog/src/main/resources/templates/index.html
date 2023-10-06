@@ -1,0 +1,121 @@
+<#include "/header.html"/>
+<div class='site-contentpbt' id='contentpbt'>
+    <form id="js_search" action="/" method="post">
+        <div class='content-areapbt' id='primarypbt'>
+            <div class='site-mainpbt' id='mainpbt' role='main'>
+                <div class='mainblogsec section'>
+                    <div class='widget' data-version='1'>
+                        <div class='blog-posts hfeed'>
+                            <#list pages.content ! as p>
+                                <div class="date-outer">
+                                    <h2 class='date-header'>
+                                        <span>${p.publishDate?string("yyyy-MM-dd HH:mm:ss")}</span>
+                                    </h2>
+                                    <div class="date-posts">
+                                        <div class='post-outer'>
+                                            <article class='post hentry'>
+                                                <header class='entry-header'>
+                                                    <h1 class='post-title entry-title' itemprop='name'>
+                                                        <a href='/?p=${p.postId?c}'>${p.postTitle!!}</a>
+                                                    </h1>
+                                                    <div class="entry-metapbt">
+                                                        <span class="post-author vcard">
+                                                            <i class="fa fa-user"></i>&nbsp;
+                                                            <span class="fn" itemprop="author">
+                                                                <a class="g-profile" href="/?uid=${p.userId?c}" rel="author" title="作者信息">
+                                                                    <span itemprop="name">${p.postAuthor!!}</span>
+                                                                </a>
+                                                            </span>&nbsp;&nbsp;&nbsp;
+
+                                                            <i class="fa fa-calendar"></i>&nbsp;
+                                                            <span class="timestamp-link" href="#" rel="bookmark">
+                                                                <span class="published updated" itemprop="datePublished" title="2014-04-20T18:03:00-07:00">
+                                                                    ${p.publishDate?string("yyyy-MM-dd HH:mm:ss")}
+                                                                </span>
+                                                            </span>&nbsp;&nbsp;&nbsp;
+
+                                                            <i class="fa fa-folder-o"></i>&nbsp;
+                                                            <a href="/?cat=${p.categoryId!!}" rel="tag">${p.categoryName!!}</a>&nbsp;&nbsp;&nbsp;
+
+                                                            <i class="fa fa-comments"></i>&nbsp;
+                                                            <a href="/?cat=${p.categoryId!!}#js_add_comments_form" onclick="">${p.commentCount!!} comments</a>&nbsp;&nbsp;&nbsp;
+
+                                                            <i class="fa fa-eye"></i>&nbsp;${p.postClicks!!}
+                                                        </span>
+                                                    </div>
+                                                </header>
+                                                <div class='post-header-line-1'></div>
+                                                <div class='post-body entry-content'>
+                                                    <div id='summary'>
+                                                        <div class="separator" style="clear: both;">${p.postContent!!}</div>
+                                                    </div>
+                                                    <div style='clear: both;'></div>
+                                                </div>
+                                                <footer class='entry-footerpbt'>
+                                                    <div class='readMoreLinkpbt'>
+                                                        <a href='/?p=${p.postId?c}'>Read More<i class='fa spaceLeft fa-angle-double-right'></i></a>
+                                                    </div>
+                                                </footer>
+                                            </article>
+                                            <div style='clear: both;'></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </#list>
+                        </div>
+                        <div style='clear: both;'></div>
+                        <div class='blog-pager' id='blog-pager'>
+                            <#include "/page_info.html"/>
+                        </div>
+                        <div class='clear'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='widget-areapbt' id='secondarypbt' role='complementary'>
+            <div class='widget widget_search'>
+                <div class='search-formpbt'>
+                    <label>
+                        <span class='screen-reader-text'>Search for:</span>
+                        <input class='search-fieldpbt' name='keyword' placeholder='Search' title='搜索' type='search' value=''/>
+                    </label>
+                    <input class='search-submitpbt' type='submit' value='Search'/>
+                </div>
+            </div>
+
+            <div class='sidebarrightsec section'>
+                <div class='widget Label' data-version='1'>
+                    <h2>文章子分类</h2>
+                    <div class='widget-content list-label-widget-content'>
+                        <ul>
+                            <#list sub_categories ! as c>
+                                <li>
+                                    <a dir='ltr' href='/?cat=${c.categoryId?c}'>${c.categoryName!!}</a>
+                                </li>
+                            </#list>
+                        </ul>
+                        <div class='clear'></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='sidebarrightsec section' id='sidebarrightsec'>
+                <div class='widget Label' data-version='1'>
+                    <h2>友情链接</h2>
+                    <div class='widget-content list-label-widget-content'>
+                        <ul>
+                            <#list links ! as link>
+                                <li>
+                                    <a dir='ltr' href='${link.linkUrl!!}' >${link.linkName!!}</a>
+                                </li>
+                            </#list>
+                        </ul>
+                        <div class='clear'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="uid" value="" />
+    </form>
+</div>
+<#include "/footer.html"/>

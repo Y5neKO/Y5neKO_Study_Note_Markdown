@@ -1,0 +1,12 @@
+Windows Server 2016（DC）
+密码：y5neko@dc123
+还原模式密码：y5neko@666
+NetBIOS域名：Y5NEKOAD
+AD域用户：weiyu@y5nekoad.com
+AD域用户密码：weiyu200161
+
+Windows 7（WIN71）
+密码：y5neko@win71
+
+Windows 7（WIN72）
+密码：y5neko@win72

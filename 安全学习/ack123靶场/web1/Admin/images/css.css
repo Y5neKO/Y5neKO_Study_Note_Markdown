@@ -1,0 +1,2591 @@
+﻿html {
+    margin: 0px;
+    padding: 0px;
+}
+.iconfont {
+    margin:auto 5px;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    text-align: center;
+    color: #000000;
+    Font-Family: "Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;
+    OVERFLOW-X: HIDDEN;
+}
+
+#hdhopenwin {
+    position: fixed;
+    display: block;
+    z-index: 9999;
+}
+
+.allkj {
+    display: block;
+    float: left;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background: #2E81D8;
+}
+
+table {
+    float: left;
+    margin: 0px auto;
+}
+
+td.leftcd {
+    background: #1C91DB;
+    width: 140px;
+}
+
+table.tb {
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #16A0D3;
+    background: #16A0D3;
+    margin: 0px 0px 5px 0px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+table.lb {
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #EEE;
+    margin: 0px 0px 5px 0px;
+    border-radius: 0px;
+    overflow: hidden;
+}
+
+    table.lb tr:hover {
+        background: #fbfbfb;
+    }
+
+    table.lb tr:hover {
+        background: #E3F0F7;
+        color: #1C91DB;
+        cursor: pointer;
+    }
+
+    table.lb tr.bjsls td b.bt {
+        display: block;
+        font-weight: 600;
+    }
+
+    table.lb tr.bt {
+        background: #E3F2FF;
+        color: #333;
+    }
+
+        table.lb tr.bt td {
+            text-align: center;
+        }
+
+        table.lb tr.bt:hover {
+            background: #2E81D8;
+            color: #fff;
+        }
+
+    table.lb tr td {
+        border-bottom: 1px solid #EEE;
+        padding: 10px 0px;
+        font-size: 12px;
+    }
+
+        table.lb tr td dd {
+            display: block;
+            float: right;
+            width: 200px;
+            text-align: right;
+            color: #000000;
+        }
+
+        table.lb tr td input {
+            position: relative;
+            width: auto;
+            margin-left: 10px;
+        }
+
+        table.lb tr td .dsrk {
+            position: relative;
+            width: 98%;
+            border-radius: 0px;
+            margin-left: 10px;
+        }
+
+        table.lb tr td .xsrk {
+            position: relative;
+            width: 300px;
+            border-radius: 0px;
+            margin-left: 10px;
+        }
+
+        table.lb tr td .xskbig {
+            position: relative;
+            width: 710px;
+            border-radius: 0px;
+            margin-left: 10px;
+        }
+
+        table.lb tr td textarea {
+            position: relative;
+            width: 98%;
+            border-radius: 0px;
+            margin-left: 10px;
+            border: 1px solid #ccc;
+        }
+
+        table.lb tr td a.del {
+            text-decoration: none;
+            display: inline-block;
+            width: auto;
+            height: 20px;
+            padding: 3px 10px;
+            line-height: 180%;
+            text-align: center;
+        }
+
+        table.lb tr td select {
+            position: relative;
+            width: auto;
+            padding: 0 0px 0 0px;
+            border-radius: 0px;
+            margin-left: 10px;
+            border: 1px solid #9A9A9A;
+        }
+
+        table.lb tr td b {
+            font-weight: 900;
+        }
+
+table.wx {
+    float: left;
+    width: 98%;
+    margin: 10px 1%;
+    color: #222;
+}
+
+    table.wx tr td {
+        border-bottom: 0px solid #2E81D8;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: left;
+    }
+
+a {
+    cursor: pointer;
+}
+
+p {
+    font-size: 12px;
+    line-height: 150%;
+    text-indent: 2em;
+}
+
+.green {
+    Color: #365805;
+}
+
+.orange {
+    Color: #AA2E08;
+}
+
+.yellow {
+    color: #FFDE29;
+}
+
+.blue {
+    Color: #017DDB;
+}
+
+.sls {
+    color: #2E81D8;
+}
+
+.red {
+    Color: #ff0000;
+}
+
+.white {
+    color: #222;
+}
+
+.dallt {
+    display: table;
+    margin: 0px;
+    padding: 5px 0px 0px 5px;
+    ;
+    width: 100%;
+    height: 20px;
+    background: #1C91DB;
+    text-align: left;
+}
+
+    .dallt > span {
+        display: block;
+        margin: auto;
+        font-size: 12px;
+        color: #efefef;
+        float: left;
+        width: auto;
+        height: 20px;
+    }
+
+    .dallt > a {
+        display: block;
+        float: right;
+        width: auto;
+        height: 20px;
+        margin-right: 15px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+    }
+
+.dallb {
+    display: block;
+    margin: 0px 10px auto auto;
+    padding: 5px 0px 0px 5px;
+    ;
+    width: 100%;
+    height: 27px;
+    background: #fff;
+    text-align: left;
+    border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+    .dallb > a.ank {
+        display: block;
+        float: left;
+        width: auto;
+        height: auto;
+    }
+
+.dalla {
+    display: table;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    min-height: 100%;
+    background: #fff;
+}
+
+.dban {
+    float: right;
+    width: auto;
+    height: auto;
+    font-size: 12px;
+    display: block;
+    padding: 3px 10px;
+    text-align: center;
+    margin: 1px 3px;
+    background: #E3F2FF;
+    color: #666;
+    border: 1px solid #9BCCFF;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #aaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .dban:hover {
+        background: #58aded;
+        color: #fff;
+    }
+
+.an {
+    float: left;
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 5px 20px;
+    text-align: center;
+    margin: 5px 3px;
+    background: #E3F2FF;
+    color: #666;
+    border: 1px solid #9BCCFF;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #aaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .an:hover {
+        background: #4393E5;
+        color: #fff;
+    }
+
+.an_red {
+    float: left;
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 5px 20px;
+    text-align: center;
+    margin: 5px 3px;
+    background: #ff0000;
+    color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #505050;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .an_red:hover {
+        background: #800000;
+    }
+
+.anblue {
+    position: relative;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    padding: 0px 5px;
+    text-align: center;
+    margin: 5px 3px;
+    background: #E3F2FF;
+    color: #666;
+    border: 1px solid #9BCCFF;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #aaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .anblue:hover {
+        background: #4393E5;
+        color: #fff;
+    }
+
+.anoneblue {
+    position: relative;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    padding: 0px 5px;
+    text-align: center;
+    margin: 5px 3px;
+    background: #E3F2FF;
+    color: #666;
+    border: 1px solid #9BCCFF;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #aaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .anoneblue:hover {
+        background: #4393E5;
+        color: #fff;
+    }
+
+.antjk {
+    position: relative;
+    font-size: 12px;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    padding: 5px 20px;
+    text-align: center;
+    margin: 5px 3px;
+    background: #16A0D3;
+    color: #fff;
+    border: 1px solid #9BCCFF;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #aaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .antjk:hover {
+        background: #2E81D8;
+    }
+
+.antwo {
+    float: left;
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 2px 5px;
+    text-align: center;
+    margin: 3px 2px 0px 2px;
+    background: #E3F2FF;
+    color: #666;
+    border-radius: 3px;
+    box-shadow: 0 0 0px #505050;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #9BCCFF;
+}
+
+    .antwo:hover {
+        background: #fff;
+    }
+
+.antwo_red {
+    float: left;
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 2px 5px;
+    text-align: center;
+    margin: 3px 2px 0px 2px;
+    background: #ff0000;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 0px #505050;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #ff0000;
+}
+
+    .antwo_red:hover {
+        background: #800000;
+    }
+
+.xan {
+    float: left;
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 2px 10px;
+    font-size: 12px;
+    text-align: center;
+    margin: 5px 5px;
+    background: #fff;
+    color: #2E81D8;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ABADB3;
+    border: 1px solid #2E81D8;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .xan:hover {
+        background: #DEFAFF;
+    }
+
+.xan_red {
+    float: left;
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 2px 10px;
+    font-size: 12px;
+    text-align: center;
+    margin: 5px 5px;
+    background: #fff;
+    color: #ff0000;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ABADB3;
+    border: 1px solid #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .xan_red:hover {
+        background: #FFDEDE;
+    }
+
+.xan_blue {
+    float: left;
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 2px 10px;
+    font-size: 12px;
+    text-align: center;
+    margin: 5px 5px;
+    background: #fff;
+    color: #0562A5;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ABADB3;
+    border: 1px solid #2E81D8;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .xan_blue:hover {
+        background: #EAF7FF;
+    }
+
+.anonebluewz {
+    float: left;
+    width: auto;
+    height: auto;
+    padding: 3px 10px;
+    font-size: 12px;
+    text-align: center;
+    margin: 3px 5px;
+    background: #fff;
+    color: #2E81D8;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ABADB3;
+    border: 1px solid #2E81D8;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .anonebluewz:hover {
+        background: #A7DBE8;
+    }
+
+.anoneorange {
+    width: auto;
+    height: auto;
+    padding: 2px 10px;
+    font-size: 12px;
+    text-align: center;
+    margin: 3px 5px;
+    background: #fff;
+    color: #AA2E08;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ABADB3;
+    border: 1px solid #AA2E08;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .anoneorange:hover {
+        background: #FFF0EA;
+    }
+
+.anoneredwz {
+    float: left;
+    width: auto;
+    height: auto;
+    padding: 2px 10px;
+    font-size: 12px;
+    text-align: center;
+    margin: 3px 5px;
+    background: #fff;
+    color: #ff0000;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ABADB3;
+    border: 1px solid #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .anoneredwz:hover {
+        background: #E39D86;
+    }
+
+.anonered {
+    position: relative;
+    width: auto !important;
+    display: inline-block;
+    height: auto;
+    padding: 0px 5px;
+    font-size: 12px;
+    text-align: center;
+    margin: 5px 3px;
+    background: #FCDEDE;
+    color: #ff0000;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ABADB3;
+    border: 1px solid #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .anonered:hover {
+        background: #AD0D0D;
+        color: #fff;
+    }
+
+.anonegreen {
+    float: left;
+    width: auto;
+    height: auto;
+    padding: 2px 10px;
+    font-size: 12px;
+    text-align: center;
+    margin: 3px 5px;
+    background: #fff;
+    color: #037E00;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ABADB3;
+    border: 1px solid #037E00;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .anonegreen:hover {
+        background: #D6FFD3;
+    }
+
+.danblue {
+    display: block;
+    height: auto;
+    padding: 2px 10px;
+    font-size: 12px;
+    text-align: center;
+    margin: 3px 5px;
+    background: #fff;
+    color: #2E81D8;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ABADB3;
+    border: 1px solid #2E81D8;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .danblue:hover {
+        background: #DEFAFF;
+    }
+
+.danred {
+    display: block;
+    height: auto;
+    padding: 2px 10px;
+    font-size: 12px;
+    text-align: center;
+    margin: 3px 5px;
+    background: #fff;
+    color: #ff0000;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ABADB3;
+    border: 1px solid #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .danred:hover {
+        background: #FFDEDE;
+    }
+
+.dangreen {
+    display: block;
+    height: auto;
+    padding: 2px 10px;
+    font-size: 12px;
+    text-align: center;
+    margin: 3px 5px;
+    background: #fff;
+    color: #037E00;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ABADB3;
+    border: 1px solid #037E00;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .dangreen:hover {
+        background: #D6FFD3;
+    }
+
+
+/**按钮占一行**/
+.allxan {
+    height: auto;
+    display: block;
+    padding: 5px 5px;
+    font-size: 12px;
+    text-align: center;
+    margin: 0px 5px 5px 5px;
+    background: #fff;
+    color: #2E81D8;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ABADB3;
+    border: 1px solid #2E81D8;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .allxan:hover {
+        background: #DEFAFF;
+    }
+
+.allxan_red {
+    height: auto;
+    display: block;
+    padding: 5px 5px;
+    font-size: 12px;
+    text-align: center;
+    margin: 0px 5px 5px 5px;
+    background: #fff;
+    color: #ff0000;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #ABADB3;
+    border: 1px solid #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.allantwo {
+    height: auto;
+    display: block;
+    padding: 5px 5px;
+    text-align: center;
+    margin: 0px 5px 5px 5px;
+    background: #E3F2FF;
+    color: #666;
+    border-radius: 3px;
+    box-shadow: 0 0 0px #505050;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #9BCCFF;
+}
+
+    .allantwo:hover {
+        background: #fff;
+    }
+
+.allantwo_red {
+    height: auto;
+    display: block;
+    padding: 5px 5px;
+    text-align: center;
+    margin: 0px 5px 5px 5px;
+    background: #ff0000;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 0px #505050;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #ff0000;
+}
+
+    .allantwo_red:hover {
+        background: #800000;
+    }
+
+.allan {
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 5px;
+    text-align: center;
+    margin: 0px 5px 5px 5px;
+    background: #E3F2FF;
+    color: #666;
+    border: 1px solid #9BCCFF;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #aaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .allan:hover {
+        background: #4393E5;
+        color: #fff;
+    }
+
+.allan_red {
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 5px;
+    text-align: center;
+    margin: 0px 5px 5px 5px;
+    background: #ff0000;
+    color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #505050;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .allan_red:hover {
+        background: #800000;
+    }
+
+
+
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+    text-align: center;
+}
+
+input.an {
+    border: 0px;
+    cursor: pointer;
+}
+
+.bigbt {
+    display: block;
+    float: left;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.dwzts {
+    display: block;
+    margin: 10px;
+    background: #EAFFE5;
+    border-radius: 5px;
+    padding: 10px;
+    color: #245D00;
+    box-shadow: 0 0 5px #555;
+}
+
+.xhx {
+    border-bottom: 1px dotted #808080;
+}
+
+div.cdzx {
+    display: block;
+    width: 100%;
+    margin: 0px;
+    height: auto;
+    min-height: 100%;
+    padding: 0px;
+    background: #2E81D8;
+}
+
+.cdzx .admincd {
+    display: block;
+    margin: 0px;
+    padding: 0px 1px 0px 1px;
+    width: 100%;
+    text-align: left;
+    text-indent: 2px;
+    margin: 0px auto 0px auto;
+}
+
+    .cdzx .admincd b {
+        display: block;
+        padding: 8px 0px;
+        width: auto;
+        font-weight: normal;
+        color: #fff;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+        .cdzx .admincd b:hover {
+            background: #E3F2FF;
+            color: #1C91DB;
+        }
+
+    .cdzx .admincd .xm {
+        margin: 0px;
+        padding: 0px 0px;
+        width: 100%;
+        font-size: 12px;
+        display: none;
+    }
+
+        .cdzx .admincd .xm a {
+            display: block;
+            padding: 8px 0px;
+            color: #fff;
+            text-indent: 10px;
+            text-decoration: none;
+            height: auto;
+            cursor: pointer;
+        }
+
+            .cdzx .admincd .xm a:hover {
+                background: #E3F2FF;
+                color: #1C91DB;
+            }
+            i.fa {
+                margin-right:5px;
+            }
+    .cdzx .admincd .on {
+        display: block;
+        color: #ffffff;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+        .cdzx .admincd .on a {
+            display: block;
+            padding: 5px 0px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+.bglist {
+    Float: Left;
+    Margin: 2px 0 0 2px;
+    OverFlow: Hidden;
+    Padding: 0px 4px 0px 4px;
+    width: 100%;
+}
+
+.DonforNoBorder {
+    Float: Left;
+    Width: 100%;
+    Padding: 0px;
+    Border: 0px;
+    Margin-Left: 0px;
+    Margin-Right: 0px;
+    Word-break: break all;
+    OverFlow: Hidden;
+}
+
+.DonforYesBorder {
+    Float: Left;
+    Width: 100%;
+    Padding: 0px;
+    Border: 1px Solid #ECECEC;
+    Margin-Left: 0px;
+    Margin-Right: 0px;
+    Word-break: break all;
+    OverFlow: Hidden;
+}
+
+.DonforNoBorder Ol {
+    Margin: 0px;
+    Padding: 0px;
+    Margin-Left: 7px;
+}
+
+    .DonforNoBorder Ol Li {
+        Float: Left;
+        Width: 200px;
+        Height: auto;
+        Margin-Top: 8px;
+        Padding: 0px;
+        list-style-type: none;
+        OverFlow: Hidden;
+    }
+
+.bigtitle {
+    float: left;
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 25px;
+}
+/*----编辑区界面中部样式---------------*/
+.mr {
+    display: block;
+    float:left;width:100%;
+    min-height: 100%;
+    text-align: left;
+    margin: 0px;background:#fff;
+}
+
+    .mr .tsk {
+        float: left;
+        border: 1px solid #1598CB;
+        width: 100%;
+        margin: 5px 0px;
+        background: #ffffff;
+        F1F5F8;
+        color: #000000;
+    }
+
+        .mr .tsk div {
+            padding: 5px;
+        }
+
+    .mr .zkj {
+    float: left;
+    border: 1px solid #B7C1C9;
+    width: 99%;
+    margin: 5px 0.5% 0px 0.5%;
+    padding: 0px;
+    background: #fff;
+    color: #333;
+    border-radius: 2px;
+    }
+
+        .mr .zkj .bt {
+            width: 100%;
+            height: 30px;
+            background: #4393E5;
+            url(btbj.gif);
+            overflow: hidden;
+            color: #fff;
+        }
+
+            .mr .zkj .bt b {
+                display: block;
+                padding: 5px;
+                color: #ffffff;
+                font-size: 12px;
+                font-weight: 100;
+            }
+
+        .mr .zkj div.lr {
+            float: left;
+            width: 100%;
+            border-bottom: 0px solid #9bccff;
+            #1598CB;
+            padding: 5px 0;
+        }
+
+            .mr .zkj div.lr > div {
+                display: block;
+                margin: 5px;
+                width: auto;
+            }
+
+                .mr .zkj div.lr > div div.kjall {
+                    clear: both;
+                    float: left;
+                    width: 100%;
+                    height: auto;
+                    margin: 5px 0;
+                    overflow: hidden;
+                }
+
+                    .mr .zkj div.lr > div div.kjall .l {
+                        float: left;
+                        display: inline-block;
+                        width: 150px;
+                        height: auto;
+                        overflow: hidden;
+                    }
+
+                    .mr .zkj div.lr > div div.kjall .r {
+                        display: block;
+                        height: auto;
+                        overflow: hidden;
+                    }
+
+                    .mr .zkj div.lr > div div.kjall .half {
+                        float: left;
+                        width: 48%;
+                        height: auto;
+                        margin: 5px 1%;
+                        overflow: hidden;
+                    }
+
+.pagekj {
+    float: left;
+    width: 98%;
+    margin: 5px 1%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+    .pagekj a {
+        display: block;
+        float: left;
+        width: auto;
+        height: auto;
+        margin: 3px 5px;
+        padding: 3px 5px 3px 5px;
+        border: 1px solid #efefef;
+        text-decoration: none;
+        color: #808080;
+    }
+
+        .pagekj a:hover {
+            color: #f00;
+        }
+
+        .pagekj a.checked {
+            font-weight: 600;
+            color: #fff;
+            background: #2E81D8;
+        }
+
+.bd {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    padding: 10px auto;
+    margin: 0px;
+}
+
+/*----编辑区界面底部样式---------------*/
+.dallf {
+    display: table;
+    margin: 0px;
+    padding: 10px 0px;
+    width: 100%;
+    min-height: 20px;
+    background: #1C91DB;
+    color: #ffffff;
+}
+/*----登录界面样式---------------*/
+.center {
+    text-align: center;
+}
+
+.loginkj {
+    width: 460px;
+    height: 500px;
+    margin: 100px auto;
+    border: 10px solid #C3E4F5;
+    border-radius: 10px;
+    background: rgba(255,255,255,1);
+}
+
+    .loginkj .srk {
+        display: block;
+        width: 338px;
+        height: auto;
+        margin: 12px auto 30px auto;
+    }
+
+    .loginkj > .srk > form > strong {
+        display: block;
+        float: left;
+        width: 100%;
+        font-family: "Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu;
+        font-size: 26px;
+        Margin: 20px auto 0px auto;
+        color: #2C89CB;
+        height: 85px;
+        text-shadow: 0 0 2px #fff;
+    }
+
+    .loginkj > .srk > form > .yhm {
+        display: block;
+        float: left;
+        width: 338px;
+        height: 48px;
+        background: url(donfor_yh.png);
+    }
+
+        .loginkj > .srk > form > .yhm > input.ady {
+            display: block;
+            float: left;
+            width: 277px;
+            height: 30px;
+            margin: 9px auto auto 49px;
+            border: 0px;
+            background: none;
+            font-size: 18px;
+            color: #58ADED;
+        }
+
+    .loginkj > .srk > form > .mm {
+        display: block;
+        float: left;
+        width: 338px;
+        height: 48px;
+        background: url(donfor_mm.png);
+    }
+
+        .loginkj > .srk > form > .mm > input.adm {
+            display: block;
+            float: left;
+            width: 277px;
+            height: 30px;
+            margin: 9px auto auto 49px;
+            border: 0px;
+            background: none;
+            font-size: 18px;
+            color: #58ADED;
+        }
+
+    .loginkj > .srk > form > .yzm {
+        display: block;
+        float: left;
+        width: 338px;
+        height: 48px;
+        background: url(donfor_yz.png);
+    }
+
+        .loginkj > .srk > form > .yzm > input.yzm {
+            display: block;
+            float: left;
+            width: 177px;
+            height: 30px;
+            margin: 9px auto auto 47px;
+            border: 0px;
+            background: none;
+            font-size: 18px;
+            color: #58ADED;
+        }
+
+        .loginkj > .srk > form > .yzm > img.yzm {
+            float: right;
+            width: 88px;
+            height: auto;
+            margin: 9px 8px auto auto;
+            border: 0px;
+            background: none;
+            font-size: 18px;
+            color: #58ADED;
+        }
+
+    .loginkj > .srk > form > span {
+        display: block;
+    }
+
+        .loginkj > .srk > form > span > input.ady {
+            display: block;
+            float: left;
+            width: 277px;
+            height: 30px;
+            margin: 17px auto auto 47px;
+            border: 0px;
+            background: none;
+            font-size: 18px;
+            color: #58ADED;
+        }
+
+        .loginkj > .srk > form > span > input.adm {
+            display: block;
+            float: left;
+            width: 277px;
+            height: 30px;
+            margin: 16px auto auto 47px;
+            border: 0px;
+            background: none;
+            font-size: 18px;
+            color: #58ADED;
+        }
+
+        .loginkj > .srk > form > span > input.yzm {
+            display: block;
+            float: left;
+            width: 177px;
+            height: 30px;
+            margin: 16px auto auto 47px;
+            border: 0px;
+            background: none;
+            font-size: 18px;
+            color: #58ADED;
+        }
+
+        .loginkj > .srk > form > span > img.yzm {
+            float: right;
+            width: 88px;
+            height: auto;
+            margin: 18px 8px auto auto;
+            border: 0px;
+            background: none;
+            font-size: 18px;
+            color: #58ADED;
+        }
+
+        .loginkj > .srk > form > span > input.tjk {
+            display: block;
+            float: left;
+            width: 300px;
+            height: 30px;
+            margin: 15px auto auto auto;
+            border: 1px solid #004C9B;
+            border-radius: 5px;
+            color: #D3EBFF;
+            cursor: pointer;
+            font: bold 24px Cambria,"Hoefler Text",serif;
+            padding: 10px;
+            text-shadow: 0 -1px 0 #444444;
+            width: 338px;
+            height: 50px;
+            background-color: #0496DA;
+            background-image: linear-gradient(top, #0496DA 0%, #0067CD 100%);
+        }
+/*----页面辅助提示文字---------------*/
+span.ts {
+    margin-left: 10px;
+    color: #999999;
+}
+/*-----页面背景----*/
+.bjgreen {
+    background: #365805;
+}
+
+    .bjgreen:hover {
+        background: #365800;
+    }
+
+.bjorange {
+    background: #AA2E08;
+}
+
+    .bjorange:hover {
+        background: #AA2E00;
+    }
+
+.bjblue {
+    background: #017DDB;
+}
+
+    .bjblue:hover {
+        background: #017DD0;
+    }
+
+.bjsls {
+    background: #fafafa;
+}
+
+    .bjsls:hover {
+        background: #E3F2FF;
+    }
+
+.bjred {
+    background: #ff0000;
+}
+
+    .bjred:hover {
+        background: #800000;
+    }
+
+/*-----会员卡样式 开始------*/
+.cardcenter {
+    margin: 22px auto 0;
+    float: left;
+    width: 270px;
+    Height: 190px;
+    top: 20px;
+}
+
+.card {
+    margin: 0 auto;
+    position: relative;
+    height: 159px;
+    text-align: left;
+    width: 267px;
+}
+
+.cardbg {
+    height: 159px;
+    width: 267px;
+    position: absolute;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.card .logo {
+    max-height: 70px;
+    max-width: 140px;
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    z-index: 2;
+}
+
+.msk {
+    display: inline-block;
+    position: absolute;
+    width: 320px;
+    height: 115px;
+    top: 78px;
+    left: 0;
+    z-index: 3;
+    background: url(../images/msk.png) no-repeat 0 0 transparent;
+    -webkit-background-size: 320px 128px;
+    background-size: 320px 128px;
+}
+
+.card h1 {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.2);
+    color: #000000;
+    font-size: 11px;
+    line-height: 25px;
+    text-align: right;
+    font-weight: normal;
+    z-index: 10;
+}
+
+.card h2 {
+    position: absolute;
+    top: 3px;
+    right: 8px;
+    font-size: 9px;
+    line-height: 22px;
+    text-align: right;
+    color: #EDD3BA;
+    text-shadow: 1px 1px #A69079;
+}
+
+.card .verify {
+    display: inline-block;
+    height: 40px;
+    top: 105px;
+    right: 12px;
+    text-align: right;
+    line-height: 24px;
+    color: #000000;
+    font-size: 20px;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.2);
+    z-index: 2;
+}
+
+    .card .verify span {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .card .verify em {
+        display: block;
+        line-height: 13px;
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+    }
+
+.pdo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+}
+
+.explain {
+    line-height: 36px;
+    text-align: center;
+    width: 320px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+    .explain span {
+        font-size: 14px;
+        color: #646464;
+        text-shadow: 0 1px #fff;
+        padding-left: 20px;
+        display: inline-block;
+        background: url(../images/show1.jpg) no-repeat 0 50%;
+        background-size: 13px 14.5px;
+    }
+
+.explain2 {
+    line-height: 22px;
+    margin: 30px auto 10px;
+    padding: 0 40px;
+    text-align: center;
+}
+
+    .explain2 span {
+        color: #888888;
+        display: inline-block;
+        font-size: 12px;
+        margin-top: 22px;
+        text-shadow: 0 1px #FFFFFF;
+    }
+
+.cardexplain {
+    margin: 0px 10px 20px 9px;
+    min-width: 301px;
+}
+
+.divrgdl {
+    overflow-y: scroll;
+    width: 150px;
+    height: 500px;
+    float: left;
+}
+
+.HdhDxDxd {
+    display: inline-block;
+    width: auto;
+    height: 20px;
+    overflow: hidden;
+    color: #222;
+    border: 1px solid #aaa;
+    padding: 2px 5px;
+    margin: 2px auto auto 2px;
+    background: #fff;
+}
+
+.HdhDxYxd {
+    display: inline-block;
+    width: auto;
+    height: 20px;
+    overflow: hidden;
+    color: #222;
+    border: 1px solid #2E81D8;
+    padding: 2px 5px;
+    margin: 2px auto auto 2px;
+    background: url(HdhXdOk.png) bottom right no-repeat #f1f1f1;
+}
+
+
+
+/*----通栏DIV项目样式---------------*/
+.TlxWdiv {
+    display: block;
+    height: 40px;
+    background: #C9EAFF;
+    margin: 2px auto;
+}
+
+    .TlxWdiv > div.dl {
+        float: left;
+        width: auto;
+        height: auto;
+        margin: 5px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .TlxWdiv > div.dr {
+        float: right;
+        width: 200px;
+        height: auto;
+        margin: 5px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+.TlxTpz {
+    display: block;
+    height: 30px;
+    background: #fff;
+    margin: 2px auto 2px 10px;
+    border: 1px solid #fff;
+    padding: 5px;
+}
+
+    .TlxTpz > div.dl {
+        float: left;
+        width: auto;
+        height: auto;
+        margin: 5px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .TlxTpz > div.dr {
+        float: right;
+        width: 200px;
+        height: auto;
+        margin: 5px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+/*----------图片载减canvas样式-------*/
+.upcanvas {
+    border: 1px solid #A2E0EA;
+    float: left;
+    position: relative;
+    cursor: crosshair;
+}
+
+.lsfixed {
+    display: block;
+    padding: 10px;
+    width: auto;
+    text-align: center;
+    border-radius: 5px;
+    position: fixed;
+    right: 0px;
+    top: 20px;
+    margin-top: -25px;
+    margin-right: 20px;
+    background: #0A7DC7;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.tjkblue {
+    display: inline-block;
+    cursor: pointer;
+    margin: 5px auto auto 5px;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 30px;
+    background: #1E7BB3;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    width: auto;
+    text-decoration: none;
+}
+
+.sr {
+    float: left;
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 5px 20px;
+    text-align: center;
+    margin: 5px 3px;
+    background: #ffff;
+    color: #666;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #aaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.divall {
+    float: left;
+    width: 98%;
+    height: auto;
+    padding: 2px 0px;
+    margin: 2px 1%;
+}
+/*----网页通用弹出框---------------*/
+.hdhtck {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    top: 0px;
+    right: 0px;
+    z-index: 4;
+}
+
+.tcxsk {
+    position: absolute;
+    border: 5px solid #58ADED;
+    background: #fff;
+    box-shadow: 5px 0px 5px #222;
+    z-index: 5;
+    display: block;
+    top: 0px;
+    left: auto;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+    .tcxsk > .tcbtk {
+        float: left;
+        width: 100%;
+        height: 40px;
+        background: #58ADED;
+    }
+
+        .tcxsk > .tcbtk > b {
+            float: left;
+            display: block;
+            width: auto;
+            height: 20px;
+            margin: 10px 10px;
+            color: #fff;
+            font-weight: 100;
+            font-size: 14px;
+        }
+
+        .tcxsk > .tcbtk > a {
+            float: right;
+            display: block;
+            width: 15px;
+            height: 15px;
+            margin: 10px 10px 0 0;
+            border-radius: 50%;
+            background: #eee;
+            color: #1C91DB;
+            border: 1px solid #f1f1f1;
+            font-size: 12px;
+            font-family: Arial;
+            text-align: center;
+            padding: 2px;
+        }
+
+.hdhtck > .bhk {
+    z-index: 99;
+    display: block;
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -150px;
+    background: #fff;
+}
+
+.hdhspkj {
+    float: left;
+    width: 500px;
+    height: 300px;
+}
+
+.hdhclosed {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 50%;
+    background: #4393E5;
+    right: -20px;
+    top: -20px;
+    line-height: 150%;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    border: 0px;
+    cursor: pointer;
+    z-index: 9999;
+}
+/*----框架左右块，左菜单200px,右框架自适应，---------------*/
+.hkjlr {
+    display: block;
+    height:100%;
+    margin: 5px;
+}
+
+    .hkjlr > .xsk {
+        display:block;
+        float: left;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        overflow-y:auto;
+    }
+
+        .hkjlr > .xsk > .hl {
+            display: inline-block;
+            float: left;
+            width: 110px;
+            min-height: 200px;
+            margin-right: 10px;
+        }
+
+        .hkjlr > .xsk > .hr {
+            display: block;
+            height:100%;
+            overflow-y:auto;
+        }
+
+/*----标签菜单 ---------------*/
+.labelzcd {
+    float: left;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+
+    .labelzcd > .yj {
+        float: left;
+        width: 100%;
+        padding: 0px 0px;
+        margin: 0px;
+    }
+
+        .labelzcd > .yj > a {
+            display: block;
+            margin: 0px;
+            padding: 5px 0px;
+            text-indent: 0px;
+            text-decoration: none;
+            color: #222;
+        }
+
+    .labelzcd > .ej {
+        float: left;
+        width: 100%;
+        padding: 0px 0px;
+        margin: 0px;
+    }
+
+        .labelzcd > .ej > a {
+            display: block;
+            margin: 0px;
+            padding: 3px 0px;
+            text-indent: 5px;
+            text-decoration: none;
+            color: #222;
+        }
+
+    .labelzcd > .sj {
+        float: left;
+        width: 100%;
+        padding: 0px 0px;
+        margin: 0px;
+    }
+
+        .labelzcd > .sj > a {
+            display: block;
+            margin: 0px;
+            padding: 5px 0px;
+            text-indent: 10px;
+            text-decoration: none;
+            color: #222;
+        }
+
+    .labelzcd .axz {
+        background: #E3F2FF;
+    }
+/*----右部内容显示 ---------------*/
+.labelzlrk {
+    display:block;
+    float: left;
+    width: 100%;
+    min-height: 100%;
+    font-size: 12px;
+    overflow-y:auto;
+}
+
+    .labelzlrk > .xsk {
+        float: left;
+        width: 100%;
+        height: auto;
+    }
+
+        .labelzlrk > .xsk > h1 {
+            display: block;
+            height: auto;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .labelzlrk > .xsk > .dmk {
+            display: block;
+            margin: 2px;
+            height: auto;
+            padding: 5px;
+            background: #F5F7F7;
+            border: 1px dotted #B7C1C9;
+            line-height: 150%;
+            color: #706d6d;
+        }
+
+            .labelzlrk > .xsk > .dmk > pre {
+                display: block;
+                margin: 0px 1%;
+                overflow: auto;
+                overflow-y: hidden;
+            }
+/*********************首页框架开始***************************/
+table.tabledkj {
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background: #2E81D8;
+}
+
+    table.tabledkj > tr {
+        float: left;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+
+.kjtop {
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+    .kjtop > .all {
+        float: left;
+        width: 100%;
+        min-height: 50px;
+        background: #2E81D8;
+        padding: 3px 0px;
+    }
+
+        .kjtop > .all > .kl {
+            float: left;
+            width: auto;
+            display: inline-block;
+            height: 50px;
+        }
+
+            .kjtop > .all > .kl > img {
+                float: left;
+                width: auto;
+                height: 50px;
+                border: 0px;
+            }
+
+        .kjtop > .all > .kr {
+            display: block;
+            height: 50px;
+            overflow: hidden;
+        }
+
+            .kjtop > .all > .kr > .one {
+                float: left;
+                width: 100%;
+                height: 20px;
+                background: none;
+                color: #fff;
+                text-align: right;
+                font-size: 12px;
+            }
+
+                .kjtop > .all > .kr > .one > span > a {
+                    width: auto;
+                    font-size: 12px;
+                    height: auto;
+                    background: #fff;
+                    color: #2E81D8;
+                    padding: 3px 8px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }
+
+                    .kjtop > .all > .kr > .one > span > a:hover {
+                        background: #f00;
+                        color: #fff;
+                    }
+
+            .kjtop > .all > .kr > .two {
+                float: left;
+                width: 100%;
+                height: 30px;
+            }
+
+table.tabledkj > tr > td.kjmid {
+    text-align: left;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+table.tabledkj > tr > td.kjfot {
+    text-align: left;
+    height: 30px;
+}
+
+.dkjfot {
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+    .dkjfot > .dl {
+        display: block;
+        float: left;
+        width: 180px;
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+    }
+
+        .dkjfot > .dl > iframe {
+            float: left;
+            width: 100%;
+            height: 100%;
+            border: 0px;
+            overflow-y: auto;
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+        }
+
+    .dkjfot > .dr {
+        display: block;
+        overflow: hidden;
+        height: 100%;
+    }
+
+        .dkjfot > .dr > iframe {
+            float: left;
+            width: 100%;
+            height: 100%;
+            border: 0px;
+            overflow-y: auto;
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+        }
+    /******后台底部菜单或框架******/
+    .dkjfot > .dlzkj {
+        display: block;
+        float: left;
+        width: 180px;
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+    }
+
+.drztl {
+    /*display: block;
+        overflow: hidden;
+        height: 100%;
+        background: #E3F2FF;
+        padding: 3px;
+        margin: 0px 2px;*/
+    /*display: block;
+    overflow-y:auto;
+    height: 30px;
+    background: #E3F2FF;
+    padding: 3px;
+    margin: 0px 5px;
+    position: fixed;
+    bottom: 5px;
+    border: 1px solid #2e81d8;*/
+
+    display: block;
+    overflow-y: auto;
+    height: 30px;
+    background: #E3F2FF;
+    padding: 0px;
+    margin: 0px 0px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    border: 1px solid #2E81D8;
+    border-left:0px;border-right:0px;
+
+}
+
+    .drztl > span {
+        display: inline-block;
+        font-weight: 600;
+        width: auto;
+        height: auto;
+        margin: 5px 5px 0px 0px;
+        font-size: 12px;
+        cursor: pointer;
+        border-radius: 3px;
+        box-shadow: 2px 0 3px #000;
+        padding: 0px;
+        float: left;
+        text-align: left;
+    }
+
+        .drztl > span > span {
+            padding: 5px 15px;
+            display: block;
+        }
+
+        .drztl > span > a {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            font-size: 9px;
+            background: #f00;
+            color: #fff;
+            text-decoration: none;
+            margin: -5px -7px;
+            text-align: center;
+            border-radius: 15px;
+            font-weight: 100;
+            line-height: 15px;
+        }
+
+    .drztl > .xz {
+        background: #2E81D8;
+        color: #fff;
+    }
+
+    .drztl > .wx {
+        background: #7C9DBF;
+        color: #fff;
+    }
+
+/*********************首页框架结束***************************/
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+    width: 10px;
+    height: 2px;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+    border-radius: 2px;
+    background-color: #eee;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #2E81D8;
+}
+
+/*定义后台管理员权限选择栏目区样式*/
+#adminlist {
+    float: left;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.dlmxs {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+.zlmxs {
+    display: block;
+    margin: 0px 0 0 10px;
+    ;
+    padding: 0px;
+}
+
+
+/**上传AB图**/
+.div-a {
+    float: left;
+    width: 190px;
+    height: 115px;
+}
+
+.div-b {
+    position: absolute;
+    width: 185px;
+    height: 120px;
+}
+
+.FileUplod_div {
+    font-size: 45px;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: 80;
+    width: 190px;
+    height: 120px;
+}
+/**后台顶部隐藏菜单样式  开始**/
+.tophidemenu {
+    position: absolute;
+    z-index: 10;
+    display: none;
+    width: 870px;
+    height: auto;
+    right: 2px;
+    top: 50px;
+    padding: 10px;
+}
+
+    .tophidemenu > .admincd {
+        float: right;
+        display: block;
+        margin: 0px 0px 2px 0px;
+        padding: 0px 1px 2px 1px;
+        width: 100%;
+        height: auto;
+        text-align: left;
+        text-indent: 10px;
+        border: 1px solid #888;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #222;
+    }
+
+        .tophidemenu > .admincd > b {
+            display: block;
+            padding: 8px 0px;
+            width: auto;
+            font-weight: normal;
+            color: #fff;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+    .tophidemenu .admincd b:hover {
+        background: #E3F2FF;
+        color: #1C91DB;
+    }
+
+    .tophidemenu > .admincd > .xm {
+        margin: 0px;
+        padding: 0px 0px;
+        width: 100%;
+        height: auto;
+        font-size: 12px;
+    }
+
+        .tophidemenu > .admincd > .xm > a {
+            display: block;
+            float: left;
+            padding: 5px 2px;
+            width: 165px;
+            color: #2E81D8;
+            text-decoration: none;
+            height: 26px;
+            margin: 2px 0 2px 2px;
+            cursor: pointer;
+            overflow: hidden;
+            line-height: 200%;
+        }
+
+            .tophidemenu > .admincd > .xm > a:hover {
+                background: #4393E5;
+                color: #fff;
+                border-radius: 3px;
+            }
+
+    .tophidemenu > .admincd > .on {
+        display: block;
+        color: #ffffff;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+        .tophidemenu > .admincd > .on a {
+            display: block;
+            padding: 5px 0px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+/**后台顶部隐藏菜单样式  结束**/
+/**浮动右上角大弹出框关闭按钮样式**/
+.tckclose {
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 0px;
+    background: #980005;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    color: #fffb77;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 180%;
+    border: 4px solid #efff95;
+    cursor: pointer;
+    box-shadow: 0 0 10px #000;
+}
+/*================ 弹出框CSS---Begin =========================*/
+.studentListFram {
+    width: 98%;
+    height: 360px;
+    border: none;
+}
+
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.fdk {
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    top: 0px;
+    text-align: center;
+    display: none;
+    background: url(OpacityBlack60.png);
+}
+
+    .fdk .lrk {
+        position: fixed;
+        left: 50%;
+        margin-left: -350px;
+        top: 50%;
+        margin-top: -200px;
+        width: 550px;
+        height: 410px;
+        background: #fff !important;
+    }
+
+.reveal-modal .spanClass {
+    float: left;
+    width: 100%;
+    line-height: 50px;
+    border-top: 1px solid #cccccc;
+    margin-top: 50px;
+}
+
+    .reveal-modal .spanClass .btnDiv {
+        width: 100%;
+        float: right;
+    }
+
+        .reveal-modal .spanClass .btnDiv .b1 {
+            width: 80px;
+            height: 35px;
+            float: right;
+            margin-right: 10px;
+            border: 1px solid #007DFE;
+            background-color: #007DFE;
+            color: #ffffff;
+            border-radius: 3px;
+        }
+
+        .reveal-modal .spanClass .btnDiv .b2 {
+            width: 80px;
+            height: 35px;
+            float: right;
+            margin-right: 10px;
+            border: 1px solid #CCCCCC;
+            background-color: #ffffff;
+            border-radius: 3px;
+        }
+
+
+.dlgtitleDiv {
+    float: left;
+    width: 100%;
+    line-height: 30px;
+    background-color: #E9671C;
+    color: white;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+    .dlgtitleDiv .s1 {
+        float: left;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
+    .dlgtitleDiv .s2 {
+        float: right;
+        cursor: pointer;
+        margin-right: 5px;
+        font-size: 16px;
+    }
+
+
+
+.titleDiv {
+    width: 98%;
+    margin: 0 auto;
+    line-height: 40px;
+    background-color: #ffffff;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+    .titleDiv span {
+        width: 98%;
+        margin-left: 1%;
+    }
+
+/*================ 弹出框END =========================*/
+
+
+/*================ 新增资料时批量上传影集  Str =========================*/
+/*================ 结合  HdhGetFun.cs中的 HdhCmsPhones 方法使用 =========================*/
+/*================ 结合  /Js/js.js 中的 HdhCmsPhonesSelectFile与 HdhCmsPhonesDeleteFile 方法使用 =========================*/
+.hdhcmsPhotosadd {
+    display: block;
+    padding: 3px 20px;
+    background: #1C91DB;
+    color: #fff;
+    border: 1px solid #eee;
+    border-radius: 3px;
+}
+
+.hdhyjtpk {
+    float: left;
+    width: 80px;
+    height: 150px;
+    margin: 5px 0 0 5px;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+    .hdhyjtpk > .tp {
+        width: 80px;
+        height: 100px;
+        max-height: 100px;
+        max-width: 80px;
+    }
+
+    .hdhyjtpk > .ms {
+        width: 78px;
+        height: 18px;
+        border: 1px solid #999;
+        margin: 0px;
+    }
+
+    .hdhyjtpk > .a {
+        float: left;
+        width: 100%;
+        height: 20px;
+        text-align: center;
+        margin: 2px auto auto 0;
+        cursor: pointer;
+    }
+/*================ 新增资料时批量上传影集  End =========================*/
+/*================ 新增资料时新版样式  Str =========================*/
+
+.top_1px {
+    margin-top: -1px;
+}
+
+.hdhbtk {
+    float: left;
+    width: auto;
+    border: 1px solid #EEE;
+    border-right: 0px;
+    margin: 0px;
+    overflow: hidden;
+    padding: 0px;
+    border-bottom: 0px;
+    list-style-type: none;
+    background: #ddd;
+}
+
+    .hdhbtk > li {
+        font-size: 12px;
+    }
+
+        .hdhbtk > li.yes {
+            float: left;
+            width: auto;
+            padding: 8px 20px;
+            border-right: 1px solid #EEE;
+            list-style-type: none;
+            cursor: pointer;
+            background: #4393E5;
+            color: #fff;
+        }
+
+        .hdhbtk > li.no {
+            float: left;
+            width: auto;
+            padding: 8px 20px;
+            border-right: 1px solid #EEE;
+            list-style-type: none;
+            cursor: pointer;
+        }
+/*================ 新增资料时新版样式  End =========================*/
+/*================ 后台综合搜索框【新闻、会员】样式  Str =========================*/
+.zhssk {
+    width: auto;
+    position: fixed;
+    right: 0px;
+    top: 20px;
+    background: #C14600;
+    z-index: 9999;
+    border-radius: 3px;
+    right: -490px;
+    padding: 5px 0px;
+    width: 500px;
+}
+
+    .zhssk:hover {
+        right: 0px;
+    }
+
+.zhsskb {
+    display: block;
+    color: #fff;
+    padding: 5px;
+}
+/*================ 后台综合搜索框【新闻、会员】样式  End =========================*/
+/*================ 类似简历查看表单样式【标题】  Str =========================*/
+.hdhlist {
+    display: block;
+    float: left;
+    width: 98%;
+    margin: 5px 1%;
+    height: auto;
+}
+
+    .hdhlist > b {
+        display: block;
+        float: left;
+        width: 100px;
+        height: 22px;
+        line-height: 200%;
+        overflow: hidden;
+    }
+
+    .hdhlist > span {
+        display: block;
+        height: 22px;
+        line-height: 200%;
+        overflow: hidden;
+    }
+
+    .hdhlist > div {
+        display: block;
+        width: 100%;
+        height: auto;
+        line-height: 200%;
+    }
+/*================ 类似简历查看表单样式  End =========================*/
+/*================ 内容性能参数管理  Str =========================*/
+.Lrxnbt {
+    float: left;
+    width: 100%;
+    padding: 0px 0px;
+    background: #222;
+}
+
+    .Lrxnbt > .xm {
+        float: left;
+        padding: 2px 5px;
+        text-align: center;
+    }
+
+        .Lrxnbt > .xm > b {
+            display: block;
+            float: left;
+            width: 120px;
+            text-align: center;
+            padding: 0px;
+            color: #fff;
+            height: 30px;
+            overflow: hidden;
+            line-height: 250%;
+            font-weight: 900;
+        }
+
+        .Lrxnbt > .xm > a {
+            display: block;
+            float: left;
+            width: auto;
+            text-align: center;
+            padding: 4px 5px 2px 5px;
+            color: #fff;
+            height: auto;
+            border-radius: 50%;
+            background: #2E81D8;
+            font-size: xx-small;
+        }
+
+.Lrxncs {
+    float: left;
+    width: 100%;
+    padding: 0px 0px;
+}
+
+    .Lrxncs:hover {
+        background: #2E81D8;
+    }
+
+    .Lrxncs > .xm {
+        float: left;
+        padding: 2px 5px;
+        text-align: center;
+    }
+
+        .Lrxncs > .xm > input {
+            float: left;
+            width: 100px;
+            border: 1px solid #666;
+            color: #222;
+        }
+
+        .Lrxncs > .xm > a {
+            display: block;
+            float: left;
+            width: auto;
+            margin: 0px;
+            text-align: center;
+            padding: 4px 5px 2px 5px;
+            color: #fff;
+            height: auto;
+            border-radius: 50%;
+            background: #2E81D8;
+            font-size: 9px;
+            transform: scale(0.8);
+        }
+
+/*================ 内容性能参数管理  End =========================*/
+

@@ -1,0 +1,805 @@
+11-Jun-2022 14:51:03.150 警告 [main] org.apache.catalina.core.AprLifecycleListener.init 基于APR的本地库加载失败.错误报告为[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform]
+	java.lang.UnsatisfiedLinkError: H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform
+		at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+		at java.lang.ClassLoader.loadLibrary1(ClassLoader.java:1965)
+		at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1890)
+		at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1880)
+		at java.lang.Runtime.loadLibrary0(Runtime.java:849)
+		at java.lang.System.loadLibrary(System.java:1088)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:41)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:173)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:208)
+		at org.apache.catalina.core.AprLifecycleListener.isAprAvailable(AprLifecycleListener.java:113)
+		at org.apache.catalina.connector.Connector.setProtocol(Connector.java:673)
+		at org.apache.catalina.connector.Connector.<init>(Connector.java:82)
+		at org.apache.catalina.startup.ConnectorCreateRule.begin(ConnectorCreateRule.java:62)
+		at org.apache.tomcat.util.digester.Digester.startElement(Digester.java:1235)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1350)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2778)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+		at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1496)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:618)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:669)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:305)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+11-Jun-2022 14:51:03.223 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server.服务器版本: Apache Tomcat/8.5.79
+11-Jun-2022 14:51:03.224 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器构建:        May 16 2022 15:36:23 UTC
+11-Jun-2022 14:51:03.224 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器版本号:      8.5.79.0
+11-Jun-2022 14:51:03.225 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 操作系统名称:      Windows 8
+11-Jun-2022 14:51:03.225 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS.版本:           6.2
+11-Jun-2022 14:51:03.225 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 架构:              x86
+11-Jun-2022 14:51:03.225 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java 环境变量:     D:\jdk_1_7\jre
+11-Jun-2022 14:51:03.226 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java虚拟机版本:    1.7.0_45-b18
+11-Jun-2022 14:51:03.226 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM.供应商:        Oracle Corporation
+11-Jun-2022 14:51:03.226 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 14:51:03.226 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 14:51:03.227 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.config.file=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\conf\logging.properties
+11-Jun-2022 14:51:03.227 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Jun-2022 14:51:03.227 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djdk.tls.ephemeralDHKeySize=2048
+11-Jun-2022 14:51:03.227 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Jun-2022 14:51:03.228 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dignore.endorsed.dirs=
+11-Jun-2022 14:51:03.228 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.base=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 14:51:03.228 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.home=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 14:51:03.229 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.io.tmpdir=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\temp
+11-Jun-2022 14:51:03.301 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 ["http-nio-8080"]
+11-Jun-2022 14:51:03.318 信息 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 364 ms
+11-Jun-2022 14:51:03.338 信息 [main] org.apache.catalina.core.StandardService.startInternal 正在启动服务[Catalina]
+11-Jun-2022 14:51:03.339 信息 [main] org.apache.catalina.core.StandardEngine.startInternal 正在启动 Servlet 引擎：[Apache Tomcat/8.5.79]
+11-Jun-2022 14:51:03.364 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]
+11-Jun-2022 14:51:03.618 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]的部署已在[252]毫秒内完成
+11-Jun-2022 14:51:03.619 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]
+11-Jun-2022 14:51:03.973 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]的部署已在[354]毫秒内完成
+11-Jun-2022 14:51:03.973 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]
+11-Jun-2022 14:51:04.009 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]的部署已在[36]毫秒内完成
+11-Jun-2022 14:51:04.010 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]
+11-Jun-2022 14:51:04.026 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]的部署已在[16]毫秒内完成
+11-Jun-2022 14:51:04.027 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]
+11-Jun-2022 14:51:04.062 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]的部署已在[35]毫秒内完成
+11-Jun-2022 14:51:04.065 信息 [main] org.apache.coyote.AbstractProtocol.start 开始协议处理句柄["http-nio-8080"]
+11-Jun-2022 14:51:04.077 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 758 ms
+11-Jun-2022 14:53:17.140 信息 [Thread-3] org.apache.coyote.AbstractProtocol.pause 暂停ProtocolHandler["http-nio-8080"]
+11-Jun-2022 14:53:17.590 信息 [Thread-3] org.apache.catalina.core.StandardService.stopInternal 正在停止服务[Catalina]
+11-Jun-2022 14:53:17.956 信息 [Thread-3] org.apache.coyote.AbstractProtocol.stop 正在停止ProtocolHandler ["http-nio-8080"]
+11-Jun-2022 14:53:17.972 信息 [Thread-3] org.apache.coyote.AbstractProtocol.destroy 正在摧毁协议处理器 ["http-nio-8080"]
+11-Jun-2022 14:58:13.160 警告 [main] org.apache.catalina.core.AprLifecycleListener.init 基于APR的本地库加载失败.错误报告为[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform]
+	java.lang.UnsatisfiedLinkError: H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform
+		at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+		at java.lang.ClassLoader.loadLibrary1(ClassLoader.java:1965)
+		at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1890)
+		at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1880)
+		at java.lang.Runtime.loadLibrary0(Runtime.java:849)
+		at java.lang.System.loadLibrary(System.java:1088)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:41)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:173)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:208)
+		at org.apache.catalina.core.AprLifecycleListener.isAprAvailable(AprLifecycleListener.java:113)
+		at org.apache.catalina.connector.Connector.setProtocol(Connector.java:673)
+		at org.apache.catalina.connector.Connector.<init>(Connector.java:82)
+		at org.apache.catalina.startup.ConnectorCreateRule.begin(ConnectorCreateRule.java:62)
+		at org.apache.tomcat.util.digester.Digester.startElement(Digester.java:1235)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1350)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2778)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+		at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1496)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:618)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:669)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:305)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+11-Jun-2022 14:58:13.224 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server.服务器版本: Apache Tomcat/8.5.79
+11-Jun-2022 14:58:13.224 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器构建:        May 16 2022 15:36:23 UTC
+11-Jun-2022 14:58:13.225 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器版本号:      8.5.79.0
+11-Jun-2022 14:58:13.226 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 操作系统名称:      Windows 8
+11-Jun-2022 14:58:13.226 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS.版本:           6.2
+11-Jun-2022 14:58:13.227 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 架构:              x86
+11-Jun-2022 14:58:13.227 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java 环境变量:     D:\jdk_1_7\jre
+11-Jun-2022 14:58:13.227 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java虚拟机版本:    1.7.0_45-b18
+11-Jun-2022 14:58:13.227 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM.供应商:        Oracle Corporation
+11-Jun-2022 14:58:13.228 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 14:58:13.228 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 14:58:13.228 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.config.file=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\conf\logging.properties
+11-Jun-2022 14:58:13.229 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Jun-2022 14:58:13.229 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djdk.tls.ephemeralDHKeySize=2048
+11-Jun-2022 14:58:13.229 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Jun-2022 14:58:13.230 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dignore.endorsed.dirs=
+11-Jun-2022 14:58:13.230 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.base=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 14:58:13.230 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.home=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 14:58:13.231 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.io.tmpdir=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\temp
+11-Jun-2022 14:58:13.298 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 ["http-nio-8080"]
+11-Jun-2022 14:58:13.313 信息 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 329 ms
+11-Jun-2022 14:58:13.331 信息 [main] org.apache.catalina.core.StandardService.startInternal 正在启动服务[Catalina]
+11-Jun-2022 14:58:13.332 信息 [main] org.apache.catalina.core.StandardEngine.startInternal 正在启动 Servlet 引擎：[Apache Tomcat/8.5.79]
+11-Jun-2022 14:58:13.338 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]
+11-Jun-2022 14:58:13.524 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]的部署已在[184]毫秒内完成
+11-Jun-2022 14:58:13.525 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]
+11-Jun-2022 14:58:13.705 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]的部署已在[180]毫秒内完成
+11-Jun-2022 14:58:13.706 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]
+11-Jun-2022 14:58:13.723 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]的部署已在[16]毫秒内完成
+11-Jun-2022 14:58:13.723 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]
+11-Jun-2022 14:58:13.737 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]的部署已在[14]毫秒内完成
+11-Jun-2022 14:58:13.738 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]
+11-Jun-2022 14:58:13.751 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]的部署已在[13]毫秒内完成
+11-Jun-2022 14:58:13.753 信息 [main] org.apache.coyote.AbstractProtocol.start 开始协议处理句柄["http-nio-8080"]
+11-Jun-2022 14:58:13.765 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 451 ms
+11-Jun-2022 14:58:16.198 信息 [Thread-3] org.apache.coyote.AbstractProtocol.pause 暂停ProtocolHandler["http-nio-8080"]
+11-Jun-2022 14:58:16.676 信息 [Thread-3] org.apache.catalina.core.StandardService.stopInternal 正在停止服务[Catalina]
+11-Jun-2022 14:58:16.688 信息 [Thread-3] org.apache.coyote.AbstractProtocol.stop 正在停止ProtocolHandler ["http-nio-8080"]
+11-Jun-2022 14:58:16.707 信息 [Thread-3] org.apache.coyote.AbstractProtocol.destroy 正在摧毁协议处理器 ["http-nio-8080"]
+11-Jun-2022 15:48:42.247 警告 [main] org.apache.catalina.core.AprLifecycleListener.init 基于APR的本地库加载失败.错误报告为[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform]
+	java.lang.UnsatisfiedLinkError: H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform
+		at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+		at java.lang.ClassLoader.loadLibrary1(ClassLoader.java:1965)
+		at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1890)
+		at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1880)
+		at java.lang.Runtime.loadLibrary0(Runtime.java:849)
+		at java.lang.System.loadLibrary(System.java:1088)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:41)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:173)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:208)
+		at org.apache.catalina.core.AprLifecycleListener.isAprAvailable(AprLifecycleListener.java:113)
+		at org.apache.catalina.connector.Connector.setProtocol(Connector.java:673)
+		at org.apache.catalina.connector.Connector.<init>(Connector.java:82)
+		at org.apache.catalina.startup.ConnectorCreateRule.begin(ConnectorCreateRule.java:62)
+		at org.apache.tomcat.util.digester.Digester.startElement(Digester.java:1235)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1350)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2778)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+		at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1496)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:618)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:669)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:305)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+11-Jun-2022 15:48:42.318 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server.服务器版本: Apache Tomcat/8.5.79
+11-Jun-2022 15:48:42.319 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器构建:        May 16 2022 15:36:23 UTC
+11-Jun-2022 15:48:42.320 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器版本号:      8.5.79.0
+11-Jun-2022 15:48:42.320 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 操作系统名称:      Windows 8
+11-Jun-2022 15:48:42.321 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS.版本:           6.2
+11-Jun-2022 15:48:42.322 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 架构:              x86
+11-Jun-2022 15:48:42.322 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java 环境变量:     D:\jdk_1_7\jre
+11-Jun-2022 15:48:42.323 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java虚拟机版本:    1.7.0_45-b18
+11-Jun-2022 15:48:42.323 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM.供应商:        Oracle Corporation
+11-Jun-2022 15:48:42.323 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 15:48:42.324 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 15:48:42.324 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.config.file=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\conf\logging.properties
+11-Jun-2022 15:48:42.325 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Jun-2022 15:48:42.325 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djdk.tls.ephemeralDHKeySize=2048
+11-Jun-2022 15:48:42.325 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Jun-2022 15:48:42.325 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dignore.endorsed.dirs=
+11-Jun-2022 15:48:42.326 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.base=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 15:48:42.326 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.home=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 15:48:42.326 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.io.tmpdir=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\temp
+11-Jun-2022 15:48:42.389 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 ["http-nio-8080"]
+11-Jun-2022 15:48:42.407 信息 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 357 ms
+11-Jun-2022 15:48:42.424 信息 [main] org.apache.catalina.core.StandardService.startInternal 正在启动服务[Catalina]
+11-Jun-2022 15:48:42.424 信息 [main] org.apache.catalina.core.StandardEngine.startInternal 正在启动 Servlet 引擎：[Apache Tomcat/8.5.79]
+11-Jun-2022 15:48:42.433 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]
+11-Jun-2022 15:48:42.619 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]的部署已在[184]毫秒内完成
+11-Jun-2022 15:48:42.620 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]
+11-Jun-2022 15:48:42.821 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]的部署已在[201]毫秒内完成
+11-Jun-2022 15:48:42.823 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]
+11-Jun-2022 15:48:42.840 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]的部署已在[17]毫秒内完成
+11-Jun-2022 15:48:42.841 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]
+11-Jun-2022 15:48:42.861 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]的部署已在[19]毫秒内完成
+11-Jun-2022 15:48:42.861 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]
+11-Jun-2022 15:48:42.876 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]的部署已在[15]毫秒内完成
+11-Jun-2022 15:48:42.879 信息 [main] org.apache.coyote.AbstractProtocol.start 开始协议处理句柄["http-nio-8080"]
+11-Jun-2022 15:48:42.892 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 485 ms
+11-Jun-2022 16:14:26.557 信息 [Thread-3] org.apache.coyote.AbstractProtocol.pause 暂停ProtocolHandler["http-nio-8080"]
+11-Jun-2022 16:14:27.003 信息 [Thread-3] org.apache.catalina.core.StandardService.stopInternal 正在停止服务[Catalina]
+11-Jun-2022 16:14:27.089 信息 [Thread-3] org.apache.coyote.AbstractProtocol.stop 正在停止ProtocolHandler ["http-nio-8080"]
+11-Jun-2022 16:14:28.101 信息 [Thread-3] org.apache.coyote.AbstractProtocol.destroy 正在摧毁协议处理器 ["http-nio-8080"]
+11-Jun-2022 16:14:35.640 警告 [main] org.apache.catalina.core.AprLifecycleListener.init 基于APR的本地库加载失败.错误报告为[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform]
+	java.lang.UnsatisfiedLinkError: H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform
+		at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+		at java.lang.ClassLoader.loadLibrary1(ClassLoader.java:1965)
+		at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1890)
+		at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1880)
+		at java.lang.Runtime.loadLibrary0(Runtime.java:849)
+		at java.lang.System.loadLibrary(System.java:1088)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:41)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:173)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:208)
+		at org.apache.catalina.core.AprLifecycleListener.isAprAvailable(AprLifecycleListener.java:113)
+		at org.apache.catalina.connector.Connector.setProtocol(Connector.java:673)
+		at org.apache.catalina.connector.Connector.<init>(Connector.java:82)
+		at org.apache.catalina.startup.ConnectorCreateRule.begin(ConnectorCreateRule.java:62)
+		at org.apache.tomcat.util.digester.Digester.startElement(Digester.java:1235)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1350)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2778)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+		at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1496)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:618)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:669)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:305)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+11-Jun-2022 16:14:35.706 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server.服务器版本: Apache Tomcat/8.5.79
+11-Jun-2022 16:14:35.706 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器构建:        May 16 2022 15:36:23 UTC
+11-Jun-2022 16:14:35.707 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器版本号:      8.5.79.0
+11-Jun-2022 16:14:35.709 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 操作系统名称:      Windows 8
+11-Jun-2022 16:14:35.709 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS.版本:           6.2
+11-Jun-2022 16:14:35.709 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 架构:              x86
+11-Jun-2022 16:14:35.709 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java 环境变量:     D:\jdk_1_7\jre
+11-Jun-2022 16:14:35.709 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java虚拟机版本:    1.7.0_45-b18
+11-Jun-2022 16:14:35.709 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM.供应商:        Oracle Corporation
+11-Jun-2022 16:14:35.710 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:14:35.710 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:14:35.710 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.config.file=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\conf\logging.properties
+11-Jun-2022 16:14:35.711 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Jun-2022 16:14:35.711 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djdk.tls.ephemeralDHKeySize=2048
+11-Jun-2022 16:14:35.711 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Jun-2022 16:14:35.711 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dignore.endorsed.dirs=
+11-Jun-2022 16:14:35.712 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.base=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:14:35.712 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.home=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:14:35.712 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.io.tmpdir=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\temp
+11-Jun-2022 16:14:35.784 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 ["http-nio-8080"]
+11-Jun-2022 16:14:35.801 信息 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 341 ms
+11-Jun-2022 16:14:35.819 信息 [main] org.apache.catalina.core.StandardService.startInternal 正在启动服务[Catalina]
+11-Jun-2022 16:14:35.819 信息 [main] org.apache.catalina.core.StandardEngine.startInternal 正在启动 Servlet 引擎：[Apache Tomcat/8.5.79]
+11-Jun-2022 16:14:35.826 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]
+11-Jun-2022 16:14:36.009 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]的部署已在[181]毫秒内完成
+11-Jun-2022 16:14:36.010 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]
+11-Jun-2022 16:14:36.194 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]的部署已在[183]毫秒内完成
+11-Jun-2022 16:14:36.195 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]
+11-Jun-2022 16:14:36.211 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]的部署已在[16]毫秒内完成
+11-Jun-2022 16:14:36.212 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]
+11-Jun-2022 16:14:36.226 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]的部署已在[14]毫秒内完成
+11-Jun-2022 16:14:36.227 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]
+11-Jun-2022 16:14:36.247 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]的部署已在[20]毫秒内完成
+11-Jun-2022 16:14:36.249 信息 [main] org.apache.coyote.AbstractProtocol.start 开始协议处理句柄["http-nio-8080"]
+11-Jun-2022 16:14:36.262 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 458 ms
+11-Jun-2022 16:33:36.994 信息 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.users.MemoryUserDatabase.backgroundProcess 从更新的字眼[file:/H:/学习记录/tomcat原理/apache-tomcat-8.5.79/conf/tomcat-users.xml]重新加载内存用户数据库
+11-Jun-2022 16:34:27.007 信息 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.users.MemoryUserDatabase.backgroundProcess 从更新的字眼[file:/H:/学习记录/tomcat原理/apache-tomcat-8.5.79/conf/tomcat-users.xml]重新加载内存用户数据库
+11-Jun-2022 16:34:41.507 信息 [Thread-3] org.apache.coyote.AbstractProtocol.pause 暂停ProtocolHandler["http-nio-8080"]
+11-Jun-2022 16:34:41.950 信息 [Thread-3] org.apache.catalina.core.StandardService.stopInternal 正在停止服务[Catalina]
+11-Jun-2022 16:34:41.969 信息 [Thread-3] org.apache.coyote.AbstractProtocol.stop 正在停止ProtocolHandler ["http-nio-8080"]
+11-Jun-2022 16:34:41.989 信息 [Thread-3] org.apache.coyote.AbstractProtocol.destroy 正在摧毁协议处理器 ["http-nio-8080"]
+11-Jun-2022 16:34:43.362 警告 [main] org.apache.catalina.core.AprLifecycleListener.init 基于APR的本地库加载失败.错误报告为[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform]
+	java.lang.UnsatisfiedLinkError: H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform
+		at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+		at java.lang.ClassLoader.loadLibrary1(ClassLoader.java:1965)
+		at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1890)
+		at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1880)
+		at java.lang.Runtime.loadLibrary0(Runtime.java:849)
+		at java.lang.System.loadLibrary(System.java:1088)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:41)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:173)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:208)
+		at org.apache.catalina.core.AprLifecycleListener.isAprAvailable(AprLifecycleListener.java:113)
+		at org.apache.catalina.connector.Connector.setProtocol(Connector.java:673)
+		at org.apache.catalina.connector.Connector.<init>(Connector.java:82)
+		at org.apache.catalina.startup.ConnectorCreateRule.begin(ConnectorCreateRule.java:62)
+		at org.apache.tomcat.util.digester.Digester.startElement(Digester.java:1235)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1350)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2778)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+		at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1496)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:618)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:669)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:305)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+11-Jun-2022 16:34:43.428 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server.服务器版本: Apache Tomcat/8.5.79
+11-Jun-2022 16:34:43.429 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器构建:        May 16 2022 15:36:23 UTC
+11-Jun-2022 16:34:43.429 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器版本号:      8.5.79.0
+11-Jun-2022 16:34:43.430 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 操作系统名称:      Windows 8
+11-Jun-2022 16:34:43.430 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS.版本:           6.2
+11-Jun-2022 16:34:43.431 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 架构:              x86
+11-Jun-2022 16:34:43.431 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java 环境变量:     D:\jdk_1_7\jre
+11-Jun-2022 16:34:43.431 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java虚拟机版本:    1.7.0_45-b18
+11-Jun-2022 16:34:43.432 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM.供应商:        Oracle Corporation
+11-Jun-2022 16:34:43.432 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:34:43.433 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:34:43.433 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.config.file=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\conf\logging.properties
+11-Jun-2022 16:34:43.433 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Jun-2022 16:34:43.434 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djdk.tls.ephemeralDHKeySize=2048
+11-Jun-2022 16:34:43.434 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Jun-2022 16:34:43.434 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dignore.endorsed.dirs=
+11-Jun-2022 16:34:43.434 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.base=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:34:43.435 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.home=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:34:43.435 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.io.tmpdir=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\temp
+11-Jun-2022 16:34:43.496 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 ["http-nio-8080"]
+11-Jun-2022 16:34:43.513 信息 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 330 ms
+11-Jun-2022 16:34:43.530 信息 [main] org.apache.catalina.core.StandardService.startInternal 正在启动服务[Catalina]
+11-Jun-2022 16:34:43.531 信息 [main] org.apache.catalina.core.StandardEngine.startInternal 正在启动 Servlet 引擎：[Apache Tomcat/8.5.79]
+11-Jun-2022 16:34:43.539 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]
+11-Jun-2022 16:34:43.723 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]的部署已在[182]毫秒内完成
+11-Jun-2022 16:34:43.725 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]
+11-Jun-2022 16:34:43.911 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]的部署已在[186]毫秒内完成
+11-Jun-2022 16:34:43.912 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]
+11-Jun-2022 16:34:43.928 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]的部署已在[15]毫秒内完成
+11-Jun-2022 16:34:43.928 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]
+11-Jun-2022 16:34:43.942 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]的部署已在[14]毫秒内完成
+11-Jun-2022 16:34:43.943 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]
+11-Jun-2022 16:34:43.970 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]的部署已在[27]毫秒内完成
+11-Jun-2022 16:34:43.972 信息 [main] org.apache.coyote.AbstractProtocol.start 开始协议处理句柄["http-nio-8080"]
+11-Jun-2022 16:34:43.986 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 472 ms
+11-Jun-2022 16:36:53.996 信息 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.users.MemoryUserDatabase.backgroundProcess 从更新的字眼[file:/H:/学习记录/tomcat原理/apache-tomcat-8.5.79/conf/tomcat-users.xml]重新加载内存用户数据库
+11-Jun-2022 16:36:54.005 严重 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.tomcat.util.digester.Digester.fatalError Parse Fatal Error at line 40 column 36: 与元素类型 "null" 相关联的 "password" 属性值不能包含 '<' 字符。
+	org.xml.sax.SAXParseException; lineNumber: 40; columnNumber: 36; 与元素类型 "null" 相关联的 "password" 属性值不能包含 '<' 字符。
+		at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:198)
+		at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+		at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+		at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+		at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1436)
+		at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:954)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1554)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1326)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2778)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+		at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1513)
+		at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:453)
+		at org.apache.catalina.users.MemoryUserDatabase.backgroundProcess(MemoryUserDatabase.java:704)
+		at org.apache.catalina.realm.UserDatabaseRealm.backgroundProcess(UserDatabaseRealm.java:138)
+		at org.apache.catalina.realm.CombinedRealm.backgroundProcess(CombinedRealm.java:308)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1156)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1396)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1368)
+		at java.lang.Thread.run(Thread.java:744)
+11-Jun-2022 16:36:54.019 严重 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.users.MemoryUserDatabase.backgroundProcess 从更新后的源 [file:/H:/学习记录/tomcat原理/apache-tomcat-8.5.79/conf/tomcat-users.xml] 重新加载内存用户数据库 [UserDatabase] 时出错
+	org.xml.sax.SAXParseException; lineNumber: 40; columnNumber: 36; 与元素类型 "null" 相关联的 "password" 属性值不能包含 '<' 字符。
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1239)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1513)
+		at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:453)
+		at org.apache.catalina.users.MemoryUserDatabase.backgroundProcess(MemoryUserDatabase.java:704)
+		at org.apache.catalina.realm.UserDatabaseRealm.backgroundProcess(UserDatabaseRealm.java:138)
+		at org.apache.catalina.realm.CombinedRealm.backgroundProcess(CombinedRealm.java:308)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1156)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1396)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1368)
+		at java.lang.Thread.run(Thread.java:744)
+11-Jun-2022 16:36:59.255 信息 [Thread-3] org.apache.coyote.AbstractProtocol.pause 暂停ProtocolHandler["http-nio-8080"]
+11-Jun-2022 16:36:59.691 信息 [Thread-3] org.apache.catalina.core.StandardService.stopInternal 正在停止服务[Catalina]
+11-Jun-2022 16:36:59.713 信息 [Thread-3] org.apache.coyote.AbstractProtocol.stop 正在停止ProtocolHandler ["http-nio-8080"]
+11-Jun-2022 16:36:59.722 信息 [Thread-3] org.apache.coyote.AbstractProtocol.destroy 正在摧毁协议处理器 ["http-nio-8080"]
+11-Jun-2022 16:37:01.035 警告 [main] org.apache.catalina.core.AprLifecycleListener.init 基于APR的本地库加载失败.错误报告为[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform]
+	java.lang.UnsatisfiedLinkError: H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform
+		at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+		at java.lang.ClassLoader.loadLibrary1(ClassLoader.java:1965)
+		at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1890)
+		at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1880)
+		at java.lang.Runtime.loadLibrary0(Runtime.java:849)
+		at java.lang.System.loadLibrary(System.java:1088)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:41)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:173)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:208)
+		at org.apache.catalina.core.AprLifecycleListener.isAprAvailable(AprLifecycleListener.java:113)
+		at org.apache.catalina.connector.Connector.setProtocol(Connector.java:673)
+		at org.apache.catalina.connector.Connector.<init>(Connector.java:82)
+		at org.apache.catalina.startup.ConnectorCreateRule.begin(ConnectorCreateRule.java:62)
+		at org.apache.tomcat.util.digester.Digester.startElement(Digester.java:1235)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1350)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2778)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+		at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1496)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:618)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:669)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:305)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+11-Jun-2022 16:37:01.102 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server.服务器版本: Apache Tomcat/8.5.79
+11-Jun-2022 16:37:01.102 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器构建:        May 16 2022 15:36:23 UTC
+11-Jun-2022 16:37:01.103 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器版本号:      8.5.79.0
+11-Jun-2022 16:37:01.103 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 操作系统名称:      Windows 8
+11-Jun-2022 16:37:01.104 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS.版本:           6.2
+11-Jun-2022 16:37:01.104 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 架构:              x86
+11-Jun-2022 16:37:01.104 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java 环境变量:     D:\jdk_1_7\jre
+11-Jun-2022 16:37:01.105 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java虚拟机版本:    1.7.0_45-b18
+11-Jun-2022 16:37:01.105 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM.供应商:        Oracle Corporation
+11-Jun-2022 16:37:01.105 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:37:01.105 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:37:01.106 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.config.file=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\conf\logging.properties
+11-Jun-2022 16:37:01.106 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Jun-2022 16:37:01.107 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djdk.tls.ephemeralDHKeySize=2048
+11-Jun-2022 16:37:01.107 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Jun-2022 16:37:01.107 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dignore.endorsed.dirs=
+11-Jun-2022 16:37:01.107 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.base=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:37:01.108 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.home=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:37:01.108 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.io.tmpdir=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\temp
+11-Jun-2022 16:37:01.168 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 ["http-nio-8080"]
+11-Jun-2022 16:37:01.186 信息 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 334 ms
+11-Jun-2022 16:37:01.219 严重 [main] org.apache.tomcat.util.digester.Digester.fatalError Parse Fatal Error at line 40 column 36: 与元素类型 "null" 相关联的 "password" 属性值不能包含 '<' 字符。
+	org.xml.sax.SAXParseException; lineNumber: 40; columnNumber: 36; 与元素类型 "null" 相关联的 "password" 属性值不能包含 '<' 字符。
+		at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:198)
+		at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+		at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+		at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+		at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1436)
+		at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:954)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1554)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1326)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2778)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+		at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1513)
+		at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:453)
+		at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:105)
+		at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:96)
+		at javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:321)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:846)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:157)
+		at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:115)
+		at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:69)
+		at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:32)
+		at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:138)
+		at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:112)
+		at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:87)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:695)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+11-Jun-2022 16:37:01.232 警告 [main] org.apache.naming.NamingContext.lookup 解析引用时意外异常
+	org.xml.sax.SAXParseException; lineNumber: 40; columnNumber: 36; 与元素类型 "null" 相关联的 "password" 属性值不能包含 '<' 字符。
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1239)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1513)
+		at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:453)
+		at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:105)
+		at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:96)
+		at javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:321)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:846)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:157)
+		at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:115)
+		at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:69)
+		at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:32)
+		at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:138)
+		at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:112)
+		at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:87)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:695)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+11-Jun-2022 16:37:01.241 严重 [main] org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans Exception processing Global JNDI Resources
+	javax.naming.NamingException: 解析引用时意外异常 [Root exception is org.xml.sax.SAXParseException; lineNumber: 40; columnNumber: 36; 与元素类型 "null" 相关联的 "password" 属性值不能包含 '<' 字符。]
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:865)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:157)
+		at org.apache.naming.NamingContextBindingsEnumeration.nextElementInternal(NamingContextBindingsEnumeration.java:115)
+		at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:69)
+		at org.apache.naming.NamingContextBindingsEnumeration.next(NamingContextBindingsEnumeration.java:32)
+		at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:138)
+		at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.createMBeans(GlobalResourcesLifecycleListener.java:112)
+		at org.apache.catalina.mbeans.GlobalResourcesLifecycleListener.lifecycleEvent(GlobalResourcesLifecycleListener.java:87)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:787)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:695)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+	Caused by: org.xml.sax.SAXParseException; lineNumber: 40; columnNumber: 36; 与元素类型 "null" 相关联的 "password" 属性值不能包含 '<' 字符。
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1239)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1513)
+		at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:453)
+		at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:105)
+		at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:96)
+		at javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:321)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:846)
+		... 19 more
+11-Jun-2022 16:37:01.253 信息 [main] org.apache.catalina.core.StandardService.startInternal 正在启动服务[Catalina]
+11-Jun-2022 16:37:01.253 信息 [main] org.apache.catalina.core.StandardEngine.startInternal 正在启动 Servlet 引擎：[Apache Tomcat/8.5.79]
+11-Jun-2022 16:37:01.256 严重 [main] org.apache.tomcat.util.digester.Digester.fatalError Parse Fatal Error at line 40 column 36: 与元素类型 "null" 相关联的 "password" 属性值不能包含 '<' 字符。
+	org.xml.sax.SAXParseException; lineNumber: 40; columnNumber: 36; 与元素类型 "null" 相关联的 "password" 属性值不能包含 '<' 字符。
+		at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:198)
+		at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+		at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+		at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+		at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1436)
+		at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:954)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1554)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1326)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2778)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+		at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1513)
+		at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:453)
+		at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:105)
+		at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:96)
+		at javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:321)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:846)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:171)
+		at org.apache.catalina.realm.UserDatabaseRealm.getUserDatabase(UserDatabaseRealm.java:198)
+		at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:221)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:254)
+		at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:928)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:794)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:695)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+11-Jun-2022 16:37:01.262 警告 [main] org.apache.naming.NamingContext.lookup 解析引用时意外异常
+	org.xml.sax.SAXParseException; lineNumber: 40; columnNumber: 36; 与元素类型 "null" 相关联的 "password" 属性值不能包含 '<' 字符。
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1239)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1513)
+		at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:453)
+		at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:105)
+		at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:96)
+		at javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:321)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:846)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:171)
+		at org.apache.catalina.realm.UserDatabaseRealm.getUserDatabase(UserDatabaseRealm.java:198)
+		at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:221)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:254)
+		at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:928)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:794)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:695)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+11-Jun-2022 16:37:01.267 严重 [main] org.apache.catalina.realm.UserDatabaseRealm.getUserDatabase 在键[UserDatabase]下查找用户数据库时发生异常
+	javax.naming.NamingException: 解析引用时意外异常 [Root exception is org.xml.sax.SAXParseException; lineNumber: 40; columnNumber: 36; 与元素类型 "null" 相关联的 "password" 属性值不能包含 '<' 字符。]
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:865)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:171)
+		at org.apache.catalina.realm.UserDatabaseRealm.getUserDatabase(UserDatabaseRealm.java:198)
+		at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:221)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:254)
+		at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:928)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:794)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:695)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+	Caused by: org.xml.sax.SAXParseException; lineNumber: 40; columnNumber: 36; 与元素类型 "null" 相关联的 "password" 属性值不能包含 '<' 字符。
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1239)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1513)
+		at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:453)
+		at org.apache.catalina.users.MemoryUserDatabaseFactory.getObjectInstance(MemoryUserDatabaseFactory.java:105)
+		at org.apache.naming.factory.FactoryBase.getObjectInstance(FactoryBase.java:96)
+		at javax.naming.spi.NamingManager.getObjectInstance(NamingManager.java:321)
+		at org.apache.naming.NamingContext.lookup(NamingContext.java:846)
+		... 21 more
+11-Jun-2022 16:37:01.271 严重 [main] org.apache.catalina.realm.CombinedRealm.startInternal 无法启动[org.apache.catalina.realm.UserDatabaseRealm]领域
+	org.apache.catalina.LifecycleException: 未找到key[UserDatabase]对应的UserDatabase组件。
+		at org.apache.catalina.realm.UserDatabaseRealm.startInternal(UserDatabaseRealm.java:223)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.realm.CombinedRealm.startInternal(CombinedRealm.java:254)
+		at org.apache.catalina.realm.LockOutRealm.startInternal(LockOutRealm.java:120)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:928)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:794)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:695)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+11-Jun-2022 16:37:01.286 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]
+11-Jun-2022 16:37:01.471 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]的部署已在[183]毫秒内完成
+11-Jun-2022 16:37:01.471 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]
+11-Jun-2022 16:37:01.653 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]的部署已在[182]毫秒内完成
+11-Jun-2022 16:37:01.653 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]
+11-Jun-2022 16:37:01.669 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]的部署已在[16]毫秒内完成
+11-Jun-2022 16:37:01.669 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]
+11-Jun-2022 16:37:01.686 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]的部署已在[17]毫秒内完成
+11-Jun-2022 16:37:01.687 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]
+11-Jun-2022 16:37:01.703 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]的部署已在[16]毫秒内完成
+11-Jun-2022 16:37:01.705 信息 [main] org.apache.coyote.AbstractProtocol.start 开始协议处理句柄["http-nio-8080"]
+11-Jun-2022 16:37:01.716 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 530 ms
+11-Jun-2022 16:38:47.934 信息 [Thread-3] org.apache.coyote.AbstractProtocol.pause 暂停ProtocolHandler["http-nio-8080"]
+11-Jun-2022 16:38:48.374 信息 [Thread-3] org.apache.catalina.core.StandardService.stopInternal 正在停止服务[Catalina]
+11-Jun-2022 16:38:48.389 信息 [Thread-3] org.apache.coyote.AbstractProtocol.stop 正在停止ProtocolHandler ["http-nio-8080"]
+11-Jun-2022 16:38:48.397 信息 [Thread-3] org.apache.coyote.AbstractProtocol.destroy 正在摧毁协议处理器 ["http-nio-8080"]
+11-Jun-2022 16:38:50.488 警告 [main] org.apache.catalina.core.AprLifecycleListener.init 基于APR的本地库加载失败.错误报告为[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform]
+	java.lang.UnsatisfiedLinkError: H:\学习记录\tomcat原理\apache-tomcat-8.5.79\bin\tcnative-1.dll: Can't load AMD 64-bit .dll on a IA 32-bit platform
+		at java.lang.ClassLoader$NativeLibrary.load(Native Method)
+		at java.lang.ClassLoader.loadLibrary1(ClassLoader.java:1965)
+		at java.lang.ClassLoader.loadLibrary0(ClassLoader.java:1890)
+		at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1880)
+		at java.lang.Runtime.loadLibrary0(Runtime.java:849)
+		at java.lang.System.loadLibrary(System.java:1088)
+		at org.apache.tomcat.jni.Library.<init>(Library.java:41)
+		at org.apache.tomcat.jni.Library.initialize(Library.java:173)
+		at org.apache.catalina.core.AprLifecycleListener.init(AprLifecycleListener.java:208)
+		at org.apache.catalina.core.AprLifecycleListener.isAprAvailable(AprLifecycleListener.java:113)
+		at org.apache.catalina.connector.Connector.setProtocol(Connector.java:673)
+		at org.apache.catalina.connector.Connector.<init>(Connector.java:82)
+		at org.apache.catalina.startup.ConnectorCreateRule.begin(ConnectorCreateRule.java:62)
+		at org.apache.tomcat.util.digester.Digester.startElement(Digester.java:1235)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:182)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1350)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2778)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+		at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+		at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+		at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+		at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:649)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1496)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:618)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:669)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:606)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:305)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+11-Jun-2022 16:38:50.549 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server.服务器版本: Apache Tomcat/8.5.79
+11-Jun-2022 16:38:50.549 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器构建:        May 16 2022 15:36:23 UTC
+11-Jun-2022 16:38:50.550 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器版本号:      8.5.79.0
+11-Jun-2022 16:38:50.550 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 操作系统名称:      Windows 8
+11-Jun-2022 16:38:50.550 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS.版本:           6.2
+11-Jun-2022 16:38:50.551 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 架构:              x86
+11-Jun-2022 16:38:50.551 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java 环境变量:     D:\jdk_1_7\jre
+11-Jun-2022 16:38:50.551 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java虚拟机版本:    1.7.0_45-b18
+11-Jun-2022 16:38:50.551 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM.供应商:        Oracle Corporation
+11-Jun-2022 16:38:50.551 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:38:50.552 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:38:50.552 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.config.file=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\conf\logging.properties
+11-Jun-2022 16:38:50.552 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Jun-2022 16:38:50.553 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djdk.tls.ephemeralDHKeySize=2048
+11-Jun-2022 16:38:50.553 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Jun-2022 16:38:50.553 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dignore.endorsed.dirs=
+11-Jun-2022 16:38:50.553 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.base=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:38:50.554 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.home=H:\学习记录\tomcat原理\apache-tomcat-8.5.79
+11-Jun-2022 16:38:50.554 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.io.tmpdir=H:\学习记录\tomcat原理\apache-tomcat-8.5.79\temp
+11-Jun-2022 16:38:50.614 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 ["http-nio-8080"]
+11-Jun-2022 16:38:50.631 信息 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 319 ms
+11-Jun-2022 16:38:50.650 信息 [main] org.apache.catalina.core.StandardService.startInternal 正在启动服务[Catalina]
+11-Jun-2022 16:38:50.650 信息 [main] org.apache.catalina.core.StandardEngine.startInternal 正在启动 Servlet 引擎：[Apache Tomcat/8.5.79]
+11-Jun-2022 16:38:50.661 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]
+11-Jun-2022 16:38:50.867 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\docs]的部署已在[203]毫秒内完成
+11-Jun-2022 16:38:50.867 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]
+11-Jun-2022 16:38:51.051 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\examples]的部署已在[184]毫秒内完成
+11-Jun-2022 16:38:51.052 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]
+11-Jun-2022 16:38:51.068 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\host-manager]的部署已在[16]毫秒内完成
+11-Jun-2022 16:38:51.069 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]
+11-Jun-2022 16:38:51.089 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\manager]的部署已在[20]毫秒内完成
+11-Jun-2022 16:38:51.090 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 把web 应用程序部署到目录 [H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]
+11-Jun-2022 16:38:51.111 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Web应用程序目录[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\ROOT]的部署已在[21]毫秒内完成
+11-Jun-2022 16:38:51.113 信息 [main] org.apache.coyote.AbstractProtocol.start 开始协议处理句柄["http-nio-8080"]
+11-Jun-2022 16:38:51.125 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 494 ms
+11-Jun-2022 16:42:17.016 信息 [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployWAR 正在部署web应用程序存档文件[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\test_memshell.war]
+11-Jun-2022 16:42:17.092 信息 [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployWAR web应用程序存档文件[H:\学习记录\tomcat原理\apache-tomcat-8.5.79\webapps\test_memshell.war]的部署已在[76]ms内完成
+11-Jun-2022 17:23:42.859 信息 [Thread-3] org.apache.coyote.AbstractProtocol.pause 暂停ProtocolHandler["http-nio-8080"]
+11-Jun-2022 17:23:43.362 信息 [Thread-3] org.apache.catalina.core.StandardService.stopInternal 正在停止服务[Catalina]
+11-Jun-2022 17:23:43.562 信息 [Thread-3] org.apache.coyote.AbstractProtocol.stop 正在停止ProtocolHandler ["http-nio-8080"]
+11-Jun-2022 17:23:43.574 信息 [Thread-3] org.apache.coyote.AbstractProtocol.destroy 正在摧毁协议处理器 ["http-nio-8080"]

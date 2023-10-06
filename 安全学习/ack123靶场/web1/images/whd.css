@@ -1,0 +1,1100 @@
+﻿html, body {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+/*定义   滚动条    高宽及背景 高宽分别对应横竖滚动条的尺寸    开始*/
+::-webkit-scrollbar {
+    width: 10px;
+    height: 2px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: none;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #efefef !important;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #FF4B00;
+}
+p {
+    word-wrap: break-word;
+}
+/*定义   滚动条    高宽及背景 高宽分别对应横竖滚动条的尺寸    结束*/
+/*             活动页面样式开始         */
+
+/*.pagekj {
+    float: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+    .pagekj a {
+        display: block;
+        float: left;
+        width: auto;
+        height: auto;
+        line-height: 100%;
+        padding: 3px 3px;
+        cursor: pointer;
+        border: 1px solid #D1D1D1;
+        margin: 0px 5px 0 0;
+        border-radius: 2px;
+        text-decoration: none;
+        color: #323232;
+    }
+
+    .pagekj .checked {
+        background: #f40;
+        color: #fff;
+        border-radius: 2px;
+    }
+
+
+table tr th input {
+    margin-left: 10px;
+}
+
+table tr td input {
+    margin-left: 10px;
+}
+
+table tr td select {
+    width: 80px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+}
+
+.MusicMian {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    margin-top: 60px;
+    left: 100%;
+    margin-left: -70px;
+    margin-right: 0px;
+    border-radius: 5px;
+}
+
+    .MusicMian img {
+        width: 55px;
+        height: 55px;
+        float: left;
+        border-radius: 5px;
+    }*/
+
+
+/*=========2018-05-25 报名弹出框 Begin ===========================*/
+
+/*
+.SignUpMian {
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    top: 0px;
+    text-align: center;
+    display: none;
+    background: url(../../../../Content/Images/OpacityBlack60.png);
+}
+
+    .SignUpMian > .autoDiv {
+        width: auto;
+        height: auto;
+    }
+
+        .SignUpMian > .autoDiv > .SignUpMianDiv {
+            position: absolute;
+            width: 80%;
+            height: auto;
+            min-height: 50%;
+            background: #fff !important;
+            margin-left: 10%;
+            margin-top: 20%;
+            border: 1px solid #656565;
+        }
+
+            .SignUpMian > .autoDiv > .SignUpMianDiv > .SignUpTitle {
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                font-size: 18px;
+                font-weight: 600;
+                text-align: center;
+                float: left;
+                color: white;
+                background-color: #5ea550;
+                margin-bottom: 10px;
+            }
+
+            .SignUpMian > .autoDiv > .SignUpMianDiv > .SignUpInfoDiv {
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                font-size: 14px;
+                float: left;
+                margin-top: 10px;
+            }
+
+                .SignUpMian > .autoDiv > .SignUpMianDiv > .SignUpInfoDiv span {
+                    width: 27%;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 14px;
+                    text-align: right;
+                    padding-right: 3px;
+                    float: left;
+                }
+
+                .SignUpMian > .autoDiv > .SignUpMianDiv > .SignUpInfoDiv input[type=text] {
+                    width: 61%;
+                    height: 30px;
+                    line-height: 30px;
+                    font-size: 14px;
+                    padding-left: 10px;
+                    float: left;
+                    border: 1px solid #d7d7d7;
+                }
+
+                .SignUpMian > .autoDiv > .SignUpMianDiv > .SignUpInfoDiv input[type=number] {
+                    width: 61%;
+                    height: 30px;
+                    line-height: 30px;
+                    font-size: 14px;
+                    padding-left: 10px;
+                    float: left;
+                    border: 1px solid #d7d7d7;
+                }
+
+            .SignUpMian > .autoDiv > .SignUpMianDiv > .SignUpBntDiv {
+                width: 100%;
+                height: 60px;
+                line-height: 60px;
+                float: left;
+                margin-top: 10px;
+            }
+
+                .SignUpMian > .autoDiv > .SignUpMianDiv > .SignUpBntDiv > .SignUpleftBnt {
+                    width: 70px;
+                    height: 35px;
+                    line-height: 30px;
+                    float: left;
+                    font-size: 14px;
+                    margin-top: 10px;
+                    padding-left: 3px;
+                    padding-right: 3px;
+                    text-align: center;
+                    margin-left: 22%;
+                    border-radius: 5px;
+                    border: none;
+                }
+
+                .SignUpMian > .autoDiv > .SignUpMianDiv > .SignUpBntDiv > .SignUpRightBnt {
+                    width: 70px;
+                    height: 35px;
+                    line-height: 30px;
+                    float: right;
+                    font-size: 14px;
+                    margin-top: 10px;
+                    padding-left: 3px;
+                    padding-right: 3px;
+                    text-align: center;
+                    margin-right: 22%;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: #3b9ecc;
+                    color: white;
+                }
+
+
+            .SignUpMian > .autoDiv > .SignUpMianDiv > .LockSignInfo {
+                width: 100%;
+                height: 60px;
+                float: left;
+            }
+
+                .SignUpMian > .autoDiv > .SignUpMianDiv > .LockSignInfo img {
+                    width: 65px;
+                    height: 65px;
+                    float: left;
+                    margin-left: 5px;
+                }
+
+                .SignUpMian > .autoDiv > .SignUpMianDiv > .LockSignInfo > .UserSigninfo {
+                    width: 71%;
+                    height: 22px;
+                    line-height: 22px;
+                    float: left;
+                    font-size: 14px;
+                    text-align: left;
+                }
+
+                    .SignUpMian > .autoDiv > .SignUpMianDiv > .LockSignInfo > .UserSigninfo span {
+                        width: 65px;
+                        height: 22px;
+                        line-height: 22px;
+                        float: left;
+                        text-align: right;
+                        font-size: 14px;
+                    }
+
+            .SignUpMian > .autoDiv > .SignUpMianDiv > .UserSignMianExplain {
+                width: 100%;
+                height: auto;
+                max-height: 120px;
+                overflow-y: auto;
+                float: left;
+                margin-top: 10px;
+            }
+
+                .SignUpMian > .autoDiv > .SignUpMianDiv > .UserSignMianExplain > .UserSignDiv2 {
+                    width: 100%;
+                    height: auto;
+                    min-height: 20px;
+                    line-height: 20px;
+                    font-size: 12px;
+                    float: left;
+                    text-align: left;
+                }
+
+                    .SignUpMian > .autoDiv > .SignUpMianDiv > .UserSignMianExplain > .UserSignDiv2 > .signDDQD {
+                        width: 100%;
+                        height: auto;
+                        float: left;
+                        color: #969696;
+                    }
+
+                        .SignUpMian > .autoDiv > .SignUpMianDiv > .UserSignMianExplain > .UserSignDiv2 > .signDDQD span {
+                            width: 30%;
+                            height: auto;
+                            line-height: 20px;
+                            font-size: 12px;
+                            text-align: right;
+                            padding-right: 5px;
+                            float: left;
+                            color: #969696;
+                        }
+
+
+            .SignUpMian > .autoDiv > .SignUpMianDiv > .UserSignDiv {
+                width: 100%;
+                height: 25px;
+                line-height: 30px;
+                font-size: 14px;
+                float: left;
+                text-align: left;
+            }
+
+                .SignUpMian > .autoDiv > .SignUpMianDiv > .UserSignDiv span {
+                    width: 30%;
+                    height: 30px;
+                    line-height: 30px;
+                    font-size: 14px;
+                    text-align: right;
+                    padding-right: 5px;
+                    float: left;
+                    color: #575757;
+                }
+
+            .SignUpMian > .autoDiv > .SignUpMianDiv > .UserSigninfoTitle {
+                width: 100%;
+                height: 30px;
+                float: left;
+                border-bottom: 1px solid #e2e2e2;
+                margin-top: 10px;
+            }
+
+                .SignUpMian > .autoDiv > .SignUpMianDiv > .UserSigninfoTitle span {
+                    width: 95%;
+                    height: auto;
+                    line-height: 25px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    float: left;
+                    text-align: left;
+                    padding-left: 10px;
+                }
+
+            .SignUpMian > .autoDiv > .SignUpMianDiv > .LockSignCloseBnt {
+                width: 100%;
+                line-height: 60px;
+                float: left;
+                margin-top: 10px;
+            }
+
+                .SignUpMian > .autoDiv > .SignUpMianDiv > .LockSignCloseBnt > .BntCloselot {
+                    width: 45%;
+                    height: 35px;
+                    line-height: 35px;
+                    text-align: center;
+                    float: left;
+                    border: none;
+                    background-color: #a9a9a9;
+                    border-radius: 5px;
+                    color: white;
+                    font-size: 16px;
+                    margin-left: 30%;
+                    margin-bottom: 20px;
+                }
+
+                .SignUpMian > .autoDiv > .SignUpMianDiv > .LockSignCloseBnt > .BntClose {
+                    width: 35%;
+                    height: 35px;
+                    line-height: 35px;
+                    text-align: center;
+                    float: left;
+                    border: none;
+                    background-color: #a9a9a9;
+                    border-radius: 5px;
+                    color: white;
+                    font-size: 16px;
+                    margin-left: 10%;
+                    margin-bottom: 20px;
+                }
+
+                .SignUpMian > .autoDiv > .SignUpMianDiv > .LockSignCloseBnt > .SignMoney {
+                    width: 35%;
+                    height: 35px;
+                    line-height: 35px;
+                    text-align: center;
+                    float: left;
+                    border: none;
+                    background-color: #1dafe4;
+                    border-radius: 5px;
+                    color: white;
+                    font-size: 16px;
+                    margin-left: 10%;
+                    margin-bottom: 20px;
+                    text-decoration: none;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
+
+*/
+
+
+/*=========2018-05-25 报名弹出框 End ===========================*/
+/*.WxActiveMian {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    float: left;
+    display: block;
+    overflow: hidden;
+}
+
+    .WxActiveMian > .ContentDiv {
+        width: 100%;
+        height: auto;
+        float: left;
+        background-color: white;
+        margin-bottom: 20px;
+    }
+
+        .WxActiveMian > .ContentDiv > .ActiveContentInfo {
+            width: 95%;
+            height: auto;
+            margin-left: 10px;
+            float: left;
+            display: none;
+        }
+
+        .WxActiveMian > .ContentDiv > .ActiveContentInfoMoney {
+            width: 100%;
+            height: auto;
+            margin-left: 10px;
+            float: left;
+        }
+
+            .WxActiveMian > .ContentDiv > .ActiveContentInfoMoney img {
+                width: 90%;
+                height: auto;
+                float: left;
+            }*/
+
+/*=================2018-05-25 活动标题、日期报名Begin==================================*/
+/*.WxActiveMian > .ContentDiv > .ActiveTitlediv {
+    width: 100%;
+    height: auto;
+    float: left;
+
+}
+
+    .WxActiveMian > .ContentDiv > .ActiveTitlediv span {
+        float: left;
+        width: 95%;
+        height: auto;
+        margin-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        min-height: 40px;
+        line-height: 20px;
+        padding-right: 10px;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+.WxActiveMian > .ContentDiv > .ActiveDataTimeDiv {
+    width: 100%;
+    height: 30px;
+    float: left;
+}
+
+    .WxActiveMian > .ContentDiv > .ActiveDataTimeDiv span {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        float: left;
+        padding-left: 10px;
+    }
+
+
+.WxActiveMian > .ContentDiv > .ActiveBntDiv {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    text-align: center;
+    border-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+    .WxActiveMian > .ContentDiv > .ActiveBntDiv > .bntClass {
+        width: 60%;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 5px;
+        background-color: #1dafe4;
+        color: white;
+        font-size: 18px;
+        text-align: center;
+        border: none;
+    }
+
+    .WxActiveMian > .ContentDiv > .ActiveBntDiv a {
+        width: 45%;
+        height: 45px;
+        line-height: 45px;
+        text-decoration: none;
+        display: block;
+        margin-left: 20%;
+        border-radius: 5px;
+        background-color: #1dafe4;
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        border: none;
+        float: left;
+    }
+
+    .WxActiveMian > .ContentDiv > .ActiveBntDiv > .BntLockSignInfo {
+        width: 20%;
+        height: 35px;
+        line-height: 35px;
+        text-decoration: none;
+        display: block;
+        margin-left: 10%;
+        border-radius: 5px;
+        background-color: #62b651;
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        border: none;
+        float: left;
+        margin-top: 10px;
+        padding: 1px;
+    }
+
+.WxActiveMian > .TopTitleDiv {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    float: left;
+    font-size: 18px;
+    color: white;
+    background-color: #62b651;
+    border-bottom: 2px solid #419630;
+}
+
+.WxActiveMian > .TopImg {
+    width: 100%;
+    height: 40%;
+    float: left;
+}
+
+    .WxActiveMian > .TopImg img {
+        width: 100%;
+        height: 100%;
+        float: left;
+        margin-top: 42px;
+    }*/
+
+/*****--------  微信在线报名  开始  ---------*****/
+.hdhcmswhd{float:left;width:100%;height:auto;display:block;padding-bottom:50px !important;}
+.hdhcmswhd>.toptitle{float:left;width:100%;height:auto;padding:8px 0px;text-align:center;background:#2195FF;color:#fff;font-weight:600;font-size:12px;}
+.hdhcmswhd>.mainimg{float:left;width:100%;height:auto;}
+.hdhcmswhd>.mainimg>img{float:left;width:100%;height:auto;border:0px;}
+.hdhcmswhd>ul.itemlist{;margin:5px 2%;list-style-type:none;padding:0px;position:relative;float:left;background:#FFF;width:96%;border-radius:5px;border:1px solid #C9E5FF;padding-bottom:15px;}
+.hdhcmswhd>ul.itemlist>li{display:block;margin:15px 15px 0 15px;padding:0px;list-style-type:none;font-size:12px;}
+.hdhcmswhd>ul.itemlist>li>a{text-decoration:none;color:#64A7E8;}
+.hdhcmswhd>.content{margin:5px 2%;list-style-type:none;padding:0px;position:relative;float:left;background:#FFF;width:96%;border-radius:5px;border:1px solid #C9E5FF;}
+.hdhcmswhd>.content>.content{display:block;margin:10px;line-height:200%;font-size:12px;color:#5D5D5D;}
+.hdhcmswhd>.content>.content>a{color:#5D5D5D;}
+.fgl30{float:left;width:100%;height:30px;}
+.hdhsignkj{position:fixed;bottom:0px;width:100%;height:50px;background:rgba(219,219,219,0.8);text-align: center;}
+.hdhsignkj>.sign{display: inline-block;width: 30%;height:auto;padding:10px 30px;font-size:12px;font-weight:600;color:#fff;background:#0171fa;text-align:center;border-radius:5px;cursor:pointer;}
+/*****--------  参与人中员列表  ---------*****/
+.hdzsk {
+    display: block;
+    margin: 10px;
+    height: auto;
+}
+
+    .hdzsk > .hdlbk {
+        float: left;
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+        border-bottom: 1px solid #555;
+    }
+
+        .hdzsk > .hdlbk > .btx {
+            display: block;
+            float: left;
+            width: 180px;
+            height: auto;
+            text-align: center;
+        }
+
+        .hdzsk > .hdlbk > .czx {
+            display: block;
+            float: left;
+            overflow: hidden;
+            text-align: center;
+        }
+
+    .hdzsk > .hdlrk {
+        float: left;
+        display: block;
+        margin: 10px 10px;
+        background: #E6E6E6;
+    }
+
+        .hdzsk > .hdlrk > .btm {
+            padding: 10px 0px;
+        }
+
+        .hdzsk > .hdlrk > .btx {
+            display: block;
+            float: left;
+            width: 180px;
+            height: auto;
+            text-align: center;
+        }
+
+        .hdzsk > .hdlrk > .czx {
+            display: block;
+            float: left;
+            overflow: hidden;
+            text-align: center;
+        }
+
+/*****--------  大屏幕页面  ---------*****/
+.AbigAll {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    top: 0px;
+}
+
+.AfixR {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: -180px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #fff;
+    background: rgba(254, 109, 0,0.8);
+    z-index:999;
+}
+
+    .AfixR:hover {
+        right: 0px;
+    }
+
+    .AfixR > a.lj {
+        float: right;
+        display: block;
+        width: 200px !important;
+        height: auto;
+        padding: 5px 0px;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+    }
+/**浮动右上角大弹出框关闭按钮样式**/
+.tckclose {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    padding: 0px;
+    background: #980005;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    color: #fffb77;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 180%;
+    border: 4px solid #efff95;
+    cursor: pointer;
+    box-shadow: 0 0 10px #000;
+}
+/*----网页通用弹出框---------------*/
+#openDiv {
+    position: relative;
+}
+
+.hdhtck {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    top: 0px;
+    left: 0px;
+    z-index: 4;
+}
+/*****--------  微信活动大屏幕弹出框  ---------*****/
+    .hdhtck > .tcxsk {position:absolute;width:90%;overflow-y:auto;top:0;margin-left:5%;background:rgba(255,255,255,0.8);border-radius:10px;border:1px solid #0081FF;}
+
+        .hdhtck > .tcxsk > .tcbtk {
+            float: left;
+            width: 100%;
+            height: 40px;
+            background: #58ADED;
+        }
+
+            .hdhtck > .tcxsk > .tcbtk > b {
+                float: left;
+                display: block;
+                width: auto;
+                height: 20px;
+                margin: 10px 10px;
+                color: #fff;
+                font-weight: 100;
+                font-size: 14px;
+            }
+
+            .hdhtck > .tcxsk > .tcbtk > a {
+                float: right;
+                display: block;
+                width: 15px;
+                height: 15px;
+                margin: 10px 10px 0 0;
+                border-radius: 50%;
+                background: #eee;
+                color: #1C91DB;
+                border: 1px solid #f1f1f1;
+                font-size: 12px;
+                font-family: Arial;
+                text-align: center;
+                padding: 2px;
+            }
+/*****--------  微信在线报名、签到、签退页弹出框  ---------*****/
+.hdhtck > .tcbmk {position:absolute;width:90%;overflow-y:auto;top:50%;margin-top:-200px;margin-left:5%;background:rgba(255,255,255,0.8);border-radius:10px;border:1px solid #0081FF;}
+.hdhtck>.tcbmk>h4{float:left;width:100%;height:30px;margin:0px;text-align:center;padding:0px;background:#007CFF;color:#F7FFBC;}
+.hdhtck>.tcbmk>h4>span{display:block;float:left;font-size:14px;margin:5px 10px;color:#fff;}
+.hdhtck>.tcbmk>h4>a{display:block;float:right;font-size:12px;margin:5px 10px;background:#ffffff;color:#007CFF;width:20px;height:20px;border-radius:10px;text-align:center;line-height:170%;}
+.hdhtck>.tcbmk>.m{float:left;width:100%;height:370px;margin:0px;text-align:center;padding:0px;line-height:200%;font-size:12px;overflow-y:auto;}
+.hdhbmzjxx{float:left;width:96%;height:auto;margin:0 2% 10px 2%;border:1px solid #C9E5FF;background:#fff;border-radius:5px;}
+.hdhbmzjxx>.lrk{display:block;padding:10px;color:#FB4A00;}
+.hdhtck>.tcbmk>.f{float:left;width:100%;height:30px;margin:0px;text-align:center;padding:0px;line-height:200%;}
+.signkj{float:left;width:90%;min-height:100px;margin:20px 5% 5px 5%;}
+.signkj>.xsk{float:left;width:100%;height:auto;margin:10px 0 0 0;}
+.signkj>.xsk>.tp{display:block;width:150px;height:150px;margin:10px auto;}
+.signkj>.xsk>b{display:block;width:80px;height:20px;float: left;text-align:right;}
+.signkj>.xsk>div{display:block;height:20px;overflow:hidden;text-align:left;}
+.signkj>.xsk>div>input{float:left;width:90%;height:18px;padding:0px;margin:0px;border:1px solid #efefef;margin-left:5px;}
+.signkj>.xsk>.tjk{display:inline-block;margin:10px auto;background:#0F81E8;color:#fff;border-radius:3px;border:0px;padding:5px 20px;}
+/*----活动介绍---------------*/
+.hdjsk {
+    position: relative;
+    display: block;
+    width: 60%;
+    height: 80%;
+    top: 10%;
+    left: 20%;
+    background: rgba(254, 109, 0,0.6);
+    overflow: hidden;
+    overflow-y: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #323232;
+}
+
+    .hdjsk > h1 {
+        display: block;
+        margin: 10px;
+        font-size: 46px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .hdjsk > div {
+        display: block;
+        margin: 10px;
+        font-size: 26px;
+        text-align: left;
+        color: #ffba99;
+        line-height: 200%;
+    }
+
+        .hdjsk > div > p {
+            text-indent: 40px;
+            margin: 0px;
+            padding: 0px;
+            font-size: 26px;
+        }
+/********  开始抽奖页面  ***************/
+.menu_zjxcd {
+    position: absolute;
+    width: 200px;
+    height: 400px;
+    top: 50%;
+    left: -100px;
+    margin-top: -200px;
+    overflow-y: auto;
+    background: rgba(255,0,0,0.5);
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0 0 5px #969696;
+    cursor: pointer;
+    z-index:20;
+}
+
+    .menu_zjxcd:hover {
+        left: 0px;
+    }
+
+    .menu_zjxcd > a {
+        display: block;
+        margin: 5px 5px;
+        padding: 20px 0;
+        text-align: right;
+        background: #f00;
+        color: #FFD300;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+.center_list {
+    position: absolute;
+    width: 910px;
+    height: 600px;
+    left: 50%;
+    margin-left: -455px;
+    top: 50%;
+    margin-top: -300px;
+}
+
+    .center_list > h1 {
+        padding: 0px 0px;
+        font-size: 120px;
+        color: #E9060A;
+        font-weight: 900;
+        font-family: STXinwei;
+        -webkit-text-stroke: 4px #F7FFBC;
+        margin: 0px;
+        text-shadow: 0px 0px 0 #b89800, 1px -1px 0 #b39400, 2px -2px 0 #ad8f00, 3px -3px 0 #a88b00, 4px -4px 0 #a38700, 5px -5px 0 #9e8300, 6px -6px 0 #997f00, 7px -7px 0 #947a00, 8px -8px 0 #8f7600, 9px -9px 0 #8a7200, 10px -10px 0 #856e00, 11px -11px 0 #806a00, 12px -12px 0 #7a6500, 13px -13px 12px rgba(0, 0, 0, 0.55), 13px -13px 1px rgba(0, 0, 0, 0.5);
+    }
+
+    .center_list > .tp_list {
+        float: left;
+        width: 100%;
+        height: 300px;
+    }
+
+        .center_list > .tp_list > .tpk {
+            float: left;
+            width: 283px;
+            height: 283px;
+            background: rgba(255,0,0,0.5);
+            margin: 10px 0 0 10px;
+            font-size: 140px;
+            color: #F7FFBC;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 10px;
+            line-height: 200%;
+            border: 5px solid #F7FFBC;
+            overflow: hidden;
+            color: #FFD300;
+            text-shadow: 0px 0px 0 #b89800, 1px -1px 0 #b39400, 2px -2px 0 #ad8f00, 3px -3px 0 #a88b00, 4px -4px 0 #a38700, 5px -5px 0 #9e8300, 6px -6px 0 #997f00, 7px -7px 0 #947a00, 8px -8px 0 #8f7600, 9px -9px 0 #8a7200, 10px -10px 0 #856e00, 11px -11px 0 #806a00, 12px -12px 0 #7a6500, 13px -13px 12px rgba(0, 0, 0, 0.55), 13px -13px 1px rgba(0, 0, 0, 0.5);
+        }
+
+            .center_list > .tp_list > .tpk > img {
+                float: left;
+                width: 283px;
+                height: 283px;
+            }
+
+    .center_list > .an_str {
+        float: left;
+        width: 100%;
+        height: 90px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+        .center_list > .an_str > .kscj {
+            display: block;
+            margin: auto;
+            width: auto;
+            height: auto;
+            padding: 10px 50px;
+            font-size: 50px;
+            background: #F7FFBC;
+            box-shadow: 0 0 5px #E9060A;
+            border-radius: 10px;
+            color: #E9060A;
+        }
+
+        .center_list > .an_str > .xydz {
+            display: block;
+            margin: auto;
+            width: auto;
+            height: auto;
+            padding: 10px 50px;
+            font-size: 50px;
+            background: #F7FFBC;
+            box-shadow: 0 0 5px #E9060A;
+            border-radius: 10px;
+            color: #E9060A;
+            display: none;
+        }
+
+    .center_list > .wz_cjs {
+        float: left;
+        width: 100%;
+        height: auto;
+        font-size: 40px;
+        font-weight: 900;
+        color: #F7FFBC;
+        padding: 10px 0px;
+        text-align: center;
+    }
+/***     查看抽奖项     ***/
+.table {
+    float: left;
+    width: 100%;
+    padding: 5px;
+    margin: 0px;
+}
+
+    .table .title {
+        background: #e8e567;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+        .table .title td {
+            background: #e8e567;
+            padding: 10px 0px;
+            text-align: center;
+        }
+
+            .table .title td b {
+                color: #E9060A;
+            }
+
+    .table .content {
+        font-size: 14px;
+        text-align: center;
+        padding: 10px 0;
+        background: #EAEAB4;
+        height: auto;
+    }
+
+        .table .content:hover {
+            background: #efefef;
+            height: auto;
+        }
+
+        .table .content td {
+            padding: 10px 0px;
+            text-align: center;
+            color: #323232;
+        }
+/***     抽奖结果展示     ***/
+.HdhCjjg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(254, 109, 0,0.5);
+    margin: 0;
+    z-index: 999;
+    display: none;
+}
+
+    .HdhCjjg > .l {
+        float: left;
+        width: 220px;
+        height: 100%;
+        background: rgba(242,0,111,0.4);
+        font-size: 20px;
+    }
+
+        .HdhCjjg > .l > span {
+            display: block;
+            height: auto;
+            padding: 10px 10px 0 10px;
+            text-align: left;
+            color: #fff;
+        }
+
+        .HdhCjjg > .l > a {
+            display: block;
+            margin: 10px 20px;
+            height: auto;
+            padding: 10px 50px;
+            font-size: 20px;
+            background: #F7FFBC;
+            box-shadow: 0 0 5px #E9060A;
+            border-radius: 10px;
+            color: #E9060A;
+        }
+
+    .HdhCjjg > .r {
+        display: block;
+        height: 100%;
+        overflow: hidden;
+        background: rgba(254, 109, 0,0.4);
+    }
+
+        .HdhCjjg > .r > .tpk {
+            display: block;
+            float: left;
+            width: 180px;
+            height: 210px;
+            overflow: hidden;
+            margin: 10px 0 0 10px;
+        }
+
+            .HdhCjjg > .r > .tpk > img {
+                float: left;
+                width: 180px;
+                height: 180px;
+            }
+
+            .HdhCjjg > .r > .tpk > span {
+                display: block;
+                text-align: center;
+                font-size: 20px;
+                padding: 5px 0;
+                font-weight: 600;
+                color: #FFD300;
+            }
+/***     大屏幕中奖详情列表框     ***/
+.HdhZjlbk {
+    display: block;
+    width: 90%;
+    height: auto;
+    margin: 20px 5% 0 5%;
+    border-radius: 5px;
+    background: #980005;
+    height: auto;
+}
+
+    .HdhZjlbk > .title {
+        float: left;
+        width: 100%;
+        height: auto;
+        padding: 5px 0px;
+        margin:20px 0 0 0;
+        text-indent: 20px;
+        font-size: 40px;
+        text-align: left;
+        font-weight: 900;
+        text-transform: uppercase;
+        border-radius: 10px;
+        line-height: 200%;
+        border: 5px solid #F7FFBC;
+        overflow: hidden;
+        color: #fff;
+        text-shadow: 0px 0px 0 #b89800, 1px -1px 0 #b39400, 2px -2px 0 #ad8f00, 3px -3px 0 #a88b00, 4px -4px 0 #a38700, 5px -5px 0 #9e8300, 6px -6px 0 #997f00, 7px -7px 0 #947a00, 8px -8px 0 #8f7600, 9px -9px 0 #8a7200, 10px -10px 0 #856e00, 11px -11px 0 #806a00, 12px -12px 0 #7a6500, 13px -13px 12px rgba(0, 0, 0, 0.55), 13px -13px 1px rgba(0, 0, 0, 0.5);
+    }
+    .HdhZjlbk > .content {
+        float: left;
+        width: 100%;
+        height: auto;
+        padding: 5px 0px;
+        margin:20px 0 0 0;
+    }
+            .HdhZjlbk > .content> .tpk {
+            display: block;
+            float: left;
+            width: 180px;
+            height: 210px;
+            overflow: hidden;
+            margin: 10px 0 0 10px;
+        }
+
+            .HdhZjlbk > .content> .tpk > img {
+                float: left;
+                width: 180px;
+                height: 180px;
+            }
+
+            .HdhZjlbk > .content> .tpk > span {
+                display: block;
+                text-align: center;
+                font-size: 20px;
+                padding: 5px 0;
+                font-weight: 600;
+                color: #FFD300;
+            }
+/***     微报名人员列表     ***/
+.Wbmrylb{float: left;width: 98%;height: auto;margin: 10px 1%;font-size: 12px;padding: 30px 0px;}
+.Wbmrylb>.bt{position: fixed;width: 100%;height: 30px;top: 0px;background: #21a0ff;color: #fff;line-height: 250%;text-align: center;font-weight: 600;border-top:4px solid #DACCCD;}
+.Wbmrylb>.bt>.one{display:block;float:left;width:50px;height:30px;}
+.Wbmrylb>.bt>.two{display:block;float:left;width:50%;height:30px;}
+.Wbmrylb>.bt>.thr{display:block;height:30px;overflow:hidden}
+.Wbmrylb>.jb{float:left;width:100%;height:20px;text-align:left;line-height:150%;margin:5px 0 2px 0;background:#E8F7FF;text-indent:5px;}
+.Wbmrylb>.lb{float:left;width:100%;height:85px;text-align:left;border-bottom:1px solid #bbb;padding:0px 0px 5px 0px;color:#666;}
+.Wbmrylb>.lb>.one{display:block;float:left;width:50px;height:60px;margin-right:2px;}
+.Wbmrylb>.lb>.one>img{display:block;float:left;width:50px;height:60px;border:0px;}
+.Wbmrylb>.lb>.two{display:block;float:left;width:50%;height:60px;margin-right:2px;padding:5px 0 0 5px;}
+.Wbmrylb>.lb>.thr{display:block;height:60px;overflow:hidden;padding:5px 0 0 5px;}
+.Wbmrylb>.fy{position: fixed;width: 100%;height: auto;bottom: 2px;text-align: center;font-size: 12px;padding: 5px 0;color: #666;background:#21A0FF;border-top:1px solid #E8F7FF;color:#fff;border-bottom-left-radius: 8px;border-bottom-right-radius: 8px;}
+.Wbmrylb>.fy>a{display:inline-block;padding:2px 5px;text-decoration:none;color:#333;color:#fff;}

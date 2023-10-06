@@ -1,0 +1,49 @@
+﻿ <!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{hedonghua:sitetitle}[sitetitle]-{/hedonghua:sitetitle}</title>
+<meta name="keywords" content="DemoHdhCms" />
+<meta name="description" content="DemoHdhCms" />
+<link rel="stylesheet" type="text/css" href="{hedonghua:siteml}{hedonghua:sitemb}/hdhcss.css" />
+<script type="text/javascript" charset="utf-8" src="{hedonghua:siteml}{hedonghua:sitemb}js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+
+<div class="hdhtlk"><div class="hdhnkj">
+ <div class="dl">
+  <span>{hedonghua:mobileweburl}网站链接：</span>
+  <a href="#">HDHCMS</a>
+  <a href="#">散文随笔</a>
+{hedonghua:specialmenu  menu=专题栏目ID  class=classaa  checked=classed }
+<a href="[specialmenu:menuhref]" [specialmenu:class]>
+[specialmenu:menuname]
+</a>
+{/hedonghua:specialmenu}
+ </div>
+ <div class="dr">
+  <a href="{hedonghua:memberpath}">登录</a>
+  <a href="#">注册</a>
+  <a href="#">联系我们</a>
+ </div>
+</div></div>
+<div class="hdhlogokj"><div class="hdhnkj">
+ <a class="logo"><img src="{hedonghua:sitelogo}"  onerror="this.src='{hedonghua:siteml}images/default.png';"></a>
+ <ul>
+ <li><a href="{hedonghua:indexlink}">首页</a><li>
+{hedonghua:mainmenu}
+<li>
+<a href="[mainmenu:href]">[mainmenu:title]</a>
+</li>
+{/hedonghua:mainmenu}
+ </ul>
+ <div class="skk">
+<form action=?action=ok method="post">
+<input type="text" value="" name="DonforGjc" class="ssWzk" placeholder="请输入关键词">
+<input type="submit" value="搜一下" name="DonforTjk" class="ssTjk">
+<input type="hidden" value="3" name="Get" class="Tjk">
+</form>
+ </div>
+</div></div>
+
+

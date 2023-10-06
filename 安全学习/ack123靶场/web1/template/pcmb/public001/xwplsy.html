@@ -1,0 +1,77 @@
+﻿{templatefile:[top.html]}
+<div class="hdhzkj">
+{templatefile:[_daohang.html]}
+ <div class="hdhwkj">
+  <div class="l">
+  <script type="text/javascript" charset="utf-8" src="{hedonghua:siteml}{hedonghua:sitemb}js/lbtjs.js"></script>
+<div id="xxx"  >
+     <script>
+     var box =new PPTBox();
+     box.width = 455; //宽度
+     box.height = 340;//高度
+     box.autoplayer = 3;//自动播放间隔时间
+{hedonghua:content column={hedonghua:dyj} num=5 photonews sort=desc order=desc}
+   box.add({"url":"[content:donfortp]","href":"[content:outlink]","title":"[content:donformc]"})
+{/hedonghua:content}
+     box.show();
+    </script>
+</div>  
+  </div>
+  <div class="c">
+ 
+{hedonghua:content column=1 num=4  sort=desc order=donforsj}
+    <a href="[content:outlink]" class="gdxw">[content:donformc]</a>
+{/hedonghua:content}
+   <ul class="xskj">
+{hedonghua:content column=3 num=9   sort=desc order=donforsj}
+     <li><a href="[content:outlink]">[content:donformc]</a><span>[content:outsjyyr]</span></li>
+{/hedonghua:content}
+   </ul>
+  </div>
+  <div class="r">
+{hedonghua:content column=3 num=4 photonews sort=desc order=donforsj}
+   <div class="nkj">
+    <img src="[content:donfortp]" onerror="this.src='{hedonghua:siteml}images/default.png';" />
+    <a href="[content:outlink]">[content:donformc]</a>
+    <span>[content:outsjyyr]</span>
+   </div>
+{/hedonghua:content}
+  </div>
+ </div>
+ 
+ 
+ 
+{hedonghua:webcatalog}
+ <div class="hdhwkj">
+  <div class="bt">
+  <h2>[hdhcatalog:title]</h2>
+  <p>
+   {hedonghua:thrmenu menu=[hdhcatalog:cataid] class=class checked=classed}
+    <a href="[thrmenu:href]" [thrmenu:class]>[thrmenu:title]</a>
+   {/hedonghua:thrmenu}
+   <A title="[hdhcatalog:title]" href="[hdhcatalog:href]">更多+</A>
+  </p>
+  </div>
+  <ul class="dl">
+ {hedonghua:cataloglist photonews num=6}
+   <li>
+   <a href="[cataloglist:link]">
+   <img src="[cataloglist:donfortp]" onerror="this.src='{hedonghua:siteml}images/default.png';" />
+   <h3>[cataloglist:donformc]</h3>
+   <p>[cataloglist:donforzy]</p>
+   <span>[cataloglist:donforsj]<span>
+   </a>
+   </li>
+ {/hedonghua:cataloglist}
+  </ul>
+  <ul class="dr">
+  
+{hedonghua:content bigclass=[cataloglist:cataid] num=9 sort=desc order=donforsj}
+   <li class="hdh[content:1outcountjsq]"><span class="span[content:1outcountjsq]">[content:1outcountjsq]</span><a href="[content:outlink]">[content:donformc]</a></li>
+{/hedonghua:content}
+  </ul>
+ </div> 
+ {/hedonghua:webcatalog}
+ 
+</div>
+{templatefile:[bottom.html]}

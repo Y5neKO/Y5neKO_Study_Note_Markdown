@@ -1,0 +1,47 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
+die() {
+  echo >&2 $1
+  exit 1
+}
+
+usage() {
+  echo -e >&2 "Usage: $0 deb output"
+  exit 2
+}
+
+extract() {
+    local deb=`readlink -f $1`
+    local out=$2
+    if [ ! -d "$out" ]; then
+        mkdir $out
+    fi
+    local tmp=`mktemp -d`
+
+    cd $tmp
+    ar xv $deb || die "ar failed"
+    if [ -f "data.tar.zst" ];then
+        tar -I zstd -xf data.tar.* || die "tar failed"
+    else
+        tar xf data.tar.* || die "tar failed"
+    fi
+    cd -
+
+    cp -rP $tmp/lib/*/* $out 2>/dev/null \
+      || cp -rP $tmp/lib32/* $out 2>/dev/null \
+      || cp -rP $tmp/usr/lib/debug/lib/*/* $out 2>/dev/null \
+      || cp -rP $tmp/usr/lib/debug/lib32/* $out 2>/dev/null \
+      || cp -rP $tmp/usr/lib/debug/.build-id $out 2>/dev/null \
+      || die "Failed to save. Check it manually $tmp"
+
+    rm -rf $tmp
+}
+
+if [[ $# -ne 2 ]]; then
+    usage
+fi
+
+extract "$1" "$2"
+
+
