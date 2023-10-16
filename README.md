@@ -13,7 +13,7 @@
 
 - 2023/10/11
 
-*PS：继续肝约束委派！*
+*PS：前两天摸了两天，搞了一下其他工具的环境，今天回来把资源约束搞定了，最后搞提权利用，配iis配了半天没搞好（恼），明天继续搞 :<*
 
 **目录更新日志**
 
@@ -51,7 +51,7 @@
 
 - [javaweb-sec-master](./javaweb-sec-master)
 
-> 对https://github.com/javaweb-sec/javaweb-sec项目进行的一个本地离线备份，个人觉得写的十分甚至有九分不错（赞赏），算是本人的Java安全启蒙知识框架
+> 对[https://github.com/javaweb-sec/javaweb-sec](https://github.com/javaweb-sec/javaweb-sec)项目进行的一个本地离线备份，个人觉得写的十分甚至有九分不错（赞赏），算是本人的Java安全启蒙知识框架
 
 - [Java安全通用](./Java安全通用)
 
