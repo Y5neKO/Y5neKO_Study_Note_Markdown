@@ -1,0 +1,22 @@
+12-Jan-2024 17:28:20.356 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+12-Jan-2024 17:28:20.356 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+12-Jan-2024 17:28:20.356 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@b359a6f')
+12-Jan-2024 17:28:20.951 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Shiro environment
+12-Jan-2024 17:29:16.278 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+12-Jan-2024 17:29:16.278 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+12-Jan-2024 17:29:16.278 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@589c8f40')
+12-Jan-2024 17:29:16.622 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Shiro environment
+12-Jan-2024 17:29:37.061 信息 [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+12-Jan-2024 17:29:37.061 信息 [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+12-Jan-2024 17:29:37.061 信息 [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Cleaning up Shiro Environment
+12-Jan-2024 17:31:10.335 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+12-Jan-2024 17:31:10.335 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+12-Jan-2024 17:31:10.335 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2068f3b9')
+12-Jan-2024 17:31:10.678 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Shiro environment
+12-Jan-2024 17:31:56.399 信息 [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+12-Jan-2024 17:31:56.399 信息 [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+12-Jan-2024 17:31:56.414 信息 [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Cleaning up Shiro Environment
+12-Jan-2024 17:31:59.112 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+12-Jan-2024 17:31:59.112 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+12-Jan-2024 17:31:59.113 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@4b849d9a')
+12-Jan-2024 17:31:59.468 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Shiro environment
