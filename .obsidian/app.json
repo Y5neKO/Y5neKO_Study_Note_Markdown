@@ -1,0 +1,9 @@
+{
+  "attachmentFolderPath": "./image",
+  "showLineNumber": false,
+  "readableLineLength": true,
+  "showInlineTitle": false,
+  "livePreview": true,
+  "strictLineBreaks": false,
+  "rightToLeft": false
+}

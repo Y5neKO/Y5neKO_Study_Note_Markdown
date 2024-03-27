@@ -1,0 +1,179 @@
+{
+  "main": {
+    "id": "b5d9642031edde78",
+    "type": "split",
+    "children": [
+      {
+        "id": "94f7529db04c2ed4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3bcafae824bbc0df",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "逆向/汇编语言.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a1063bd58db3b3cc",
+    "type": "split",
+    "children": [
+      {
+        "id": "6e58ff52df4f55d3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f9ce8d7ebbb07710",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1edfefa5ccaba7ed",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4eda78854f78e603",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "7e3a98022743b5ab",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "逆向/汇编语言.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "28c401d2fae99183",
+    "type": "split",
+    "children": [
+      {
+        "id": "8d15ece7fa9bc8a9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "58e9766a4e21d050",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "逆向/汇编语言.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d842a45612900752",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "逆向/汇编语言.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "767f8731f543c046",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "obsidian42-brat:BRAT": false
+    }
+  },
+  "active": "3bcafae824bbc0df",
+  "lastOpenFiles": [
+    "逆向/image/Pasted image 20240327173312.png",
+    "逆向/image/Pasted image 20240327173016.png",
+    "逆向/image/Pasted image 20240327172825.png",
+    "逆向/image/Pasted image 20240327172626.png",
+    "逆向/image/Pasted image 20240327172317.png",
+    "逆向/image/Pasted image 20240327171724.png",
+    "逆向/image/Pasted image 20240327165452.png",
+    "逆向/image/Pasted image 20240327164950.png",
+    "逆向/image/Pasted image 20240327164630.png",
+    "逆向/image/Pasted image 20240327162713.png",
+    "逆向/image/Pasted image 20240327162122.png",
+    "逆向/a.exe.til",
+    "逆向/a.exe.id2",
+    "逆向/a.exe.nam",
+    "逆向/a.exe.id1",
+    "逆向/a.exe.id0",
+    "逆向/a.exe",
+    "逆向/example.s",
+    "逆向/example.c",
+    "Java安全通用/Java安全.md",
+    "逆向/汇编语言.md",
+    "逆向/image",
+    "README.md",
+    "1编曲/编曲学习.md"
+  ]
+}
