@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "94f7529db04c2ed4",
+        "id": "9bf5cfc2388ba86e",
         "type": "tabs",
         "children": [
           {
-            "id": "3bcafae824bbc0df",
+            "id": "3e777c5418c58c29",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "逆向/汇编语言.md",
+                "file": "Java_Study/JavaStudy.md",
                 "mode": "source",
                 "source": false
               }
@@ -71,7 +71,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "逆向/汇编语言.md"
+                "file": "Java_Study/JavaStudy.md"
               }
             }
           }
@@ -80,7 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 239.5
   },
   "right": {
     "id": "28c401d2fae99183",
@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "逆向/汇编语言.md",
+                "file": "Java_Study/JavaStudy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "逆向/汇编语言.md",
+                "file": "Java_Study/JavaStudy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,6 +140,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "remotely-save:Remotely Save": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -149,30 +150,39 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "3bcafae824bbc0df",
+  "active": "3e777c5418c58c29",
   "lastOpenFiles": [
-    "逆向/image/Pasted image 20240327173312.png",
-    "逆向/image/Pasted image 20240327173016.png",
-    "逆向/image/Pasted image 20240327172825.png",
-    "逆向/image/Pasted image 20240327172626.png",
-    "逆向/image/Pasted image 20240327172317.png",
-    "逆向/image/Pasted image 20240327171724.png",
-    "逆向/image/Pasted image 20240327165452.png",
-    "逆向/image/Pasted image 20240327164950.png",
-    "逆向/image/Pasted image 20240327164630.png",
-    "逆向/image/Pasted image 20240327162713.png",
-    "逆向/image/Pasted image 20240327162122.png",
-    "逆向/a.exe.til",
-    "逆向/a.exe.id2",
-    "逆向/a.exe.nam",
-    "逆向/a.exe.id1",
-    "逆向/a.exe.id0",
-    "逆向/a.exe",
-    "逆向/example.s",
-    "逆向/example.c",
-    "Java安全通用/Java安全.md",
+    "Java_Study/image/Pasted image 20240407170714.png",
+    "Java_Study/image/Pasted image 20240407170638.png",
+    "Java_Study/image/Pasted image 20240407165619.png",
+    "Java_Study/image/Pasted image 20240407105952.png",
+    "Java_Study/image/Pasted image 20240407104618.png",
+    "Java_Study/image/Pasted image 20240407102431.png",
+    "Java_Study/image/Pasted image 20240407102328.png",
+    "Java_Study/image/Pasted image 20240407095801.png",
+    "Java_Study/image",
+    "Java学习/Java学习.md",
+    "Java_Study/JavaStudy.md",
+    "Java_Study",
+    "逆向/IDA.md",
+    "逆向/Study/stack_frame/a.out.til",
+    "逆向/Study/stack_frame/a.out.id2",
+    "逆向/Study/stack_frame/a.out.nam",
+    "逆向/Study/stack_frame/a.out.id1",
+    "逆向/Study/stack_frame/a.out.id0",
+    "逆向/Study/example_if/a.out.til",
+    "逆向/Study/example_if/a.out.id2",
+    "逆向/Study/example_if/a.out.nam",
     "逆向/汇编语言.md",
-    "逆向/image",
+    "CTF-Pwn/pwn工具.md",
+    "CTF-Pwn/pwn解题思路.md",
+    "逆向/image/Pasted image 20240329184027.png",
+    "逆向/image/Pasted image 20240329181906.png",
+    "逆向/image/Pasted image 20240329181641.png",
+    "逆向/数据结构.md",
+    "逆向/逆向刷题.md",
+    "未命名.md",
+    "Java安全通用/Java安全.md",
     "README.md",
     "1编曲/编曲学习.md"
   ]
