@@ -505,3 +505,151 @@ class Student extends Person {
 ```
 **结论：如果父类没有默认的构造方法，子类就必须显式调用`super()`并给出参数以便让编译器定位到父类的一个合适的构造方法。**
 **这里还顺带引出了另一个问题：即子类`不会继承`任何父类的构造方法。子类默认的构造方法是编译器自动生成的，不是继承的。**
+### final
+final表示最终的意思，也就表示不能被继承。
+![[Pasted image 20240413140147.png]]
+### 阻止继承
+正常情况下，只要某个class没有`final`修饰符，那么任何类都可以从该class继承。
+从Java 15开始，允许使用`sealed`修饰class，并通过`permits`明确写出能够从该class继承的子类名称。
+例如，定义一个`Shape`类：
+```java
+public sealed class Shape permits Rect, Circle, Triangle {
+    ...
+}
+```
+上述`Shape`类就是一个`sealed`类，它只允许指定的3个类继承它。如果写：
+```java
+public final class Rect extends Shape {...}
+```
+是没问题的，因为`Rect`出现在`Shape`的`permits`列表中。但是，如果定义一个`Ellipse`就会报错：
+```java
+public final class Ellipse extends Shape {...}
+// Compile error: class is not allowed to extend sealed class: Shape
+```
+原因是`Ellipse`并未出现在`Shape`的`permits`列表中。这种`sealed`类主要用于一些框架，防止继承被滥用。
+`sealed`类在Java 15中目前是预览状态，要启用它，必须使用参数`--enable-preview`和`--source 15`。
+### 向上转型
+如果一个引用变量的类型是`Student`，那么它可以指向一个`Student`类型的实例：
+```java
+Student s = new Student();
+```
+如果一个引用类型的变量是`Person`，那么它可以指向一个`Person`类型的实例：
+```java
+Person p = new Person();
+```
+现在问题来了：如果`Student`是从`Person`继承下来的，那么，一个引用类型为`Person`的变量，能否指向`Student`类型的实例？
+```java
+Person p = new Student(); // ???
+```
+![[Pasted image 20240413140908.png]]
+测试一下就可以发现，这种指向是允许的！
+这是因为`Student`继承自`Person`，因此，它拥有`Person`的全部功能。`Person`类型的变量，如果指向`Student`类型的实例，对它进行操作，是没有问题的！
+这种把一个子类类型安全地变为父类类型的赋值，被称为向上转型（upcasting）。
+向上转型实际上是把一个子类型安全地变为**更加抽象的父类型**：
+> 抽象：更概括，例如Person
+> 具体：更准确，例如Student
+
+```java
+Student s = new Student();
+Person p = s; // upcasting, ok
+Object o1 = p; // upcasting, ok
+Object o2 = s; // upcasting, ok
+```
+注意到继承树是`Student > Person > Object`，所以，可以把`Student`类型转型为`Person`，或者更高层次的`Object`。
+### 向下转型
+和向上转型相反，如果把一个父类类型强制转型为子类类型，就是向下转型（downcasting）。例如：
+```java
+Person p1 = new Student(); // upcasting, ok
+Person p2 = new Person();
+Student s1 = (Student) p1; // ok
+Student s2 = (Student) p2; // runtime error! ClassCastException!
+```
+![[Pasted image 20240413141610.png]]
+如果测试上面的代码，可以发现：
+`Person`类型`p1`实际指向`Student`实例，`Person`类型变量`p2`实际指向`Person`实例。在向下转型的时候，把`p1`转型为`Student`会成功，因为`p1`确实指向`Student`实例，把`p2`转型为`Student`会失败，因为`p2`的实际类型是`Person`，不能把父类变为子类，因为子类功能比父类多，多的功能无法凭空变出来。
+因此，向下转型很可能会失败。失败的时候，Java虚拟机会报`ClassCastException`。
+#### instanceof 
+为了避免向下转型出错，Java提供了`instanceof`操作符，可以先判断一个实例究竟是不是某种类型：
+![[Pasted image 20240413143326.png]]
+`instanceof`实际上判断一个变量所指向的实例是否是指定类型，或者这个类型的子类。如果一个引用变量为`null`，那么对任何`instanceof`的判断都为`false`。
+利用`instanceof`，在向下转型前可以先判断：
+```java
+Object obj = "hello";
+if (obj instanceof String) {
+    String s = (String) obj;
+    System.out.println(s.toUpperCase());
+}
+```
+从Java 14开始，判断`instanceof`后，可以直接转型为指定变量，避免再次强制转型。例如：
+```java
+public class Main {
+    public static void main(String[] args) {
+        Object obj = "hello";
+        if (obj instanceof String s) {
+            // 可以直接使用变量s:
+            System.out.println(s.toUpperCase());
+        }
+    }
+}
+```
+### 区分继承和组合
+在使用继承时，我们要注意逻辑一致性。
+考察下面的`Book`类：
+```java
+class Book {
+    protected String name;
+    public String getName() {...}
+    public void setName(String name) {...}
+}
+```
+这个`Book`类也有`name`字段，那么，我们能不能让`Student`继承自`Book`呢？
+```java
+class Student extends Book {
+    protected int score;
+}
+```
+显然，从逻辑上讲，这是不合理的，`Student`不应该从`Book`继承，而应该从`Person`继承。
+究其原因，是因为`Student`是`Person`的一种，它们是is关系，而`Student`并不是`Book`。实际上`Student`和`Book`的关系是has关系。
+具有has关系不应该使用继承，而是使用组合，即`Student`可以持有一个`Book`实例：
+```java
+class Student extends Person {
+    protected Book book;
+    protected int score;
+}
+```
+因此，继承是is关系，组合是has关系。
+## 多态
+在继承关系中，子类如果定义了一个与父类方法签名完全相同的方法，被称为覆写（Override）。
+例如，在`Person`类中，我们定义了`run()`方法：
+```java
+class Person {
+    public void run() {
+        System.out.println("Person.run");
+    }
+}
+```
+在子类`Student`中，覆写这个`run()`方法：
+```java
+class Student extends Person {
+    @Override
+    public void run() {
+        System.out.println("Student.run");
+    }
+}
+```
+![[Pasted image 20240413153239.png]]
+Override和Overload不同的是，如果方法签名不同，就是Overload，Overload方法是一个新方法；如果方法签名相同，并且返回值也相同，就是`Override`。
+>  注意：方法名相同，方法参数相同，但方法返回值不同，也是不同的方法。在Java程序中，出现这种情况，编译器会报错。
+
+```java
+class Person {
+    public void run() { … }
+}
+
+class Student extends Person {
+    // 不是Override，因为参数不同:
+    public void run(String s) { … }
+    // 不是Override，因为返回值不同:
+    public int run() { … }
+}
+```
