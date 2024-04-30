@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Java_Study/JavaStudy.md",
+                "file": "JavaFX学习/JavaFX.md",
                 "mode": "source",
                 "source": false
               }
@@ -71,11 +71,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Java_Study/JavaStudy.md"
+                "file": "JavaFX学习/JavaFX.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -95,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java_Study/JavaStudy.md",
+                "file": "JavaFX学习/JavaFX.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Java_Study/JavaStudy.md",
+                "file": "JavaFX学习/JavaFX.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,20 +152,22 @@
   },
   "active": "3e777c5418c58c29",
   "lastOpenFiles": [
-    "Java_Study/image/Pasted image 20240413153239.png",
-    "Java_Study/image/Pasted image 20240413143326.png",
-    "Java_Study/image/Pasted image 20240413141610.png",
-    "Java_Study/image/Pasted image 20240413140908.png",
-    "Java_Study/image/Pasted image 20240413140732.png",
-    "Java_Study/image/Pasted image 20240413140730 1.png",
-    "Java_Study/image/Pasted image 20240413140730.png",
-    "Java_Study/image/Pasted image 20240413140147.png",
-    "Java_Study/image/Pasted image 20240413140123.png",
-    "Java_Study/image/Pasted image 20240407170714.png",
-    "Java_Study/image/Pasted image 20240407170638.png",
+    "JavaFX学习/image/Pasted image 20240430182725.png",
+    "JavaFX学习/image/Pasted image 20240430181851.png",
+    "JavaFX学习/image/Pasted image 20240430170905.png",
+    "JavaFX学习/image/Pasted image 20240430163242.png",
+    "JavaFX学习/image/Pasted image 20240430110615.png",
+    "JavaFX学习/image/Pasted image 20240430110534.png",
+    "JavaFX学习/image/Pasted image 20240430093300.png",
+    "JavaFX学习/image/Pasted image 20240429225929.png",
+    "JavaFX学习/image/Pasted image 20240429225204.png",
+    "JavaFX学习/image/Pasted image 20240429225153.png",
+    "JavaFX学习/image/Pasted image 20240429224918.png",
+    "JavaFX学习/image",
+    "Java_Study/JavaStudy.md",
+    "JavaFX学习/JavaFX.md",
     "Java_Study/image",
     "Java学习/Java学习.md",
-    "Java_Study/JavaStudy.md",
     "Java_Study",
     "逆向/IDA.md",
     "逆向/Study/stack_frame/a.out.til",
@@ -174,7 +177,6 @@
     "逆向/Study/stack_frame/a.out.id0",
     "逆向/Study/example_if/a.out.til",
     "逆向/Study/example_if/a.out.id2",
-    "逆向/Study/example_if/a.out.nam",
     "逆向/汇编语言.md",
     "CTF-Pwn/pwn工具.md",
     "CTF-Pwn/pwn解题思路.md",
