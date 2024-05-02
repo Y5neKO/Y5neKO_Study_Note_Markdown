@@ -1,4 +1,3 @@
-
 # 环境准备
 下载对应版本JavaFX，解压出来如下：
 ![[Pasted image 20240429164508.png]]
@@ -1218,3 +1217,1280 @@ vbox.getChildren().addAll(
 对齐是告知容器将控件定位在何处的属性。 topControls将对齐设置为BOTTOM_LEFT。 topRightControls将对齐设置为BOTTOM_RIGHT。 “BOTTOM”确保文本“Refresh”的基线与文本“Sign Out”的基线匹配。
 为了使退出`Hyperlink`在屏幕变宽时向右移动，需要`Priority.ALWAYS`。 这是一个提示JavaFX扩大topRightControls。 否则，topControls将保留空间，topRightControls将显示在左侧。 注销`Hyperlink`仍然是右对齐的，但在一个更窄的容器中。
 请注意，`setHgrow()`是一个静态方法，既不在topControls `HBox`上调用，也不在其自身topRightControls上调用。 这是JavaFX API的一个方面，可能会引起混淆，因为大多数API都是通过对象上的setter来设置属性的。
+```java
+topControls.setAlignment( Pos.BOTTOM_LEFT );
+
+HBox.setHgrow(topRightControls, Priority.ALWAYS );
+topRightControls.setAlignment( Pos.BOTTOM_RIGHT );
+```
+关闭按钮被包装在HBox中，并使用BOTTOM_RIGHT优先级定位。
+```java
+bottomControls.setAlignment(Pos.BOTTOM_RIGHT );
+```
+### Vgrow
+由于最外面的容器是`VBox`，所以当窗口变宽时，子容器`TableView`将扩展以占用额外的水平空间。 但是，垂直移动窗口将在屏幕底部产生间隙。 `VBox`不会自动调整其任何子项的大小。 与topRightControls`HBox`一样，可以设置增长指示器。 在`HBox`的情况下，这是一个水平方向的递归指令setHgrow（）。 对于`TableView`容器`VBox`，这将是setVgrow（）。
+```java
+VBox.setVgrow( tblCustomers, Priority.ALWAYS );
+```
+### Margin
+有几种方法可以分隔UI控件。 本文在几个容器上使用margin属性在控件周围添加空白。 这些是单独设置的，而不是在`VBox`上使用间距，以便分隔符将跨越整个宽度。
+```java
+VBox.setMargin( topControls, new Insets(10.0d) );
+VBox.setMargin( tblCustomers, new Insets(0.0d, 10.0d, 10.0d, 10.0d) );
+VBox.setMargin( bottomControls, new Insets(10.0d) );
+```
+tblCustomers使用的`Insets`省略了任何顶部间距，以保持间距均匀。 JavaFX不像网页设计中那样合并空白。 如果将`TableView`的顶部Inset设置为10.0d，则顶部控件和`TableView`之间的距离将是任何其他控件之间距离的两倍。
+请注意，这些都是静态方法，如`Priority`。
+### 选择合适的容器
+JavaFX布局的哲学与Swing的哲学相同。 为手头的任务选择合适的容器。 本文介绍了两个最通用的容器：`VBox`和`HBox`。 通过设置alignment、hgrow和vgrow等属性，您可以通过嵌套构建极其复杂的布局。 这些是我使用最多的容器，而且通常是我唯一需要的容器。
+### 完整代码
+`Customer.java`
+```java
+package com.y5neko.layout;  
+  
+public class Customer {  
+  
+    private String firstName;  
+    private String lastName;  
+  
+    public Customer(String firstName,  
+                    String lastName) {  
+        this.firstName = firstName;  
+        this.lastName = lastName;  
+    }  
+  
+    public String getFirstName() {  
+        return firstName;  
+    }  
+  
+    public void setFirstName(String firstName) {  
+        this.firstName = firstName;  
+    }  
+  
+    public String getLastName() {  
+        return lastName;  
+    }  
+    public void setLastName(String lastName) {  
+        this.lastName = lastName;  
+    }  
+}
+```
+`VBoxAndHBoxApp.java`
+```java
+package com.y5neko.layout;  
+  
+import javafx.application.Application;  
+import javafx.geometry.Insets;  
+import javafx.geometry.Pos;  
+import javafx.scene.Scene;  
+import javafx.scene.control.*;  
+import javafx.scene.control.cell.PropertyValueFactory;  
+import javafx.scene.layout.HBox;  
+import javafx.scene.layout.Priority;  
+import javafx.stage.Stage;  
+import javafx.scene.layout.VBox;  
+  
+public class VBoxAndHBoxApp extends Application {  
+  
+    @Override  
+    public void start(Stage primaryStage) throws Exception {  
+  
+        VBox vbox = new VBox();  
+  
+        HBox topControls = new HBox();  
+        VBox.setMargin( topControls, new Insets(10.0d) );  
+        topControls.setAlignment( Pos.BOTTOM_LEFT );  
+  
+        Button btnRefresh = new Button("刷新");  
+        btnRefresh.setOnAction( e -> {  
+            System.out.println("点击刷新");  
+        });  
+  
+        HBox topRightControls = new HBox();  
+        HBox.setHgrow(topRightControls, Priority.ALWAYS );  
+        topRightControls.setAlignment( Pos.BOTTOM_RIGHT );  
+        Hyperlink signOutLink = new Hyperlink("退出");  
+        signOutLink.setOnAction( e -> {  
+            System.out.println("点击退出");  
+        });  
+        topRightControls.getChildren().add( signOutLink );  
+  
+        topControls.getChildren().addAll( btnRefresh, topRightControls );  
+  
+        TableView<Customer> tblCustomers = new TableView<>();  
+        tblCustomers.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);  
+        VBox.setMargin( tblCustomers, new Insets(0.0d, 10.0d, 10.0d, 10.0d) );  
+        // setVgrow可以自动调整Vbox子项的大小,防止大小变动时出现空隙  
+        VBox.setVgrow( tblCustomers, Priority.ALWAYS );  
+  
+        TableColumn<Customer, String> lastNameCol = new TableColumn<>("Last Name");  
+        lastNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));  
+  
+        TableColumn<Customer, String> firstNameCol = new TableColumn<>("First Name");  
+        firstNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));  
+  
+        tblCustomers.getColumns().addAll( lastNameCol, firstNameCol );  
+  
+        Separator sep = new Separator();  
+  
+        HBox bottomControls = new HBox();  
+        bottomControls.setAlignment(Pos.BOTTOM_RIGHT );  
+        VBox.setMargin( bottomControls, new Insets(10.0d) );  
+  
+        Button btnClose = new Button("关闭");  
+  
+        btnClose.setOnAction( e -> {  
+            System.out.println("点击关闭");  
+            System.exit(0);  
+        });  
+        bottomControls.getChildren().add( btnClose );  
+  
+        Button btnAdd = new Button("添加");  
+        btnAdd.setOnAction( e -> {  
+            System.out.println("点击添加");  
+            loadTable(tblCustomers);  
+        });  
+        bottomControls.getChildren().add( btnAdd );  
+  
+        vbox.getChildren().addAll(  
+                topControls,  
+                tblCustomers,  
+                sep,  
+                bottomControls  
+        );  
+  
+        Scene scene = new Scene(vbox );  
+  
+        primaryStage.setScene( scene );  
+        primaryStage.setWidth( 800 );  
+        primaryStage.setHeight( 600 );  
+        primaryStage.setTitle("VBox and HBox App");  
+        primaryStage.setOnShown( (evt) -> loadTable(tblCustomers) );  
+        primaryStage.show();  
+    }  
+  
+    public static void main(String[] args) {  
+        launch(args);  
+    }  
+  
+    private void loadTable(TableView<Customer> tblCustomers) {  
+        tblCustomers.getItems().add(new Customer("George", "Washington"));  
+        tblCustomers.getItems().add(new Customer("Abe", "Lincoln"));  
+        tblCustomers.getItems().add(new Customer("Thomas", "Jefferson"));  
+    }  
+}
+```
+运行结果如下： 
+![[Pasted image 20240501093804.png]]
+## StackPane
+`StackPane`将它的子项的一个放在另一个上面。最后添加的`Node`是最高的。默认情况下，`StackPane`将使用`Pos.CENTER`对齐子项，如下图所示，其中3个子项（按添加顺序）为：`Rectangle`、`Circle`和`Button`。
+我们可以通过添加`pane.setAlignment(Pos.CENTER_LEFT);`来更改默认对齐方式。
+```java
+package com.y5neko.layout;  
+  
+import javafx.application.Application;  
+import javafx.scene.Scene;  
+import javafx.scene.control.Button;  
+import javafx.scene.layout.StackPane;  
+import javafx.scene.paint.Color;  
+import javafx.scene.shape.Circle;  
+import javafx.scene.shape.Rectangle;  
+import javafx.stage.Stage;  
+  
+public class StackPaneApp extends Application {  
+    @Override  
+    public void start(Stage stage) throws Exception {  
+        Button hello_button = new Button("Hello StackPane");  
+        hello_button.setOnAction(e -> {  
+            System.out.println("Hello");  
+        });  
+  
+        StackPane pane = new StackPane(  
+                new Rectangle(200, 100, Color.BLACK),  
+                new Circle(40, Color.RED),  
+                hello_button  
+        );  
+  
+        stage.setScene(new Scene(pane, 300, 300));  
+        stage.show();  
+    }  
+  
+    public static void main(String[] args) {  
+        launch(args);  
+    }  
+}
+```
+运行结果如下： 
+![[Pasted image 20240501094609.png]]
+## 绝对定位（带Pane）
+像`VBox`或`BorderPane`这样的容器对齐并分发它们的子节点。 超类`Pane`也是一个容器，但不对其子类强加顺序。 子元素通过x、centerX和layoutX等属性定位自己。 这被称为绝对定位，它是一种将`Shape`或`Node`放置在屏幕上某个位置的技术。
+### Pane尺寸
+与大多数容器不同，`Pane`会调整大小以适应其内容，而不是相反。 这张图片是在添加右下角弧之前从风景视图中截取的屏幕截图。 `Pane`是黄色突出显示的区域。 请注意，它并没有占用整个`Stage`。
+![[Pasted image 20240501105020.png]]
+这是添加右下角`Arc`后的屏幕截图。 这个`Arc`被放置在更靠近`Stage`右下边缘的位置。 这会迫使扩展器拉伸以容纳扩展的内容。
+![[Pasted image 20240501105128.png]]
+### The Pane
+About View的最外层容器是`VBox`，其唯一内容是`Pane`。 `VBox`用于适应整个`Stage`并提供背景。
+```java
+VBox vbox = new VBox();
+vbox.setPadding( new Insets( 10 ) );
+vbox.setBackground(
+    new Background(
+        new BackgroundFill(Color.BLACK, new CornerRadii(0), new Insets(0))
+        ));
+
+Pane p = new Pane();
+```
+### 形状
+在屏幕的左上角，有一组4个“弧”和1个“圆”。 这段代码通过`Arc`构造函数中的centerX和centerY参数将largeArc定位在（0，0）。 请注意，backgroundArc也位于（0，0）处，并出现在largeArc下面。 `Pane`并不试图消除重叠形状的冲突，在这种情况下，重叠是想要的。 smArc1位于（0，160），在Y轴上向下。 smArc2位于（160，0）处，正好在X轴上。 smCircle与smArc1和smArc2的距离相同，但角度为45度。
+```java
+Arc largeArc = new Arc(0, 0, 100, 100, 270, 90);
+largeArc.setType(ArcType.ROUND);
+
+Arc backgroundArc = new Arc(0, 0, 160, 160, 270, 90 );
+backgroundArc.setType( ArcType.ROUND );
+
+Arc smArc1 = new Arc( 0, 160, 30, 30, 270, 180);
+smArc1.setType(ArcType.ROUND);
+
+Circle smCircle = new Circle(160/Math.sqrt(2.0), 160/Math.sqrt(2.0), 30,Color.web("0xF2A444"));
+
+Arc smArc2 = new Arc( 160, 0, 30, 30, 180, 180);
+smArc2.setType(ArcType.ROUND);
+```
+右下角的`Arc`基于`Stage`的整体高度定位。 从高度减去20是从`Insets`减去10个像素`VBox`（左10+右10）。
+```java
+Arc medArc = new Arc(568-20, 320-20, 60, 60, 90, 90);
+medArc.setType(ArcType.ROUND);
+
+primaryStage.setWidth( 568 );
+primaryStage.setHeight( 320 );
+```
+### 超链接
+`Hyperlink`定位成偏离中心（284，160），该中心是`Stage`的宽度和高度两者除以2。 这会将`Hyperlink`的文本定位在屏幕的右下象限，因此需要基于`Hyperlink`的宽度和高度的偏移量。 在显示屏幕之前，尺寸不适用于`Hyperlink`，因此我对位置进行了显示后调整。
+```java
+Hyperlink hyperlink = new Hyperlink("About this App");
+
+primaryStage.setOnShown( (evt) -> {
+     hyperlink.setLayoutX( 284 - (hyperlink.getWidth()/3) );
+     hyperlink.setLayoutY( 160 - hyperlink.getHeight() );
+});
+```
+`Hyperlink`没有放在屏幕的真正中心。 layoutX值基于将其从左上方设计移开的除以三操作。
+### Z-Order
+如前所述，`Pane`支持重叠的子节点。 此图片显示了在左上角设计中添加了深度的About View。 较小的`Arcs`和`Circle`像largeArc一样悬停在backgroundArc上。
+![[Pasted image 20240501105939.png]]
+![[Pasted image 20240501105919.png]]
+本例中的z顺序由子节点添加到`Pane`的顺序确定。 backgroundArc被后来添加的项目所掩盖，最明显的是largeArc。 要重新排列子元素，请在将项添加到`Pane`之后使用toFront（）和toBack（）方法。
+```java
+p.getChildren().addAll( backgroundArc, largeArc, smArc1, smCircle, smArc2, hyperlink, medArc );
+
+vbox.getChildren().add( p );
+```
+在启动JavaFX时，构建一个绝对布局是很有诱惑力的。 请注意，绝对布局是脆弱的，经常在调整屏幕大小或在软件维护阶段添加项目时中断。 然而，有充分的理由使用绝对定位。 游戏就是这样一种用法。 在游戏中，您可以调整“Shape”的（x，y）坐标来在屏幕上移动游戏棋子。 本文演示了JavaFX类`Pane`，它为任何形状驱动的UI提供绝对定位。
+### 完整代码
+```java
+package com.y5neko.layout;  
+  
+import javafx.application.Application;  
+import javafx.geometry.Insets;  
+import javafx.scene.Scene;  
+import javafx.scene.control.Hyperlink;  
+import javafx.scene.layout.*;  
+import javafx.scene.paint.Color;  
+import javafx.scene.shape.Arc;  
+import javafx.scene.shape.ArcType;  
+import javafx.scene.shape.Circle;  
+import javafx.scene.text.Font;  
+import javafx.stage.Stage;  
+import org.scenicview.ScenicView;  
+  
+public class PaneApp extends Application {  
+  
+    @Override  
+    public void start(Stage primaryStage) throws Exception {  
+  
+        VBox vbox = new VBox();  
+        vbox.setPadding( new Insets( 10 ) );  
+        vbox.setBackground(  
+            new Background(  
+                new BackgroundFill(Color.BLACK, new CornerRadii(0), new Insets(0))  
+                ));  
+  
+        Pane p = new Pane();  
+//        VBox.setMargin(p, new Insets(0.0d, 10.0d, 10.0d, 10.0d));  
+  
+        Arc largeArc = new Arc(0, 0, 100, 100, 270, 90);  
+        largeArc.setFill(Color.web("0x59291E"));  
+        largeArc.setType(ArcType.ROUND);  
+  
+        Arc backgroundArc = new Arc(0, 0, 160, 160, 270, 90 );  
+        backgroundArc.setFill( Color.web("0xD96F32") );  
+        backgroundArc.setType( ArcType.ROUND );  
+  
+        Arc smArc1 = new Arc( 0, 160, 30, 30, 270, 180);  
+        smArc1.setFill(Color.web("0xF2A444"));  
+        smArc1.setType(ArcType.ROUND);  
+  
+        Circle smCircle = new Circle(  
+            160/Math.sqrt(2.0), 160/Math.sqrt(2.0), 30,Color.web("0xF2A444")  
+            );  
+  
+        Arc smArc2 = new Arc( 160, 0, 30, 30, 180, 180);  
+        smArc2.setFill(Color.web("0xF2A444"));  
+        smArc2.setType(ArcType.ROUND);  
+  
+        Hyperlink hyperlink = new Hyperlink("About this App");  
+        hyperlink.setOnAction((evt) -> {  
+            System.out.println("Link");  
+        });  
+        hyperlink.setFont( Font.font(36) );  
+        hyperlink.setTextFill( Color.web("0x3E6C93") );  
+        hyperlink.setBorder( Border.EMPTY );  
+  
+        Arc medArc = new Arc(568-35, 320-58, 60, 60, 90, 90);  
+        medArc.setFill(Color.web("0xD9583B"));  
+        medArc.setType(ArcType.ROUND);  
+  
+        p.getChildren().addAll( backgroundArc, largeArc, smArc1, smCircle,  
+            smArc2, hyperlink, medArc );  
+  
+        vbox.getChildren().add( p );  
+  
+        Scene scene = new Scene(vbox);  
+        scene.setFill(Color.BLACK);  
+  
+        primaryStage.setTitle("Pane App");  
+        primaryStage.setScene( scene );  
+        primaryStage.setWidth( 568 );  
+        primaryStage.setHeight( 320 );  
+        primaryStage.setOnShown( (evt) -> {  
+             hyperlink.setLayoutX( 284 - (hyperlink.getWidth()/3) );  
+             hyperlink.setLayoutY( 160 - hyperlink.getHeight() );  
+        });  
+        primaryStage.show();  
+  
+        ScenicView.show(scene);  
+    }  
+  
+    public static void main(String[] args) {  
+        launch(args);  
+    }  
+}
+```
+## Clipping
+大多数JavaFX布局容器（基类[Region](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Region.html)）会自动定位和调整其子容器的大小，因此裁剪任何可能超出容器布局边界的子内容都不会成为问题。一个大的例外是[Rolling](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Pane.html)，它是`Region`的直接子类，也是所有具有可公开访问的子元素的布局容器的基类。与它的子类不同的是，它不尝试排列它的子类，而只是接受显式的用户定位和大小调整。
+这使得`Pane`适合作为绘图表面，类似于[Canvas](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/canvas/Canvas.html)，但呈现用户定义的[Shape](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/shape/Shape.html)子对象，而不是直接绘制命令。问题是，通常期望绘图表面自动在其边界处剪裁其内容。`Canvas`默认情况下会这样做，但`Pane`不会。从Javadoc条目`Pane`的最后一段：
+> 默认情况下，窗格不会裁剪其内容，因此子对象的边界可能会超出其自身的边界，无论是子对象位于负坐标还是窗格的大小调整为小于其首选大小。
+
+这句话有点误导。无论子对象的位置和大小的组合是否超出父对象的边界，都将在父对象`Pane`之外呈现（全部或部分），而不管位置是否为负或`Pane`是否调整过大小。很简单，`Pane`只提供了一个坐标移动到它的子项，基于它的左上角-但它的布局边界是完全忽略，而呈现子项。请注意，所有`Pane`子类的Javadoc（我检查过）都包含类似的警告。他们也不剪辑他们的内容，但如上所述，这通常不是一个问题，因为他们自动安排他们的子项。
+因此，要正确使用`Pane`作为`Shapes`的绘图表面，我们需要手动剪切其内容。这有点复杂，特别是当涉及可见边界时。我写了一个小的演示应用程序来说明默认行为和修复它的各种步骤。你可以下载它作为[PaneDemo.zip](http://kynosarges.org/misc/PaneDemo.zip)，其中包含NetBeans 8.2和Java SE 8u112的项目。以下各节通过屏幕截图和相关代码片段解释了每个步骤。
+### 默认行为
+启动时，PaneDemo显示了当您将`Ellipse`形状放入太小而无法完全包含它的`Pane`形状时会发生什么。`Pane`有一个很好的厚圆形[边界](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/Border.html)，以可视化其区域。应用程序窗口是可调整大小的，`Pane`大小跟随窗口大小。左侧的三个按钮用于切换到演示中的其他步骤;单击Default（Alt+D）可从后面的步骤恢复到默认输出。
+![[Pasted image 20240501143803.png]]
+![[Pasted image 20240501143931.png]]
+正如你所看到的，`Ellipse`覆盖了它的父视图`Border`，并突出了它。下面的代码用于生成默认视图。它被分成几个较小的方法，以及一个用于`Border`拐角半径的常量，因为它们将在接下来的步骤中被引用。
+```java
+static final double BORDER_RADIUS = 4;
+
+static Border createBorder() {
+    return new Border(
+            new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID,
+            new CornerRadii(BORDER_RADIUS), BorderStroke.THICK));
+}
+
+static Shape createShape() {
+    final Ellipse shape = new Ellipse(50, 50);
+    shape.setCenterX(80);
+    shape.setCenterY(80);
+    shape.setFill(Color.LIGHTCORAL);
+    shape.setStroke(Color.LIGHTCORAL);
+    return shape;
+}
+
+static Region createDefault() {
+    final Pane pane = new Pane(createShape());
+    pane.setBorder(createBorder());
+    pane.setPrefSize(100, 100);
+    return pane;
+}
+```
+### 简单剪裁
+令人惊讶的是，没有预定义的选项可以让可调整大小的`Region`自动将其子项剪切到当前大小。相反，您需要使用在`Node`上定义的基本[clipProperty](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Node.html#clipProperty)，并手动更新它以反映不断变化的布局边界。下面的方法`clipChildren`展示了这是如何工作的（使用Javadoc，因为你可能想在自己的代码中重用它）：
+```java
+static void clipChildren(Region region, double arc) {
+
+    final Rectangle outputClip = new Rectangle();
+    outputClip.setArcWidth(arc);
+    outputClip.setArcHeight(arc);
+    region.setClip(outputClip);
+
+    region.layoutBoundsProperty().addListener((ov, oldValue, newValue) -> {
+        outputClip.setWidth(newValue.getWidth());
+        outputClip.setHeight(newValue.getHeight());
+    });
+}
+
+static Region createClipped() {
+    final Pane pane = new Pane(createShape());
+    pane.setBorder(createBorder());
+    pane.setPrefSize(100, 100);
+
+    // clipped children still overwrite Border!
+    clipChildren(pane, 3 * BORDER_RADIUS);
+
+    return pane;
+}
+```
+![[Pasted image 20240501144120.png]]
+这样好多了`Ellipse`不再突出于`Pane` -但仍然覆盖其边界。还要注意的是，我们必须手动指定裁剪`Rectangle`的估计角圆化，以反映圆化的`Border`角。这个估计值是3 * BORDER_RADIUS，因为在`Border`上指定的拐角半径实际上定义了它的内径，而外径（我们在这里需要的）将根据`Border`厚度而更大。(You如果你真的想的话，你可以精确地计算外半径，但我在演示应用程序中跳过了这一点。）
+### 嵌套窗格
+我们能以某种方式指定一个剪切区域，排除一个可见的'边界'？据我所知。剪切区域会影响`Pane`以及其他内容，因此如果您要缩小剪切区域以排除它，您将不再看到任何`Border`。相反，解决方案是创建两个嵌套窗格：一个内部图形`Border`，不带`Pane`，精确地剪裁到其边界，一个外部图形`Border`，定义可见的`StackPane`，并调整图形`Border`的大小。下面是最终代码：
+```java
+static Region createNested() {
+    // create drawing Pane without Border or size
+    final Pane pane = new Pane(createShape());
+    clipChildren(pane, BORDER_RADIUS);
+
+    // create sized enclosing Region with Border
+    final Region container = new StackPane(pane);
+    container.setBorder(createBorder());
+    container.setPrefSize(100, 100);
+    return container;
+}
+```
+![[Pasted image 20240501145950.png]]
+作为一个额外的奖励，我们不再需要猜测剪裁`Rectangle`的正确角半径。我们现在剪裁到可见`Border`的内圆周而不是外圆周，因此我们可以直接重用其内角半径。如果您指定多个不同的圆角半径或更复杂的`Border`，则必须定义相应的更复杂的剪裁`Shape`。
+有一个小小的警告。所有子坐标都相对的图形`Pane`的左上角现在开始于可见`Border`内。如果您将一个带有可见`Pane`的`Border`追溯更改为嵌套窗格，如下图所示，所有子窗格将显示与`Border`厚度对应的轻微位置偏移。
+### 完整代码
+```java
+package com.y5neko.layout;  
+  
+import javafx.application.Application;  
+import javafx.geometry.Insets;  
+import javafx.scene.Scene;  
+import javafx.scene.layout.*;  
+import javafx.scene.paint.Color;  
+import javafx.scene.shape.Ellipse;  
+import javafx.scene.shape.Rectangle;  
+import javafx.scene.shape.Shape;  
+import javafx.stage.Stage;  
+import org.scenicview.ScenicView;  
+  
+public class ClippingApp extends Application {  
+    static final double BORDER_RADIUS = 4;  
+  
+    static Border createBorder() {  
+        return new Border(  
+                new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID,  
+                new CornerRadii(BORDER_RADIUS), BorderStroke.THICK));  
+    }  
+  
+    static Shape createShape() {  
+        final Ellipse shape = new Ellipse(50, 50);  
+        shape.setCenterX(80);  
+        shape.setCenterY(80);  
+        shape.setFill(Color.LIGHTCORAL);  
+        shape.setStroke(Color.LIGHTCORAL);  
+        return shape;  
+    }  
+  
+    @Override  
+    public void start(Stage primaryStage) throws Exception {  
+        VBox vbox = new VBox();  
+  
+        Pane pane = new Pane();  
+        // 未裁剪  
+        Region region = createDefault();  
+        // 裁剪  
+        Region region1 = createClipped();  
+  
+        VBox.setMargin(pane, new Insets(10.0d, 10.0d, 10.0d, 10.0d));  
+  
+//        pane.getChildren().addAll(region);  
+        pane.getChildren().addAll(region1);  
+        vbox.getChildren().addAll(pane);  
+  
+        Scene scene = new Scene(vbox);  
+        primaryStage.setScene(scene);  
+        primaryStage.setTitle("Clipping");  
+        primaryStage.setWidth(200);  
+        primaryStage.setHeight(200);  
+        primaryStage.show();  
+  
+        ScenicView.show(scene);  
+    }  
+  
+    static Region createDefault() {  
+        final Pane pane = new Pane(createShape());  
+        pane.setBorder(createBorder());  
+        pane.setPrefSize(100, 100);  
+        return pane;  
+    }  
+  
+    static void clipChildren(Region region, double arc) {  
+        final Rectangle outputClip = new Rectangle();  
+        outputClip.setArcWidth(arc);  
+        outputClip.setArcHeight(arc);  
+        region.setClip(outputClip);  
+  
+        region.layoutBoundsProperty().addListener((ov, oldValue, newValue) -> {  
+            outputClip.setWidth(newValue.getWidth());  
+            outputClip.setHeight(newValue.getHeight());  
+        });  
+    }  
+  
+    static Region createClipped() {  
+        final Pane pane = new Pane(createShape());  
+        pane.setBorder(createBorder());  
+        pane.setPrefSize(100, 100);  
+  
+        // clipped children still overwrite Border!  
+        clipChildren(pane, 3 * BORDER_RADIUS);  
+  
+        return pane;  
+    }  
+  
+    public static void main(String[] args) {  
+        launch(args);  
+    }  
+}
+```
+## GridPane
+业务应用程序中的窗体通常使用模仿数据库记录的布局。 对于表中的每一列，在左侧添加一个标题，该标题与右侧的行值相匹配。JavaFX有一个名为`GridPane`的特殊用途控件，用于这种类型的布局，使内容按行和列对齐。 `GridPane`还支持跨越更复杂的布局。
+这个屏幕截图显示了一个基本的`GridPane`布局。 在表单的左侧，有一列字段名称：电子邮件、优先级、问题、说明。 在表单的右侧，有一列控件，将显示相应字段的值。 字段名称的类型为`Label`，值控件是包括`TextField`、`TextArea`和`ComboBox`的混合控件。
+![[Pasted image 20240501151232.png]]
+下面的代码显示为窗体创建的对象。“vbox”是`Scene`的根，也将包含表单底部的`ButtonBar`。
+```java
+VBox vbox = new VBox();
+
+GridPane gp = new GridPane();
+
+Label lblTitle = new Label("Support Ticket");
+
+Label lblEmail = new Label("Email");
+TextField tfEmail = new TextField();
+
+Label lblPriority = new Label("Priority");
+ObservableList<String> priorities = FXCollections.observableArrayList("Medium", "High", "Low");
+ComboBox<String> cbPriority = new ComboBox<>(priorities);
+
+Label lblProblem = new Label("Problem");
+TextField tfProblem = new TextField();
+
+Label lblDescription = new Label("Description");
+TextArea taDescription = new TextArea();
+```
+GridView有一个方便的方法`setGridLinesVisible()`，它可以显示网格结构和槽。 它在涉及跨越的更复杂的布局中特别有用，因为行/列分配中的间隙可能导致布局中的移动。
+![[Pasted image 20240501151429.png]]
+### 间距
+作为一个容器，`GridPane`有一个padding属性，可以设置为用空白包围`GridPane`内容。 “padding”将接受一个`Inset`对象作为参数。 在这个例子中，10个像素的空白被应用到所有的边，所以一个简短的形式构造器被用于`Inset`。
+在`GridPane`中，vgap和hgap控制沟槽。 hgap设置为4，以保持字段接近其值。 vgap稍微大一点，以帮助鼠标导航。
+```java
+gp.setPadding( new Insets(10) );
+gp.setHgap( 4 );
+gp.setVgap( 8 );
+```
+为了保持表单的下部一致，在VBox上设置了`Priority`。 但是，这不会调整单个行的大小。 对于单个调整大小规格，请使用`ColumnConstraints`和`RowConstraints`。
+```java
+VBox.setVgrow(gp, Priority.ALWAYS );
+```
+### 添加项目
+与`BorderPane`或`HBox`等容器不同，节点需要指定它们在`GridPane`中的位置。 这是通过`add()`上的`GridPane`方法完成的，而不是容器子属性上的add方法。 这种形式的`GridPane``add()`方法采用从零开始的列位置和从零开始的行位置。 这段代码将两个语句放在同一行以提高可读性。
+```java
+gp.add( lblTitle,       1, 1);  // empty item at 0,0，按照网格坐标排版
+gp.add( lblEmail,       0, 2); gp.add(tfEmail,        1, 2);
+gp.add( lblPriority,    0, 3); gp.add( cbPriority,    1, 3);
+gp.add( lblProblem,     0, 4); gp.add( tfProblem,     1, 4);
+gp.add( lblDescription, 0, 5); gp.add( taDescription, 1, 5);
+```
+lblTitle放在第一行的第二列。 第一行的第一列中没有条目。
+随后的增加是成对的。 字段名`Label`对象放在第一列（列索引=0），值控件放在第二列（列索引=1）。 这些行由递增的第二个值相加。 例如，lblPriority与它的`ComboBox`一起放在沿着的第四行。
+`GridPane`是JavaFX业务应用程序设计中的一个重要容器。 当您需要名称/值对时，`GridPane`将是支持传统表单的强列定向的简单方法。
+### 完整代码
+```java
+package com.y5neko.layout;  
+  
+import javafx.application.Application;  
+import javafx.collections.FXCollections;  
+import javafx.collections.ObservableList;  
+import javafx.geometry.Insets;  
+import javafx.scene.Scene;  
+import javafx.scene.control.*;  
+import javafx.scene.layout.GridPane;  
+import javafx.scene.layout.Priority;  
+import javafx.scene.layout.VBox;  
+import javafx.stage.Stage;  
+import org.scenicview.ScenicView;  
+  
+public class GridPaneApp extends Application {  
+  
+    @Override  
+    public void start(Stage primaryStage) throws Exception {  
+  
+        VBox vbox = new VBox();  
+  
+        GridPane gp = new GridPane();  
+        gp.setPadding( new Insets(10) );  
+        gp.setHgap( 4 );  
+        gp.setVgap( 8 );  
+  
+        VBox.setVgrow(gp, Priority.ALWAYS );  
+  
+        Label lblTitle = new Label("Support Ticket");  
+  
+        Label lblEmail = new Label("Email");  
+        TextField tfEmail = new TextField();  
+  
+        Label lblPriority = new Label("Priority");  
+        ObservableList<String> priorities =  
+            FXCollections.observableArrayList("Medium", "High", "Low");  
+        ComboBox<String> cbPriority = new ComboBox<>(priorities);  
+  
+        Label lblProblem = new Label("Problem");  
+        TextField tfProblem = new TextField();  
+  
+        Label lblDescription = new Label("Description");  
+        TextArea taDescription = new TextArea();  
+  
+//        gp.setGridLinesVisible(true);  
+  
+        gp.add( lblTitle,       1, 1);  // empty item at 0,0  
+        gp.add( lblEmail,       0, 2); gp.add(tfEmail,        1, 2);  
+        gp.add( lblPriority,    0, 3); gp.add( cbPriority,    1, 3);  
+        gp.add( lblProblem,     0, 4); gp.add( tfProblem,     1, 4);  
+        gp.add( lblDescription, 0, 5); gp.add( taDescription, 1, 5);  
+  
+        Separator sep = new Separator(); // hr  
+  
+        ButtonBar buttonBar = new ButtonBar();  
+        buttonBar.setPadding( new Insets(10) );  
+  
+        Button saveButton = new Button("Save");  
+        Button cancelButton = new Button("Cancel");  
+  
+        buttonBar.setButtonData(saveButton, ButtonBar.ButtonData.OK_DONE);  
+        buttonBar.setButtonData(cancelButton, ButtonBar.ButtonData.CANCEL_CLOSE);  
+  
+        buttonBar.getButtons().addAll(saveButton, cancelButton);  
+  
+        vbox.getChildren().addAll( gp, sep, buttonBar );  
+  
+        Scene scene = new Scene(vbox);  
+  
+        primaryStage.setTitle("Grid Pane App");  
+        primaryStage.setScene(scene);  
+        primaryStage.setWidth( 736 );  
+        primaryStage.setHeight( 414  );  
+        primaryStage.show();  
+  
+        ScenicView.show(scene);  
+    }  
+  
+    public static void main(String[] args) {  
+        launch(args);  
+    }  
+}
+```
+## 网格跨越
+对于使用`GridPane`实现的更复杂的表单，支持跨越。 跨越允许控件声明相邻列（colspan）和相邻行（rowspan）的空间。 这个屏幕截图显示了一个扩展了上一节中的示例的表单。 早期版本的两栏布局已被多栏布局取代。 Problem和Description等字段保留原始结构。 但是控件被添加到以前只包含电子邮件和优先级的行中。
+![[Pasted image 20240501153438.png]]
+打开轴网线时，请注意，前面的两列轴网线已替换为六列轴网线。 第三行包含六个项目-3个字段名/值对-指示结构。     表单的其余部分将使用跨度来填充空白。
+此更新中使用的`VBox`和`GridPane`容器对象如下。 还有一点Vgap可以帮助用户选择`ComboBox`控件。
+```java
+GridPane gp = new GridPane();
+gp.setPadding( new Insets(10) );
+gp.setHgap( 4 );
+gp.setVgap( 10 );
+
+VBox.setVgrow(gp, Priority.ALWAYS );
+```
+这些是来自更新示例的控件创建语句。
+```java
+Label lblTitle = new Label("Support Ticket");
+
+Label lblEmail = new Label("Email");
+TextField tfEmail = new TextField();
+
+Label lblContract = new Label("Contract");
+TextField tfContract = new TextField();
+
+Label lblPriority = new Label("Priority");
+ObservableList<String> priorities =
+    FXCollections.observableArrayList("Medium", "High", "Low");
+ComboBox<String> cbPriority = new ComboBox<>(priorities);
+
+Label lblSeverity = new Label("Severity");
+ObservableList<String> severities =
+    FXCollections.observableArrayList("Blocker", "Workaround", "N/A");
+ComboBox<String> cbSeverity = new ComboBox<>(severities);
+
+Label lblCategory = new Label("Category");
+ObservableList<String> categories =
+    FXCollections.observableArrayList("Bug", "Feature");
+ComboBox<String> cbCategory = new ComboBox<>(categories);
+
+Label lblProblem = new Label("Problem");
+TextField tfProblem = new TextField();
+
+Label lblDescription = new Label("Description");
+TextArea taDescription = new TextArea();
+```
+与早期版本一样，使用`GridPane`方法将控件添加到`add()`。 指定了列和行。 在这个片段中，索引并不简单，因为有一些空白需要通过跨越内容来填充。
+```java
+gp.add( lblTitle,       1, 0);  // empty item at 0,0
+
+gp.add( lblEmail,       0, 1);
+gp.add(tfEmail,         1, 1);
+gp.add( lblContract,    4, 1 );
+gp.add( tfContract,     5, 1 );
+
+gp.add( lblPriority,    0, 2);
+gp.add( cbPriority,     1, 2);
+gp.add( lblSeverity,    2, 2);
+gp.add( cbSeverity,     3, 2);
+gp.add( lblCategory,    4, 2);
+gp.add( cbCategory,     5, 2);
+
+gp.add( lblProblem,     0, 3); gp.add( tfProblem,     1, 3);
+gp.add( lblDescription, 0, 4); gp.add( taDescription, 1, 4);
+```
+最后，使用静态方法在`GridPane`上设置生成定义。 有一个类似的方法来做行跨越。 标题将占据5列，问题和描述也是如此。 电子邮件与合同共享一行，但将占用更多列。 ComboBoxes的第三行是一组三个字段/值对，每个字段/值对占据一列。
+```java
+GridPane.setColumnSpan( lblTitle, 5 );
+GridPane.setColumnSpan( tfEmail, 3 );
+GridPane.setColumnSpan( tfProblem, 5 );
+GridPane.setColumnSpan( taDescription, 5 );
+```
+或者，add（）方法的一个变体将columnSpan和rowSpan参数用于避免随后的静态方法调用。
+这个扩展的`GridPane`示例演示了列跨越。 同样的功能也可用于行跨越，这将允许控件要求额外的垂直空间。 即使在给定行（或列）中的项数不同的情况下，跨度也会使控件保持对齐。 为了保持对跨主题的关注，这个网格允许列宽变化。 关于`ColumnConstraints`和`RowConstraints`的文章将重点关注通过更好地控制列（和行）来构建真正的模块化和列排版网格。
+### 完整代码
+```java
+package com.y5neko.layout;  
+  
+import javafx.application.Application;  
+import javafx.collections.FXCollections;  
+import javafx.collections.ObservableList;  
+import javafx.geometry.Insets;  
+import javafx.scene.Scene;  
+import javafx.scene.control.*;  
+import javafx.scene.layout.GridPane;  
+import javafx.scene.layout.Priority;  
+import javafx.scene.layout.VBox;  
+import javafx.stage.Stage;  
+  
+public class ComplexGridPaneApp extends Application {  
+  
+    @Override  
+    public void start(Stage primaryStage) throws Exception {  
+  
+        VBox vbox = new VBox();  
+  
+        GridPane gp = new GridPane();  
+        gp.setPadding( new Insets(10) );  
+        gp.setHgap( 4 );  
+        gp.setVgap( 10 );  
+  
+        VBox.setVgrow(gp, Priority.ALWAYS );  
+  
+        Label lblTitle = new Label("Support Ticket");  
+  
+        Label lblEmail = new Label("Email");  
+        TextField tfEmail = new TextField();  
+  
+        Label lblContract = new Label("Contract");  
+        TextField tfContract = new TextField();  
+  
+        Label lblPriority = new Label("Priority");  
+        ObservableList<String> priorities =  
+            FXCollections.observableArrayList("Medium", "High", "Low");  
+        ComboBox<String> cbPriority = new ComboBox<>(priorities);  
+  
+        Label lblSeverity = new Label("Severity");  
+        ObservableList<String> severities = FXCollections.observableArrayList("Blocker", "Workaround", "N/A");  
+        ComboBox<String> cbSeverity = new ComboBox<>(severities);  
+  
+        Label lblCategory = new Label("Category");  
+        ObservableList<String> categories = FXCollections.observableArrayList("Bug", "Feature");  
+        ComboBox<String> cbCategory = new ComboBox<>(categories);  
+  
+        Label lblProblem = new Label("Problem");  
+        TextField tfProblem = new TextField();  
+  
+        Label lblDescription = new Label("Description");  
+        TextArea taDescription = new TextArea();  
+  
+        gp.add( lblTitle,       1, 0);  // empty item at 0,0  
+  
+        gp.add( lblEmail,       0, 1);  
+        gp.add(tfEmail,         1, 1);  
+        gp.add( lblContract,    4, 1 );  
+        gp.add( tfContract,     5, 1 );  
+  
+        gp.add( lblPriority,    0, 2);  
+        gp.add( cbPriority,     1, 2);  
+        gp.add( lblSeverity,    2, 2);  
+        gp.add( cbSeverity,     3, 2);  
+        gp.add( lblCategory,    4, 2);  
+        gp.add( cbCategory,     5, 2);  
+  
+        gp.add( lblProblem,     0, 3); gp.add( tfProblem,     1, 3);  
+        gp.add( lblDescription, 0, 4); gp.add( taDescription, 1, 4);  
+  
+        GridPane.setColumnSpan( lblTitle, 5 );  
+        GridPane.setColumnSpan( tfEmail, 3 );  
+        GridPane.setColumnSpan( tfProblem, 5 );  
+        GridPane.setColumnSpan( taDescription, 5 );  
+  
+        Separator sep = new Separator(); // hr  
+  
+        ButtonBar buttonBar = new ButtonBar();  
+        buttonBar.setPadding( new Insets(10) );  
+  
+        Button saveButton = new Button("Save");  
+        Button cancelButton = new Button("Cancel");  
+  
+        buttonBar.setButtonData(saveButton, ButtonBar.ButtonData.OK_DONE);  
+        buttonBar.setButtonData(cancelButton, ButtonBar.ButtonData.CANCEL_CLOSE);  
+  
+        buttonBar.getButtons().addAll(saveButton, cancelButton);  
+  
+        vbox.getChildren().addAll( gp, sep, buttonBar );  
+  
+        Scene scene = new Scene(vbox);  
+  
+        primaryStage.setTitle("Grid Pane App");  
+        primaryStage.setScene(scene);  
+        primaryStage.setWidth( 736 );  
+        primaryStage.setHeight( 414  );  
+        primaryStage.show();  
+  
+    }  
+  
+    public static void main(String[] args) {  
+        launch(args);  
+    }  
+}
+```
+## 网格列约束和行约束
+上一篇文章介绍了如何创建一个两列布局，字段名称在左侧，字段值在右侧。 该示例已扩展为向给定行添加更多控件，并在内容中使用跨越句柄间隙。 本文介绍了一对JavaFX类`GridPane`和`ColumnConstraints`。 这些类给予对行或列的附加说明。 在这个例子中，当窗口调整大小时，包含`RowConstraints`的行将被给予所有额外的空间。 这两列将被设置为宽度相等。
+这个屏幕截图显示了一个从以前的文章修改的示例。 本文的演示程序有一种旋转的感觉，即字段名与字段值垂直配对（在值的顶部），而不是水平配对。 跨行和跨列用于对齐大于单个单元格的项。
+![[Pasted image 20240501154341.png]]
+这段代码创建了`Scene`根和`GridPane`对象。
+```java
+VBox vbox = new VBox();
+
+GridPane gp = new GridPane();
+gp.setPadding( new Insets(10) );
+gp.setHgap( 4 );
+gp.setVgap( 10 );
+
+VBox.setVgrow(gp, Priority.ALWAYS );
+```
+此代码创建本文中使用的UI控件对象。 注意，Priority现在被实现为包含Radiobserver的`VBox`。
+```java
+Label lblTitle = new Label("Support Ticket");
+
+Label lblEmail = new Label("Email");
+TextField tfEmail = new TextField();
+
+Label lblContract = new Label("Contract");
+TextField tfContract = new TextField();
+
+Label lblPriority = new Label("Priority");
+RadioButton rbMedium = new RadioButton("Medium");
+RadioButton rbHigh = new RadioButton("High");
+RadioButton rbLow = new RadioButton("Low");
+VBox priorityVBox = new VBox();
+priorityVBox.setSpacing( 2 );
+GridPane.setVgrow(priorityVBox, Priority.SOMETIMES);
+priorityVBox.getChildren().addAll( lblPriority, rbMedium, rbHigh, rbLow );
+
+Label lblSeverity = new Label("Severity");
+ObservableList<String> severities =
+    FXCollections.observableArrayList("Blocker", "Workaround", "N/A");
+ComboBox<String> cbSeverity = new ComboBox<>(severities);
+
+Label lblCategory = new Label("Category");
+ObservableList<String> categories =
+    FXCollections.observableArrayList("Bug", "Feature");
+ComboBox<String> cbCategory = new ComboBox<>(categories);
+
+Label lblProblem = new Label("Problem");
+TextField tfProblem = new TextField();
+
+Label lblDescription = new Label("Description");
+TextArea taDescription = new TextArea();
+```
+电子邮件、合同、问题和说明的标签和值控制配对放在一个列中。 它们应该采用`GridPane`的整个宽度，因此每个都将其columnSpan设置为2。
+```java
+GridPane.setColumnSpan( tfEmail, 2 );
+GridPane.setColumnSpan( tfContract, 2 );
+GridPane.setColumnSpan( tfProblem, 2 );
+GridPane.setColumnSpan( taDescription, 2 );
+```
+新的优先级无线电水平匹配的严重性和类别的四个控件。 这个rowSpan设置指示JavaFX将包含RadioButton的VBox放在一个高度为四行的合并单元格中。
+```java
+GridPane.setRowSpan( priorityVBox, 4 );
+```
+## 行约束
+此时，代码反映了[使用行和列跨越的示例应用程序](https://fxdocs.github.io/docs/html5/#initial_image)中提供的UI屏幕截图。 要重新分配窗体底部的额外空间，请使用RowConstraints对象在`TextArea`的行上设置Priority.ALWAYS。 这将导致`TextArea`增长，以填充可用的空间。
+这段代码是一个`RowConstraints`对象到`GridPane`的`TextArea`。 在setter之前，`RowConstraints`对象被分配给所有其他行。 当您指定第12行而没有首先分配对象时，`getRowConstraints()`的set方法将抛出一个索引异常。
+```java
+RowConstraints taDescriptionRowConstraints = new RowConstraints();
+taDescriptionRowConstraints.setVgrow(Priority.ALWAYS);
+
+for( int i=0; i<13; i++ ) {
+    gp.getRowConstraints().add( new RowConstraints() );
+}
+
+gp.getRowConstraints().set( 12, taDescriptionRowConstraints );
+```
+作为替代语法，有一个setConstraints（）方法可从`GridPane`中获得。 这将传入几个值，并消除了对`TextArea`的专用columnSpan set调用的需要。 前面清单中的`RowConstraints`代码将不会出现在完成的程序中。
+```java
+gp.setConstraints(taDescription,
+                  0, 12,
+                  2, 1,
+                  HPos.LEFT, VPos.TOP,
+                  Priority.SOMETIMES, Priority.ALWAYS);
+```
+此代码标识（0，12）处的`Node`，即`TextArea`。 `TextArea`将跨越2列，但只有1行。 HPos和Vpos设置为左上角。 最后，hgrow的`Priority`是SOMETIMES，vgrow是ALWAYS。 由于`TextArea`是唯一一行"ALWAYS"，它将获得额外的空间。 如果有其他ALWAYS设置，则空间将在多行之间共享。
+## 列约束
+要正确分配Severity和Category控件周围的空间，将指定ColumnConstraints。 默认行为分配给第一列的空间较少，因为Priority RadioValue较小。 下面的线框显示了所需的布局，其中具有由4像素（Hgap）的gutter分隔的相等列。
+要使列宽相等，请定义两个`ColumnConstraint`对象并使用百分比说明符。
+这样才会保持横向比例：
+```java
+ColumnConstraints col1 = new ColumnConstraints();
+col1.setPercentWidth( 50 );
+ColumnConstraints col2 = new ColumnConstraints();
+col2.setPercentWidth( 50 );
+gp.getColumnConstraints().addAll( col1, col2 );
+```
+### 完整代码
+```java
+package com.y5neko.layout;  
+  
+import javafx.application.Application;  
+import javafx.collections.FXCollections;  
+import javafx.collections.ObservableList;  
+import javafx.geometry.HPos;  
+import javafx.geometry.Insets;  
+import javafx.geometry.VPos;  
+import javafx.scene.Scene;  
+import javafx.scene.control.*;  
+import javafx.scene.layout.ColumnConstraints;  
+import javafx.scene.layout.GridPane;  
+import javafx.scene.layout.Priority;  
+import javafx.scene.layout.VBox;  
+import javafx.stage.Stage;  
+import org.scenicview.ScenicView;  
+  
+public class ConstraintsGridPaneApp extends Application {  
+  
+    @Override  
+    public void start(Stage primaryStage) throws Exception {  
+  
+        VBox vbox = new VBox();  
+  
+        GridPane gp = new GridPane();  
+        gp.setPadding( new Insets(10) );  
+        gp.setHgap( 4 );  
+        gp.setVgap( 10 );  
+  
+        VBox.setVgrow(gp, Priority.ALWAYS );  
+  
+        Label lblTitle = new Label("Support Ticket");  
+  
+        Label lblEmail = new Label("Email");  
+        TextField tfEmail = new TextField();  
+  
+        Label lblContract = new Label("Contract");  
+        TextField tfContract = new TextField();  
+  
+        Label lblPriority = new Label("Priority");  
+        RadioButton rbMedium = new RadioButton("Medium");  
+        RadioButton rbHigh = new RadioButton("High");  
+        RadioButton rbLow = new RadioButton("Low");  
+        VBox priorityVBox = new VBox();  
+        priorityVBox.setSpacing( 2 );  
+        GridPane.setVgrow(priorityVBox, Priority.ALWAYS);  
+        priorityVBox.getChildren().addAll( lblPriority, rbMedium, rbHigh, rbLow );  
+  
+        Label lblSeverity = new Label("Severity");  
+        ObservableList<String> severities = FXCollections.observableArrayList("Blocker", "Workaround", "N/A");  
+        ComboBox<String> cbSeverity = new ComboBox<>(severities);  
+  
+        Label lblCategory = new Label("Category");  
+        ObservableList<String> categories = FXCollections.observableArrayList("Bug", "Feature");  
+        ComboBox<String> cbCategory = new ComboBox<>(categories);  
+  
+        Label lblProblem = new Label("Problem");  
+        TextField tfProblem = new TextField();  
+  
+        Label lblDescription = new Label("Description");  
+        TextArea taDescription = new TextArea();  
+  
+        gp.add( lblTitle,       0, 0);  
+  
+        gp.add( lblEmail,       0, 1);  
+        gp.add(tfEmail,         0, 2);  
+  
+        gp.add( lblContract,    0, 3 );  
+        gp.add( tfContract,     0, 4 );  
+  
+        gp.add( priorityVBox,   0, 5);  
+  
+        gp.add( lblSeverity,    1, 5);  
+        gp.add( cbSeverity,     1, 6);  
+        gp.add( lblCategory,    1, 7);  
+        gp.add( cbCategory,     1, 8);  
+  
+        gp.add( lblProblem,     0, 9);  
+        gp.add( tfProblem,      0, 10);  
+  
+        gp.add( lblDescription, 0, 11);  
+        gp.add( taDescription,  0, 12);  
+  
+        GridPane.setColumnSpan( tfEmail, 2 );  
+        GridPane.setColumnSpan( tfContract, 2 );  
+        GridPane.setColumnSpan( tfProblem, 2 );  
+  
+        GridPane.setRowSpan( priorityVBox, 4 );  
+  
+        gp.setConstraints(taDescription,  
+                          0, 12,  
+                          2, 1,  
+                          HPos.LEFT, VPos.TOP,  
+                          Priority.SOMETIMES, Priority.ALWAYS);  
+  
+        ColumnConstraints col1 = new ColumnConstraints();  
+        col1.setPercentWidth( 50 );  
+        ColumnConstraints col2 = new ColumnConstraints();  
+        col2.setPercentWidth( 50 );  
+        gp.getColumnConstraints().addAll( col1, col2 );  
+  
+        Separator sep = new Separator(); // hr  
+  
+        ButtonBar buttonBar = new ButtonBar();  
+        buttonBar.setPadding( new Insets(10) );  
+  
+        Button saveButton = new Button("Save");  
+        Button cancelButton = new Button("Cancel");  
+  
+        buttonBar.setButtonData(saveButton, ButtonBar.ButtonData.OK_DONE);  
+        buttonBar.setButtonData(cancelButton, ButtonBar.ButtonData.CANCEL_CLOSE);  
+  
+        buttonBar.getButtons().addAll(saveButton, cancelButton);  
+  
+        vbox.getChildren().addAll( gp, sep, buttonBar );  
+  
+        Scene scene = new Scene(vbox);  
+  
+        primaryStage.setTitle("Grid Pane App");  
+        primaryStage.setScene(scene);  
+        primaryStage.setWidth( 414 );  
+        primaryStage.setHeight( 736  );  
+        primaryStage.show();  
+  
+        ScenicView.show(scene);  
+    }  
+  
+    public static void main(String[] args) {  
+        launch(args);  
+    }  
+}
+```
+运行结果如下： 
+![[Pasted image 20240501162331.png]]
+## AnchorPane
+`AnchorPane`是一个容器控件，它根据边缘定义其布局。 当放置在容器中时，`AnchorPane`拉伸以填充可用空间。 `AnchorPane`的子元素将它们的位置和大小表示为与边的距离：Top、Left、Bottom、Right。 如果一个或两个锚设置被放置在`AnchorPane`子项上，则子项将被固定到窗口的该角。 如果使用了两个以上的锚设置，子对象将被拉伸以填充可用的水平和垂直空间。
+这个模型显示了一个被一组控件包围的`TextArea`：一个`Hyperlink`和两个状态指示器。 由于`TextArea`将包含所有内容，因此它最初应该占用大部分空间，并且应该通过调整大小获得任何额外的空间。 在外围，右上角有一个`Hyperlink`，右下角有一个连接`Label`和`Circle`，左下角有一个状态`Label`。
+### 锚点
+要开始布局，请创建一个`AnchorPane`对象并将其添加到`Scene`。
+```java
+AnchorPane ap = new AnchorPane();
+Scene scene = new Scene(ap);
+```
+使用AnchoreMap类的静态方法设置参数。 方法-每条边一个-接受`Node`和偏移。     对于`Hyperlink`，将设置顶边锚和右边锚。 将每条边的偏移设置为10.0，以便链接不会被压缩到侧面。
+```java
+Hyperlink signoutLink = new Hyperlink("Sign Out");
+
+ap.getChildren().add( signoutLink );
+
+AnchorPane.setTopAnchor( signoutLink, 10.0d );
+AnchorPane.setRightAnchor( signoutLink, 10.0d );
+```
+当屏幕调整大小时，锚定器将调整大小，而signoutLink将保持其右上角的位置。 因为既没有指定左锚点也没有指定下锚点，所以不会拉伸signoutLink。
+接下来，添加连接`Label`和`Circle`。 这些控件被包装在一个`HBox`中。
+```java
+Circle circle = new Circle();
+circle.setFill(Color.GREEN );
+circle.setRadius(10);
+
+Label connLabel = new Label("Connection");
+
+HBox connHBox = new HBox();
+connHBox.setSpacing( 4.0d );
+connHBox.setAlignment(Pos.BOTTOM_RIGHT);
+connHBox.getChildren().addAll( connLabel, circle );
+
+AnchorPane.setBottomAnchor( connHBox, 10.0d );
+AnchorPane.setRightAnchor( connHBox, 10.0d );
+
+ap.getChildren().add( connHBox );
+```
+与signoutLink一样，connHBox固定在屏幕上的某个位置。 connHBox设置为距离底部边缘10像素，距离右侧边缘10像素。
+添加左下角状态`Label`。 左侧和底部锚点已设置。
+```java
+Label statusLabel = new Label("Program status");
+ap.getChildren().add( statusLabel );
+
+AnchorPane.setBottomAnchor( statusLabel, 10.0d );
+AnchorPane.setLeftAnchor( statusLabel, 10.0d );
+```
+![[Pasted image 20240501171048.png]]
+### 调整大小
+外围上的控件大小可能不同。例如，状态消息或连接消息可以更长。 然而，通过将左下状态`Label`向右延伸并将右下连接状态`Label`向左延伸，可以在该布局中容纳额外的长度。 使用此布局调整大小将以绝对值移动这些控件，但它们将保留各自的边缘加上偏移量。
+但这并不意味着#1。 因为`TextArea`可能包含很多内容，所以它应该接收用户给窗口的任何额外空间。 此控件将锚定到`TextArea`的所有四个角。 这将导致`AnchorPane`在窗口调整大小时调整大小。 `TextArea`固定在左上角，当用户将窗口手柄拖到右下角时，`TextArea`的右下角也会移动。
+突出显示的框显示与`TextArea`相邻的控件相对于边保持其位置。 `TextArea`本身的大小是基于窗口大小调整。 `TextArea`的顶部和底部偏移量考虑了其他控件，因此它们不会被隐藏。
+```java
+TextArea ta = new TextArea();
+
+AnchorPane.setTopAnchor( ta, 40.0d );
+AnchorPane.setBottomAnchor( ta, 40.0d );
+AnchorPane.setRightAnchor( ta, 10.0d );
+AnchorPane.setLeftAnchor( ta, 10.0d );
+
+ap.getChildren().add( ta );
+```
+`AnchorPane`是一个很好的选择，当你有一个可调整大小和固定位置的子项的混合。 如果只有一个子项需要安装，则首选其他控件（如带有`VBox`设置的`HBox`和`Priority`）。 使用这些控件而不是`AnchorPane`，其中单个子控件设置了所有四个锚点。 请记住，要在子对象上设置锚，您需要使用容器类的静态方法，如Anchorect.setTop锚（）。
+### 完整代码
+```java
+package com.y5neko.layout;  
+  
+import javafx.application.Application;  
+import javafx.geometry.Pos;  
+import javafx.scene.Scene;  
+import javafx.scene.control.Hyperlink;  
+import javafx.scene.control.Label;  
+import javafx.scene.control.TextArea;  
+import javafx.scene.layout.AnchorPane;  
+import javafx.scene.layout.HBox;  
+import javafx.scene.paint.Color;  
+import javafx.scene.shape.Circle;  
+import javafx.stage.Stage;  
+import org.scenicview.ScenicView;  
+  
+public class AnchorPaneApp extends Application {  
+  
+    @Override  
+    public void start(Stage primaryStage) throws Exception {  
+  
+        AnchorPane ap = new AnchorPane();  
+  
+        // upper-right sign out control  
+        Hyperlink signoutLink = new Hyperlink("Sign Out");  
+  
+        ap.getChildren().add( signoutLink );  
+  
+        AnchorPane.setTopAnchor( signoutLink, 10.0d );  
+        AnchorPane.setRightAnchor( signoutLink, 10.0d );  
+  
+        // lower-left status label  
+        Label statusLabel = new Label("Program status");  
+        ap.getChildren().add( statusLabel );  
+  
+        AnchorPane.setBottomAnchor( statusLabel, 10.0d );  
+        AnchorPane.setLeftAnchor( statusLabel, 10.0d );  
+  
+        // lower-right connection status control  
+        Circle circle = new Circle();  
+        circle.setFill(Color.GREEN );  
+        circle.setRadius(10);  
+  
+        Label connLabel = new Label("Connection");  
+  
+        HBox connHBox = new HBox();  
+        connHBox.setSpacing( 4.0d );  
+        connHBox.setAlignment(Pos.BOTTOM_RIGHT);  
+        connHBox.getChildren().addAll( connLabel, circle );  
+  
+        AnchorPane.setBottomAnchor( connHBox, 10.0d );  
+        AnchorPane.setRightAnchor( connHBox, 10.0d );  
+  
+        ap.getChildren().add( connHBox );  
+  
+        // top-left content; takes up extra space  
+        TextArea ta = new TextArea();  
+        ap.getChildren().add( ta );  
+  
+        AnchorPane.setTopAnchor( ta, 40.0d );  
+        AnchorPane.setBottomAnchor( ta, 40.0d );  
+        AnchorPane.setRightAnchor( ta, 10.0d );  
+        AnchorPane.setLeftAnchor( ta, 10.0d );  
+  
+        Scene scene = new Scene(ap);  
+  
+        primaryStage.setTitle("AnchorPaneApp");  
+        primaryStage.setScene( scene );  
+        primaryStage.setWidth(568);  
+        primaryStage.setHeight(320);  
+        primaryStage.show();  
+  
+        ScenicView.show(scene);  
+    }  
+  
+    public static void main(String[] args) {  
+        launch(args);  
+    }  
+}
+```
+## TilePane 
+`TilePane`用于相同大小的单元格的网格布局。 prefColumns和prefcountries属性定义网格中的行数和列数。 要将节点添加到`TilePane`，请访问children属性并调用add（）或addAll（）方法。 这比需要显式设置节点的行/列位置的`GridPane`更容易使用。
+此屏幕截图显示了一个定义为3 × 3网格的`TilePane`。 `TilePane`包含9个`Rectangle`对象。
+下面是三乘三网格的完整代码。 `TilePane`的children属性提供了addAll（）方法，`Rectangle`对象将添加到该方法中。 tileAlignment属性将每个`Rectangle`对象定位在其对应图块的中心。
+```java
+public class ThreeByThreeApp extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+        TilePane tilePane = new TilePane();
+        tilePane.setPrefColumns(3);
+        tilePane.setPrefRows(3);
+        tilePane.setTileAlignment( Pos.CENTER );
+
+        tilePane.getChildren().addAll(
+                new Rectangle(50, 50, Color.RED),
+                new Rectangle( 50, 50, Color.GREEN ),
+                new Rectangle( 50, 50, Color.BLUE ),
+                new Rectangle( 50, 50, Color.YELLOW ),
+                new Rectangle( 50, 50, Color.CYAN ),
+                new Rectangle( 50, 50, Color.PURPLE ),
+                new Rectangle( 50, 50, Color.BROWN ),
+                new Rectangle( 50, 50, Color.PINK ),
+                new Rectangle( 50, 50, Color.ORANGE )
+        );
+
+        Scene scene = new Scene(tilePane);
+        scene.setFill(Color.LIGHTGRAY);
+
+        primaryStage.setTitle("3x3");
+        primaryStage.setScene( scene );
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {launch(args);}
+}
+```
+![[Pasted image 20240501171847.png]]
+由于`Node`的所有`TilePane`内容都是大小相等的矩形，因此布局被打包在一起，并且tileAlignment设置不明显。 当tilePrefHeight和tilePrefWidth属性被设置为大于内容时—比如100x100个瓷砖包含50x50个矩形—tileAlignment将决定如何使用额外的空间。
+请参见以下修改后的ThreeByThreeApp类，它设置了tilePrefHeight和tilePrefWidth。
+```java
+        tilePane.setPrefTileHeight(100);
+        tilePane.setPrefTileWidth(100);
+```
+![[Pasted image 20240501171957.png]]
+在前面的屏幕截图中，为3 × 3网格提供了9个Rectangle对象。 如果内容与`TilePane`定义不匹配，则这些单元格将折叠。 这个修改只增加了五个矩形而不是九个。 第一行包含所有三个图块的内容。 第二行仅包含前两个文件的内容。 第三行完全不见了。
+![[Pasted image 20240501172158.png]]
+有一个属性“orientation”，指示`TilePane`逐行（HORIZONTAL，默认值）或逐列（VERTICAL）添加项目。 如果使用VERTICAL，那么第一列将有三个元素，第二列将只有前两个元素，第三列将缺失。 这个屏幕截图显示了使用垂直方向将五个矩形添加到三乘三的网格（九个瓷砖）中。
